@@ -45,5 +45,3 @@ def testDatabase():
 			print ingredient
 		print "********** %d *********" % count
 		count += 1
-
-testDatabase()
