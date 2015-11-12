@@ -111,4 +111,7 @@ def test6():
 #test3c()
 #test4()
 #test5()
-test6()
+#test6()
+
+print range(2,2)
+print range(2,3)
