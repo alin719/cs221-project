@@ -5,5 +5,5 @@ Austin Ray, Bruno De Martino, Alex Lin
 
 import math, random, collections, database
 
-database.testDatabase()
-
+database.testRecipeDatabase()
+database.testNutritionalDatabase()
