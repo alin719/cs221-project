@@ -5,5 +5,5 @@ Austin Ray, Bruno De Martino, Alex Lin
 
 import math, random, collections, database
 
-database.testRecipeDatabase()
-database.testNutritionalDatabase()
+database.createDatabases('allRecipes.json', 'allNutritional.json', 10)
+# database.printMissedIngredients()
