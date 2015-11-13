@@ -9,6 +9,13 @@
 
 import collections
 import numpy, scipy, math
+import re
 
-print "Hello world!"
+myStr = """1 teaspoon's coarse salt, plus more 
+for cooking water. """
 
+correctSplit = [word for word in re.split("([^a-zA-Z0-9_\''])", myStr) if word is not '' and word is not ' ']
+print correctSplit
+
+for trigram in zip(correctSplit, correctSplit[1:], correctSplit[2:]):
+	print(trigram)
