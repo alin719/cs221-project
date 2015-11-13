@@ -61,8 +61,6 @@ def buildNutritionalDatabase(ingredientNameIdMap, filename):
 	print "... Done creating Nutritional Database with %d items ..." % numIngredients
 
 	print " Out of all ingredient in our recipe, we found %d of them, and missed %d of them" % (foundItems, missedItems)
-	print
-
 
 def buildRecipeEntry(recipe):
 	recipeName = recipe["recipeName"]
