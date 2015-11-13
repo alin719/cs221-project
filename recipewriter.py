@@ -17,39 +17,39 @@ import tokenize
 ### Data Structures 
 class Ingredient:
     def __init__(self):
-    	self.amount = ""
-	    self.units = ""
-	    self.ingredientName = ""
-	    self.entireLine = ""          # Contains amount, units, and ingredient name
-	    self.lineWithoutAmount = ""
+        self.amount = ""
+        self.units = ""
+        self.ingredientName = ""
+        self.entireLine = ""          # Contains amount, units, and ingredient name
+        self.lineWithoutAmount = ""
 
-	    self.wordsInIngredient = []            # Vector of strings
-	    self.nonUnitWordsInIngredient = []     # Vector of strings
-	    self.endSeed = []                      # Vector of strings
+        self.wordsInIngredient = []            # Vector of strings
+        self.nonUnitWordsInIngredient = []     # Vector of strings
+        self.endSeed = []                      # Vector of strings
 
 class InstructionSentence:
     def __init__(self):
-    	self.isGoodSentence = True
-	    self.isServingSentence = True
+        self.isGoodSentence = True
+        self.isServingSentence = True
 
-	    self.firstWord = ""
-	    self.sentence = ""
-	    self.sentenceSubbed = ""
+        self.firstWord = ""
+        self.sentence = ""
+        self.sentenceSubbed = ""
 
-	    self.order1EndSeedsInside = []       # Vector of strings
-	    self.order2EndSeedsInside = []       # Vector of vector of strings
-	    self.nonUnitWordsInIngredient = []   # Vector of strings
-	    self.endSeed = []                    # Vector of strings
-	    self.tokensInSentence = []           # Vector of strings
+        self.order1EndSeedsInside = []       # Vector of strings
+        self.order2EndSeedsInside = []       # Vector of vector of strings
+        self.nonUnitWordsInIngredient = []   # Vector of strings
+        self.endSeed = []                    # Vector of strings
+        self.tokensInSentence = []           # Vector of strings
 
 class InstructionStep:
-	def __init__(self):
-	    self.stepNumber = 0
-	    self.numSentences = 0
-	    self.allText = ""
-	    self.allTextEdited = ""
-	    self.instructionSentences = []    # Vector of InstructionSentence's
-	    self.sentenceStringVec = []       # Vector of strings
+    def __init__(self):
+        self.stepNumber = 0
+        self.numSentences = 0
+        self.allText = ""
+        self.allTextEdited = ""
+        self.instructionSentences = []    # Vector of InstructionSentence's
+        self.sentenceStringVec = []       # Vector of strings
 
 
 """
@@ -91,7 +91,7 @@ Class: Recipe
 """
 class Recipe:
 
-	self.VALID_AFTER_WORDS = ["to", "in", "into", "on", "are", ".", ",", ";", "is"]
+    self.VALID_AFTER_WORDS = ["to", "in", "into", "on", "are", ".", ",", ";", "is"]
     self.VALID_BEFORE_WORDS = ["NUMBERS", "the", "and", "with"]
     self.NORMAL_UNITS = ["teaspoon", "tablespoon", "pound", "cup", "ounce", \
             "bunch", "strip", "clove", "stalk", "stick", "loaf", \
@@ -102,9 +102,9 @@ class Recipe:
             "rinds", "slices", "sprigs", "heads", "ears", "cans", "pints", \
             "quarts", "gallons", "sheets"]
     self.ABNORMAL_UNITS = ["Pinch of", "Juice of", "Zest of"]
-    self.DESCRIPTORS = ["large", "small", "whole", "thin", "coarse", "red", "green",
-            "rack", "hot", "medium", "baby", "fresh", "dried", "frozen",
-            "boneless", "skinless", "ripe", "pink", "coarsely chopped", "cold",
+    self.DESCRIPTORS = ["large", "small", "whole", "thin", "coarse", "red", "green", \
+            "rack", "hot", "medium", "baby", "fresh", "dried", "frozen", \
+            "boneless", "skinless", "ripe", "pink", "coarsely chopped", "cold", \
             "minced", "grated", "finely grated", "ground", "hot", "freshly ground"]
     self.STANDALONES = ["Freshly ground pepper", "Coarse salt", \
             "Coarse salt and freshly ground pepper", \
@@ -208,7 +208,7 @@ class Recipe:
 
     def fillInstructionSentenceTokens():
         for i in xrange(0, len(goodInstructionSentences)):
-            instructionSentence myInstructionSentence = goodInstructionSentences[i]
+            myInstructionSentence = goodInstructionSentences[i]
             TokenScanner scanner(myInstructionSentence.sentence)
             while (scanner.hasMoreTokens()):
                 currentToken = scanner.nextToken()
@@ -771,7 +771,7 @@ def main():
         word = ""
         getLine(adj_infile2, word)
         if (isupper(word[0])):
-        	properAdjectives += word
+            properAdjectives += word
     adj_infile2.close()
 
     ifstream infile
@@ -985,16 +985,16 @@ def main():
                 break
 
         if (descriptorWord != ""):
-        	recipeTitle += charToString(toupper(descriptorWord[0])) + descriptorWord[1] + " "
+            recipeTitle += charToString(toupper(descriptorWord[0])) + descriptorWord[1] + " "
         if (lastWordInTitle != ""):
-        	recipeTitle += charToString(toupper(lastWordInTitle[0])) + lastWordInTitle[0]
+            recipeTitle += charToString(toupper(lastWordInTitle[0])) + lastWordInTitle[0]
         if (lastWordInTitle != "" and lastWordInTitle2 != ""):
-        	recipeTitle += " with "
+            recipeTitle += " with "
         if (lastWordInTitle2 != ""):
-        	recipeTitle += charToString(toupper(lastWordInTitle2[0])) + lastWordInTitle2[0]
+            recipeTitle += charToString(toupper(lastWordInTitle2[0])) + lastWordInTitle2[0]
 
         if (descriptorWord == "" and lastWordInTitle == "" and lastWordInTitle2 == ""):
-        	recipeTitle += "Food"
+            recipeTitle += "Food"
 
         textToPrint = ""
         textToPrint += " " + recipeTitle
@@ -1004,14 +1004,14 @@ def main():
         myRecipe = allRecipes[rand]
         numServings = myRecipe.getNumServings()
         if (numServings<=0):
-        	numServings = randomInteger(1,9)
+            numServings = randomInteger(1,9)
         textToPrint += " (SERVES " + integerToString(numServings) + ")\n"
         #        print "Checkpoint 4"
 
         textToPrint += "   Ingredients:\n"
         for ingredient in markovIngredientsList:
             if (ingredient[2]=='/'):
-            	ingredient = charToString(ingredient[0]) + ingredient[:4]
+                ingredient = charToString(ingredient[0]) + ingredient[:4]
             textToPrint += "      " + ingredient + "\n"
         textToPrint += "\n"
 
@@ -1032,7 +1032,7 @@ def main():
         textToPrint.clear()
         markovIngredientsList.clear()
         if (allAtOnce == "one"):
-        	shouldStop = True
+            shouldStop = True
 
     print "\n\n\n   I have saved your recipes in \"Random_Recipe_Book.txt\" in this application's folder.\n\n\n"
 
@@ -1115,17 +1115,17 @@ def makeRandomInstructions(bigVec, ingredientsList):
         for j in xrange(0, len(endSeedsUsed)):
             endSeedUsed = endSeedsUsed[j]
             if (endSeedUsed[1]=="false"):
-            	unusedEndSeeds += endSeedUsed[0]
+                unusedEndSeeds += endSeedUsed[0]
         if (len(unusedEndSeeds)==0):
-        	break
+            break
         for i in xrange(0, len(bigVec)):
             shouldAdd = True
             hasUnusedSeed = False
             for word in bigVec[i].order1EndSeedsInside:
                 if (!(word in endSeeds):
-                	shouldAdd = False
+                    shouldAdd = False
                 if (word in unusedEndSeeds):
-                	hasUnusedSeed = True
+                    hasUnusedSeed = True
             if (shouldAdd and hasUnusedSeed):
                 refinedBigVec += bigVec[i]
         r = 0
@@ -1167,9 +1167,9 @@ def makeRandomInstructions(bigVec, ingredientsList):
                 endSeedUsed[1] = "true"
                 endSeedsUsed[i] = endSeedUsed
             if (endSeedsUsed[i][1]=="true"):
-            	trueCounter += 1
+                trueCounter += 1
         if ((trueCounter+emptiesUsed) == len(endSeeds)):
-        	existUnusedSeeds = False
+            existUnusedSeeds = False
         returnVec += sentence
         iterationCounter1 += 1
     return returnVec
@@ -1178,7 +1178,7 @@ def makeRandomInstructions(bigVec, ingredientsList):
 def refineReverseSeedMapKeys(reverseSeedMap):
     for (key in reverseSeedMap.keys()):
         if ("$" in key or "%" in key):
-        	reverseSeedMap.remove(key)
+            reverseSeedMap.remove(key)
 
 
 def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLength, endSeedLength, endSeedSeedLength):
@@ -1463,9 +1463,9 @@ def printListOfRecipesIngredients(allRecipes, startingIndex, numToPrint):
 
 def printRecipeEndSeeds(allRecipes, startingIndex, numToPrint):
     if (startingIndex==-5):
-    	startingIndex = 0
+        startingIndex = 0
     if (numToPrint==-5):
-    	numToPrint = len(allRecipes)
+        numToPrint = len(allRecipes)
     for myRecipe in allRecipes[startingIndex:numToPrint]
         myRecipe.printEndSeeds()
         print "\n\n"
@@ -1512,7 +1512,7 @@ def fillRecipes(allRecipes, allText):
                 allRecipes[recipeInd-1] = previousRecipe
             recipeInd += 1
         if (allText[index] == '\n'):
-        	newLinesSinceLastMakesServes += 1
+            newLinesSinceLastMakesServes += 1
         index += 1
 
 
