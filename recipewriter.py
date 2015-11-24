@@ -35,8 +35,6 @@ void compileAllIngredients(Vector<Recipe> & allRecipes, Vector<ingredient> & all
 Vector<string> makeRandomIngredientsList(Map<Vector<string>,Vector<string>> & reverseSeedMap, Map<Vector<string>,Vector<Vector<string>>> & endSeedMap,
                                          int numIngredients, int seedLength, int endSeedLength, int endSeedSeedLength)
 Vector<string> makeRandomInstructions(Vector<instructionSentence> & bigVec, Vector<string> ingredientsList)
-bool vectorContains(Vector<string> vec, string word)
-bool vectorContains(Vector<Vector<string>> superVec, Vector<string> subVec)
 void refineReverseSeedMapKeys(Map<Vector<string>,Vector<string>> & reverseSeedMap)
 string refineRandomInstructions(Vector<string> & instructions, Vector<instructionSentence> & servingSentencesWithoutSeeds)
 """
@@ -45,68 +43,73 @@ string refineRandomInstructions(Vector<string> & instructions, Vector<instructio
 # Main Program */
 def main(argv):
     res_dirName = "res"
-
-    adj_filename = os.path.join(res_dirName, "adjectives.txt")
-    adjectives = set()
-    with open(adj_filename) as f:
-        for adj in f:
-            adjectives.add(adj)
-    properAdjectives = [adj for adj in adjectives if adj[0].isupper()]
-
-    greetUser()
-
-    start = getStartResponse(argv)
-
-    if (start=="explain"):
-        explainProgram()
-
-    print "\n\n   -------------------------------Main Program----------------------------------\n"
-
     seedLength = 2
     endSeedLength = 2
 
+    # Collect a set of adjectives from the ./res/adjectives.txt file
+    adjectives = gatherAdjectives(res_dirName)
+    
+    # Splice out the proper adjectives from the adjectives list
+    properAdjectives = [adj for adj in adjectives if adj[0].isupper()]
+
+    # Give the user a quick welcome message
+    greetUser()
+
+    # Ask the user if they want the program explained
+    # to them or not
+    if getStartResponse(argv) == "explain":
+        explainProgram()
+
+    # Ask user:
+    #   - How many ingredients per recipe?
+    #   - How many past ingredients factor in to the next ingredient?
+    #   - How many recipes should be made?
+    #   - Do you want to print the recipes all at once or one by one?
     numIngredients = getNumIngredientsResponse(argv)
     endSeedSeedLength = getEndSeedLengthResponse(argv)
     numRecipesToPrint = getNumRecipesToPrintResponse(argv)
     allAtOnce = getAllAtOnceResponse(argv)
 
-    print "\n   ", "I'm going to generate your recipes now. This might take a minute...\n\n"
-
-    cookbook_fileName = os.path.join(res_dirName, "MarthaStewart-LivingCookbook.txt")
-    allText = open(cookbook_fileName, 'r').read()
-
-    allRecipes = []
+    # Update the user on program progress
+    printUpdate(0)
 
     # Separate complete cookbook text into individual recipe chunks
-    fillRecipes(allRecipes, allText)
+    allRecipes = separateRawRecipeTexts(res_dirName)
 
+    # Just seeing if recipe texts were filled
+    for recipe in allRecipes[:2]:
+        print recipe.getAllRecipeText() 
+        print "\n\n ---- RECIPE END ---- \n\n"
+    return
+
+    # Parse each individual recipe into its component parts
     splitRecipes(allRecipes, adjectives, endSeedLength)
+
+    # Delete any recipes that only have one ingredient
     deleteOneIngredientRecipes(allRecipes)
 
-    print "   ", "...Making progress..."
+    # Update the user on program progress
+    printUpdate(1)
+    
     allIngredients = []
     allIngredientsString = ""
     compileAllIngredients(allRecipes, allIngredients, allIngredientsString)
 
     reverseSeedMap = {}
     makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, seedLength, endSeedLength)
+   
+    # Update the user on program progress
+    printUpdate(2)
 
-    print "   ", "...Still working..."
     refineReverseSeedMapKeys(reverseSeedMap)
 
 
     endSeedMap = {}
     makeEndSeedMap(allRecipes, endSeedMap)
 
-    print "   ", "...Can't be much longer now..."
+    printUpdate(3)
 
-    singleEndSeeds = set()
-    for i in xrange(0, len(endSeedMap.keys())):
-        key = endSeedMap.keys()[i]
-        endWord = key[len(key)-1]
-        if (endWord in singleEndSeeds):
-            continue
-        singleEndSeeds.append(endWord)
+    singleEndSeeds = set([key[-1] for key in endSeedMap.keys()])
 
     allGoodSentences = []
     goodSentencesWithSeeds = []
@@ -259,10 +262,86 @@ def main(argv):
 
 
 
+### Function Implementations ###
+
+##
+# The following functions are used to separate the raw cookbook
+# text into individual, raw recipe texts 
+#    - separateRawRecipeTexts
+#    - findIndEndLastRecipe
+#    - findIndPreviousTitle
+##
+def separateRawRecipeTexts(res_dirName):
+    cookbook_fileName = os.path.join(res_dirName, "MarthaStewart-LivingCookbook.txt")
+    allText = open(cookbook_fileName, 'r').read()
+    allRecipes = []
+    index = 0
+    recipeInd = 0
+    newLinesSinceLastMakesServes = 100
+    while (True):
+        if index == len(allText):
+            indEndLastRecipe = len(allText) - 1
+            previousRecipe = allRecipes[recipeInd-1]
+            lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
+            previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : lengthOfLastRecipe])
+            allRecipes[recipeInd-1] = previousRecipe
+            break
+        makesOrServes = ""
+        if (index < len(allText)-7):
+            makesOrServes = allText[index : index + 6]
+        if (newLinesSinceLastMakesServes > 5 and (makesOrServes == "MAKES " or makesOrServes == "SERVES")):
+            newRecipe = Recipe()
+            newLinesSinceLastMakesServes = 0
+            indStartRecipe = findIndPreviousTitle(index, allText)
+            newRecipe.setIndStartRecipe(indStartRecipe)
+            allRecipes.append(newRecipe)
+
+            if (recipeInd != 0):
+                indEndLastRecipe = findIndEndLastRecipe(indStartRecipe, allText)
+                previousRecipe = allRecipes[recipeInd-1]
+                lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
+                previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : previousRecipe.getIndStartRecipe() + lengthOfLastRecipe])
+                previousRecipe.setRecipeCharLength(lengthOfLastRecipe)
+                allRecipes[recipeInd-1] = previousRecipe
+            recipeInd += 1
+        if (allText[index] == '\n'):
+            newLinesSinceLastMakesServes += 1
+        index += 1
+    return allRecipes
 
 
+def findIndEndLastRecipe(indStartRecipe, allText):
+    indEndLastRecipe = 0
+    currentIndex = indStartRecipe-1
+    while (True):
+        if (currentIndex == 0):
+            indEndLastRecipe = -1
+            break
+        currentChar = allText[currentIndex]
+        if (currentChar == '.'):
+            indEndLastRecipe = currentIndex+1
+            break
+        currentIndex -= 1
+    return indEndLastRecipe
 
-# Function Implementations */
+
+def findIndPreviousTitle(index, allText):
+    indTitle = 0
+    currentIndex = index-1
+    possibleIndTitle = -1
+    while (True):
+        if (currentIndex == 0):
+            indTitle = 0
+            break
+        currentChar = allText[currentIndex]
+        previousChar = allText[currentIndex-1]
+        if (currentChar == '.' and possibleIndTitle != -1):
+            indTitle = possibleIndTitle
+            break
+        elif (currentChar.isalpha() and currentChar.islower() and previousChar == '\n'):
+            possibleIndTitle = currentIndex
+        currentIndex -= 1
+    return indTitle
 
 def refineRandomInstructions(instructions, servingSentencesWithoutSeeds):
     serveSentence = ""
@@ -475,7 +554,7 @@ def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLe
             errorVec += "ERROR"
             return errorVec
         r = random.randint(0, len(possibleNextEndSeedKeys)-1)
-        if (vectorContains(usedEndSeedKeys,possibleNextEndSeedKeys[r])):
+        if possibleNextEndSeedKeys[r] in usedEndSeedKeys:
             i -= 1
             iterationCounter2 += 1
             continue
@@ -530,13 +609,6 @@ def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLe
         ingredientList += newIngredient
         iterationCounter2 += 1
     return ingredientList
-
-
-def vectorContains(superVec, subVec):
-    for member in superVec:
-        if (subVec == member):
-            return True
-    return False;
 
 
 def compileAllIngredients(allRecipes, allIngredients, allIngredientsString):
@@ -679,94 +751,15 @@ def splitRecipes(allRecipes, adjectives, endSeedLength):
         allRecipes[i] = myRecipe
 
 
-def printListOfRecipesIngredients(allRecipes, startingIndex, numToPrint):
-    for myRecipe in allRecipes[0:numToPrint]:
-        print myRecipe.getName()
-        print "-------------------------------"
-        myRecipe.printIngredients()
-        print "\n\n"
 
 
 
-def printRecipeEndSeeds(allRecipes, startingIndex, numToPrint):
-    if (startingIndex==-5):
-        startingIndex = 0
-    if (numToPrint==-5):
-        numToPrint = len(allRecipes)
-    for myRecipe in allRecipes[startingIndex:numToPrint]:
-        myRecipe.printEndSeeds()
-        print "\n\n"
-
-
-def fillRecipes(allRecipes, allText):
-    index = 0
-    recipeInd = 0
-    newLinesSinceLastMakesServes = 100
-    while (True):
-        if index == len(allText):
-            indEndLastRecipe = len(allText) - 1
-            previousRecipe = allRecipes[recipeInd-1]
-            lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-            previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : lengthOfLastRecipe])
-            allRecipes[recipeInd-1] = previousRecipe
-            break
-        makesOrServes = ""
-        if (index < len(allText)-7):
-            makesOrServes = allText[index : index + 6]
-        if (newLinesSinceLastMakesServes > 5 and (makesOrServes == "MAKES " or makesOrServes == "SERVES")):
-            newRecipe = Recipe()
-            newLinesSinceLastMakesServes = 0
-            indStartRecipe = findIndPreviousTitle(index, allText)
-            newRecipe.setIndStartRecipe(indStartRecipe)
-            allRecipes.append(newRecipe)
-
-            if (recipeInd != 0):
-                indEndLastRecipe = findIndEndLastRecipe(indStartRecipe, allText)
-                previousRecipe = allRecipes[recipeInd-1]
-                lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-                previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : previousRecipe.getIndStartRecipe() + lengthOfLastRecipe])
-                previousRecipe.setRecipeCharLength(lengthOfLastRecipe)
-                allRecipes[recipeInd-1] = previousRecipe
-            recipeInd += 1
-        if (allText[index] == '\n'):
-            newLinesSinceLastMakesServes += 1
-        index += 1
-
-
-def findIndEndLastRecipe(indStartRecipe, allText):
-    indEndLastRecipe = 0
-    currentIndex = indStartRecipe-1
-    while (True):
-        if (currentIndex == 0):
-            indEndLastRecipe = -1
-            break
-        currentChar = allText[currentIndex]
-        if (currentChar == '.'):
-            indEndLastRecipe = currentIndex+1
-            break
-        currentIndex -= 1
-    return indEndLastRecipe
-
-
-def findIndPreviousTitle(index, allText):
-    indTitle = 0
-    currentIndex = index-1
-    possibleIndTitle = -1
-    while (True):
-        if (currentIndex == 0):
-            indTitle = 0
-            break
-        currentChar = allText[currentIndex]
-        previousChar = allText[currentIndex-1]
-        if (currentChar == '.' and possibleIndTitle != -1):
-            indTitle = possibleIndTitle
-            break
-        elif (currentChar.isalpha() and currentChar.islower() and previousChar == '\n'):
-            possibleIndTitle = currentIndex
-        currentIndex -= 1
-    return indTitle
-
-
+##
+# Functional Group: Utility
+###########################
+# List of functions:
+#   - invertMap
+##
 def invertMap(map):
     returnMap = {}
     for key in map.keys():
@@ -775,6 +768,42 @@ def invertMap(map):
     return returnMap
 
 
+
+
+##
+# Functional Group: Reading and Writing to Files
+################################################
+# List of functions:
+#   - gatherAdjectives
+##
+def gatherAdjectives(res_dirName):
+    adjectives = set()
+    adj_filename = os.path.join(res_dirName, "adjectives.txt")
+    with open(adj_filename) as f:
+        for adj in f:
+            adjectives.add(adj)
+    return adjectives
+
+
+
+
+##
+# Functional Group: User-Interaction
+####################################
+# List of functions:
+#   - greetUser
+#   - explainProgram
+#   - printUpdate
+#
+#   - printListOfRecipesIngredients
+#   - printRecipeEndSeeds
+#   
+#   - getNumIngredientsResponse
+#   - getStartResponse
+#   - getEndSeedLengthResponse
+#   - getNumRecipesToPrintResponse
+#   - getAllAtOnceResponse
+##
 def greetUser():
     greet = "            Random Recipe Writer | Austin Ray, Bruno De Martino, Alex Lin\n"
     greet += "   -----------------------------------------------------------------------------\n\n"
@@ -783,7 +812,6 @@ def greetUser():
     greet += "   The Martha Stewart Living Cookbook\" by using Markov chains. If you want to\n"
     greet += "   know how I do this, enter \"explain\", otherwise enter \"start\" to begin: "
     print greet
-
 
 def explainProgram():
     print "\n\n   -----------------------------Program Explanation-----------------------------\n"
@@ -824,9 +852,38 @@ def explainProgram():
     print "   ", "already. And voila! You have your scrumptious new randomly generated"
     print "   ", "recipe. Happy cooking!"
 
+def printUpdate(updateNum):
+    if updateNum == 0:
+        print "\n\n   -------------------------------Main Program----------------------------------\n"
+        print "\n   ", "I'm going to generate your recipes now. This might take a minute...\n\n"
+    elif updateNum == 1:
+        print "   ", "...Making progress..."
+    elif updateNum == 2:
+        print "   ", "...Still working..."
+    elif updateNum == 3:
+        print "   ", "...Can't be much longer now..."
+
+def printListOfRecipesIngredients(allRecipes, startingIndex, numToPrint):
+    for myRecipe in allRecipes[0:numToPrint]:
+        print myRecipe.getName()
+        print "-------------------------------"
+        myRecipe.printIngredients()
+        print "\n\n"
+
+def printRecipeEndSeeds(allRecipes, startingIndex, numToPrint):
+    if (startingIndex==-5):
+        startingIndex = 0
+    if (numToPrint==-5):
+        numToPrint = len(allRecipes)
+    for myRecipe in allRecipes[startingIndex:numToPrint]:
+        myRecipe.printEndSeeds()
+        print "\n\n"
+
 def getNumIngredientsResponse(argv):
     numIngredients = 0
-    if len(argv) > 2:
+    if argv[1] in ["-d", "--default"]:
+        numIngredients = 10
+    elif len(argv) > 2:
         numIngredients = int(argv[2])
     else:
         while (True):
@@ -839,7 +896,9 @@ def getNumIngredientsResponse(argv):
 
 def getStartResponse(argv):
     start = ""
-    if len(argv) > 1:
+    if argv[1] in ["-d", "--default"]:
+        start = "start"
+    elif len(argv) > 1:
         start = argv[1]
     else:
         start = raw_input("")
@@ -847,7 +906,9 @@ def getStartResponse(argv):
 
 def getEndSeedLengthResponse(argv):
     endSeedSeedLength = 0
-    if len(argv) > 3:
+    if argv[1] in ["-d", "--default"]:
+        endSeedSeedLength = 3
+    elif len(argv) > 3:
         endSeedSeedLength = int(argv[3])
     else:
         while (True):
@@ -860,7 +921,9 @@ def getEndSeedLengthResponse(argv):
 
 def getNumRecipesToPrintResponse(argv):
     numRecipesToPrint = 0
-    if len(argv) > 4:
+    if argv[1] in ["-d", "--default"]:
+        numRecipesToPrint = 20
+    elif len(argv) > 4:
         numRecipesToPrint = int(argv[4])
     else:
         while (True):
@@ -873,7 +936,9 @@ def getNumRecipesToPrintResponse(argv):
 
 def getAllAtOnceResponse(argv):
     allAtOnce = ""
-    if len(argv) > 5:
+    if argv[1] in ["-d", "--default"]:
+        allAtOnce = "all"
+    elif len(argv) > 5:
         allAtOnce = argv[5]
     else:
         while (True):
@@ -885,5 +950,11 @@ def getAllAtOnceResponse(argv):
                 print "\n   Got it. Press Enter after each recipe prints to get the next one."
             break
 
+
+
+
+
+
+# If called from command line, call the main() function
 if __name__ == "__main__":
     main(sys.argv)
