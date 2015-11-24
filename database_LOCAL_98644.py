@@ -61,6 +61,8 @@ def buildNutritionalDatabase(ingredientNameIdMap, filename):
 	print "... Done creating Nutritional Database with %d items ..." % numIngredients
 
 	print " Out of all ingredient in our recipe, we found %d of them, and missed %d of them" % (foundItems, missedItems)
+	print
+
 
 def buildRecipeEntry(recipe):
 	recipeName = recipe["recipeName"]
@@ -124,5 +126,3 @@ def createDatabases(recipeFilename, nutritionalFileName, numRecipes):
 
 # TODO: need to figure out a way to not go over 1000 API calls/hour from government, by checking request header and not making
 # call if it will make it go over our hourly limit
-
-# add cuisine shit now

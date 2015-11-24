@@ -1,0 +1,1388 @@
+{
+    "Rhodes Dinner Rolls": {
+        "foodCalories": [
+            "307", 
+            "kcal", 
+            [
+                {
+                    "eqv": 28.35, 
+                    "label": "oz", 
+                    "qty": 1.0, 
+                    "value": "87"
+                }, 
+                {
+                    "eqv": 35.0, 
+                    "label": "roll (2-1/2\" dia)", 
+                    "qty": 1.0, 
+                    "value": "107"
+                }
+            ]
+        ], 
+        "ingredientId": "18344", 
+        "ingredientName": "Rhodes Dinner Rolls"
+    }, 
+    "beef broth": {
+        "foodCalories": [
+            "170", 
+            "kcal", 
+            [
+                {
+                    "eqv": 3.6, 
+                    "label": "cube", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }
+            ]
+        ], 
+        "ingredientId": "06076", 
+        "ingredientName": "beef broth"
+    }, 
+    "black pepper": {
+        "foodCalories": [
+            "251", 
+            "kcal", 
+            [
+                {
+                    "eqv": 2.3, 
+                    "label": "tsp, ground", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }, 
+                {
+                    "eqv": 6.9, 
+                    "label": "tbsp, ground", 
+                    "qty": 1.0, 
+                    "value": "17"
+                }, 
+                {
+                    "eqv": 2.9, 
+                    "label": "tsp, whole", 
+                    "qty": 1.0, 
+                    "value": "7"
+                }, 
+                {
+                    "eqv": 0.1, 
+                    "label": "dash", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }
+            ]
+        ], 
+        "ingredientId": "02030", 
+        "ingredientName": "black pepper"
+    }, 
+    "boneless chicken breast": {
+        "foodCalories": [
+            "120", 
+            "kcal", 
+            [
+                {
+                    "eqv": 85.0, 
+                    "label": "oz", 
+                    "qty": 3.0, 
+                    "value": "102"
+                }, 
+                {
+                    "eqv": 272.0, 
+                    "label": "piece", 
+                    "qty": 1.0, 
+                    "value": "326"
+                }, 
+                {
+                    "eqv": 926.0, 
+                    "label": "package", 
+                    "qty": 1.0, 
+                    "value": "1111"
+                }
+            ]
+        ], 
+        "ingredientId": "05062", 
+        "ingredientName": "boneless chicken breast"
+    }, 
+    "boneless skinless chicken breasts": {
+        "foodCalories": [
+            "120", 
+            "kcal", 
+            [
+                {
+                    "eqv": 85.0, 
+                    "label": "oz", 
+                    "qty": 3.0, 
+                    "value": "102"
+                }, 
+                {
+                    "eqv": 272.0, 
+                    "label": "piece", 
+                    "qty": 1.0, 
+                    "value": "326"
+                }, 
+                {
+                    "eqv": 926.0, 
+                    "label": "package", 
+                    "qty": 1.0, 
+                    "value": "1111"
+                }
+            ]
+        ], 
+        "ingredientId": "05062", 
+        "ingredientName": "boneless skinless chicken breasts"
+    }, 
+    "brown sugar": {
+        "foodCalories": [
+            "370", 
+            "kcal", 
+            [
+                {
+                    "eqv": 28.35, 
+                    "label": "oz", 
+                    "qty": 1.0, 
+                    "value": "105"
+                }, 
+                {
+                    "eqv": 51.0, 
+                    "label": "pastry", 
+                    "qty": 1.0, 
+                    "value": "189"
+                }
+            ]
+        ], 
+        "ingredientId": "18361", 
+        "ingredientName": "brown sugar"
+    }, 
+    "butter": {
+        "foodCalories": [
+            "727", 
+            "kcal", 
+            [
+                {
+                    "eqv": 14.1, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "103"
+                }, 
+                {
+                    "eqv": 227.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "1650"
+                }, 
+                {
+                    "eqv": 4.7, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "34"
+                }, 
+                {
+                    "eqv": 111.0, 
+                    "label": "stick", 
+                    "qty": 1.0, 
+                    "value": "807"
+                }
+            ]
+        ], 
+        "ingredientId": "04585", 
+        "ingredientName": "butter"
+    }, 
+    "butternut squash": {
+        "foodCalories": [
+            "50", 
+            "kcal", 
+            [
+                {
+                    "eqv": 113.0, 
+                    "label": "jar, Gerber (4 oz)", 
+                    "qty": 1.0, 
+                    "value": "56"
+                }
+            ]
+        ], 
+        "ingredientId": "03114", 
+        "ingredientName": "butternut squash"
+    }, 
+    "cabbage": {
+        "foodCalories": [
+            "19", 
+            "kcal", 
+            [
+                {
+                    "eqv": 56.0, 
+                    "label": "cup, chopped", 
+                    "qty": 1.0, 
+                    "value": "11"
+                }, 
+                {
+                    "eqv": 13.0, 
+                    "label": "shoot", 
+                    "qty": 1.0, 
+                    "value": "2"
+                }
+            ]
+        ], 
+        "ingredientId": "11503", 
+        "ingredientName": "cabbage"
+    }, 
+    "carrots": {
+        "foodCalories": [
+            "41", 
+            "kcal", 
+            [
+                {
+                    "eqv": 128.0, 
+                    "label": "cup chopped", 
+                    "qty": 1.0, 
+                    "value": "52"
+                }, 
+                {
+                    "eqv": 110.0, 
+                    "label": "cup grated", 
+                    "qty": 1.0, 
+                    "value": "45"
+                }, 
+                {
+                    "eqv": 122.0, 
+                    "label": "cup strips or slices", 
+                    "qty": 1.0, 
+                    "value": "50"
+                }, 
+                {
+                    "eqv": 72.0, 
+                    "label": "large (7-1/4\" to 8-/1/2\" long)", 
+                    "qty": 1.0, 
+                    "value": "30"
+                }, 
+                {
+                    "eqv": 61.0, 
+                    "label": "medium", 
+                    "qty": 1.0, 
+                    "value": "25"
+                }, 
+                {
+                    "eqv": 50.0, 
+                    "label": "small (5-1/2\" long)", 
+                    "qty": 1.0, 
+                    "value": "20"
+                }, 
+                {
+                    "eqv": 3.0, 
+                    "label": "slice", 
+                    "qty": 1.0, 
+                    "value": "1"
+                }, 
+                {
+                    "eqv": 7.0, 
+                    "label": "strip large (3\" long)", 
+                    "qty": 1.0, 
+                    "value": "3"
+                }, 
+                {
+                    "eqv": 4.0, 
+                    "label": "strip medium", 
+                    "qty": 1.0, 
+                    "value": "2"
+                }
+            ]
+        ], 
+        "ingredientId": "11124", 
+        "ingredientName": "carrots"
+    }, 
+    "celery": {
+        "foodCalories": [
+            "392", 
+            "kcal", 
+            [
+                {
+                    "eqv": 2.0, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "8"
+                }, 
+                {
+                    "eqv": 6.5, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "25"
+                }
+            ]
+        ], 
+        "ingredientId": "02007", 
+        "ingredientName": "celery"
+    }, 
+    "chicken breasts": {
+        "foodCalories": [
+            "263", 
+            "kcal", 
+            [
+                {
+                    "eqv": 15.0, 
+                    "label": "piece", 
+                    "qty": 1.0, 
+                    "value": "39"
+                }, 
+                {
+                    "eqv": 62.0, 
+                    "label": "pieces", 
+                    "qty": 4.0, 
+                    "value": "163"
+                }
+            ]
+        ], 
+        "ingredientId": "05327", 
+        "ingredientName": "chicken breasts"
+    }, 
+    "chicken broth": {
+        "foodCalories": [
+            "63", 
+            "kcal", 
+            [
+                {
+                    "eqv": 126.0, 
+                    "label": "serving 1/2 cup", 
+                    "qty": 1.0, 
+                    "value": "79"
+                }
+            ]
+        ], 
+        "ingredientId": "06357", 
+        "ingredientName": "chicken broth"
+    }, 
+    "chuck roast": {
+        "foodCalories": [
+            "172", 
+            "kcal", 
+            [
+                {
+                    "eqv": 85.0, 
+                    "label": "oz", 
+                    "qty": 3.0, 
+                    "value": "146"
+                }, 
+                {
+                    "eqv": 645.0, 
+                    "label": "roast", 
+                    "qty": 1.0, 
+                    "value": "1109"
+                }
+            ]
+        ], 
+        "ingredientId": "13823", 
+        "ingredientName": "chuck roast"
+    }, 
+    "corn": {
+        "foodCalories": [
+            "77", 
+            "kcal", 
+            [
+                {
+                    "eqv": 266.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "205"
+                }
+            ]
+        ], 
+        "ingredientId": "11497", 
+        "ingredientName": "corn"
+    }, 
+    "corn flakes": {
+        "foodCalories": [
+            "367", 
+            "kcal", 
+            [
+                {
+                    "eqv": 33.0, 
+                    "label": "tbsp", 
+                    "qty": 6.0, 
+                    "value": "121"
+                }
+            ]
+        ], 
+        "ingredientId": "28162", 
+        "ingredientName": "corn flakes"
+    }, 
+    "cracked black pepper": {
+        "foodCalories": [
+            "251", 
+            "kcal", 
+            [
+                {
+                    "eqv": 2.3, 
+                    "label": "tsp, ground", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }, 
+                {
+                    "eqv": 6.9, 
+                    "label": "tbsp, ground", 
+                    "qty": 1.0, 
+                    "value": "17"
+                }, 
+                {
+                    "eqv": 2.9, 
+                    "label": "tsp, whole", 
+                    "qty": 1.0, 
+                    "value": "7"
+                }, 
+                {
+                    "eqv": 0.1, 
+                    "label": "dash", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }
+            ]
+        ], 
+        "ingredientId": "02030", 
+        "ingredientName": "cracked black pepper"
+    }, 
+    "cream of chicken soup": {
+        "foodCalories": [
+            "103", 
+            "kcal", 
+            [
+                {
+                    "eqv": 124.0, 
+                    "label": "cup condensed", 
+                    "qty": 0.5, 
+                    "value": "128"
+                }
+            ]
+        ], 
+        "ingredientId": "06336", 
+        "ingredientName": "cream of chicken soup"
+    }, 
+    "diced tomatoes": {
+        "foodCalories": [
+            "125", 
+            "kcal", 
+            [
+                {
+                    "eqv": 198.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "248"
+                }
+            ]
+        ], 
+        "ingredientId": "32021", 
+        "ingredientName": "diced tomatoes"
+    }, 
+    "eggs": {
+        "foodCalories": [
+            "278", 
+            "kcal", 
+            [
+                {
+                    "eqv": 28.35, 
+                    "label": "oz", 
+                    "qty": 1.0, 
+                    "value": "79"
+                }, 
+                {
+                    "eqv": 26.0, 
+                    "label": "mini bagel (2-1/2\" dia)", 
+                    "qty": 1.0, 
+                    "value": "72"
+                }, 
+                {
+                    "eqv": 69.0, 
+                    "label": "small bagel (3\" dia)", 
+                    "qty": 1.0, 
+                    "value": "192"
+                }, 
+                {
+                    "eqv": 105.0, 
+                    "label": "medium bagel (3-1/2\" to 4\" dia)", 
+                    "qty": 1.0, 
+                    "value": "292"
+                }, 
+                {
+                    "eqv": 131.0, 
+                    "label": "large bagel (4-1/2\" dia)", 
+                    "qty": 1.0, 
+                    "value": "364"
+                }
+            ]
+        ], 
+        "ingredientId": "18003", 
+        "ingredientName": "eggs"
+    }, 
+    "flour": {
+        "foodCalories": [
+            "257", 
+            "kcal", 
+            [
+                {
+                    "eqv": 69.0, 
+                    "label": "roll", 
+                    "qty": 1.0, 
+                    "value": "177"
+                }
+            ]
+        ], 
+        "ingredientId": "28342", 
+        "ingredientName": "flour"
+    }, 
+    "fresh rosemary": {
+        "foodCalories": [
+            "131", 
+            "kcal", 
+            [
+                {
+                    "eqv": 0.7, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "1"
+                }, 
+                {
+                    "eqv": 1.7, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "2"
+                }
+            ]
+        ], 
+        "ingredientId": "02063", 
+        "ingredientName": "fresh rosemary"
+    }, 
+    "fresh thyme": {
+        "foodCalories": [
+            "101", 
+            "kcal", 
+            [
+                {
+                    "eqv": 0.8, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "1"
+                }, 
+                {
+                    "eqv": 0.4, 
+                    "label": "tsp", 
+                    "qty": 0.5, 
+                    "value": "0"
+                }
+            ]
+        ], 
+        "ingredientId": "02049", 
+        "ingredientName": "fresh thyme"
+    }, 
+    "garlic": {
+        "foodCalories": [
+            "331", 
+            "kcal", 
+            [
+                {
+                    "eqv": 3.1, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "10"
+                }, 
+                {
+                    "eqv": 9.7, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "32"
+                }
+            ]
+        ], 
+        "ingredientId": "02020", 
+        "ingredientName": "garlic"
+    }, 
+    "garlic powder": {
+        "foodCalories": [
+            "331", 
+            "kcal", 
+            [
+                {
+                    "eqv": 3.1, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "10"
+                }, 
+                {
+                    "eqv": 9.7, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "32"
+                }
+            ]
+        ], 
+        "ingredientId": "02020", 
+        "ingredientName": "garlic powder"
+    }, 
+    "ground beef": {
+        "foodCalories": [
+            "219", 
+            "kcal", 
+            [
+                {
+                    "eqv": 222.0, 
+                    "label": "serving", 
+                    "qty": 1.0, 
+                    "value": "486"
+                }
+            ]
+        ], 
+        "ingredientId": "21080", 
+        "ingredientName": "ground beef"
+    }, 
+    "ketchup": {
+        "foodCalories": [
+            "101", 
+            "kcal", 
+            [
+                {
+                    "eqv": 17.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "17"
+                }, 
+                {
+                    "eqv": 9.0, 
+                    "label": "packet", 
+                    "qty": 1.0, 
+                    "value": "9"
+                }, 
+                {
+                    "eqv": 240.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "242"
+                }
+            ]
+        ], 
+        "ingredientId": "11935", 
+        "ingredientName": "ketchup"
+    }, 
+    "lamb rib chops": {
+        "foodCalories": [
+            "237", 
+            "kcal", 
+            [
+                {
+                    "eqv": 114.0, 
+                    "label": "oz", 
+                    "qty": 4.0, 
+                    "value": "270"
+                }, 
+                {
+                    "eqv": 63.0, 
+                    "label": "chop", 
+                    "qty": 1.0, 
+                    "value": "149"
+                }
+            ]
+        ], 
+        "ingredientId": "17314", 
+        "ingredientName": "lamb rib chops"
+    }, 
+    "lean ground beef": {
+        "foodCalories": [
+            "250", 
+            "kcal", 
+            [
+                {
+                    "eqv": 85.0, 
+                    "label": "oz", 
+                    "qty": 3.0, 
+                    "value": "212"
+                }, 
+                {
+                    "eqv": 77.0, 
+                    "label": "patty (yield from 1/4 lb raw meat)", 
+                    "qty": 1.0, 
+                    "value": "192"
+                }
+            ]
+        ], 
+        "ingredientId": "23568", 
+        "ingredientName": "lean ground beef"
+    }, 
+    "mozzarella cheese": {
+        "foodCalories": [
+            "324", 
+            "kcal", 
+            [
+                {
+                    "eqv": 228.0, 
+                    "label": "serving", 
+                    "qty": 1.0, 
+                    "value": "739"
+                }, 
+                {
+                    "eqv": 27.0, 
+                    "label": "piece", 
+                    "qty": 1.0, 
+                    "value": "87"
+                }
+            ]
+        ], 
+        "ingredientId": "36611", 
+        "ingredientName": "mozzarella cheese"
+    }, 
+    "mustard": {
+        "foodCalories": [
+            "884", 
+            "kcal", 
+            [
+                {
+                    "eqv": 14.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "124"
+                }, 
+                {
+                    "eqv": 218.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "1927"
+                }, 
+                {
+                    "eqv": 4.5, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "40"
+                }
+            ]
+        ], 
+        "ingredientId": "04583", 
+        "ingredientName": "mustard"
+    }, 
+    "oil": {
+        "foodCalories": [
+            "884", 
+            "kcal", 
+            [
+                {
+                    "eqv": 13.6, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "120"
+                }, 
+                {
+                    "eqv": 218.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "1927"
+                }, 
+                {
+                    "eqv": 4.5, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "40"
+                }
+            ]
+        ], 
+        "ingredientId": "04646", 
+        "ingredientName": "oil"
+    }, 
+    "olive oil": {
+        "foodCalories": [
+            "361", 
+            "kcal", 
+            [
+                {
+                    "eqv": 15.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "54"
+                }, 
+                {
+                    "eqv": 232.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "838"
+                }
+            ]
+        ], 
+        "ingredientId": "04708", 
+        "ingredientName": "olive oil"
+    }, 
+    "onions": {
+        "foodCalories": [
+            "155", 
+            "kcal", 
+            [
+                {
+                    "eqv": 228.0, 
+                    "label": "inch sub", 
+                    "qty": 6.0, 
+                    "value": "353"
+                }, 
+                {
+                    "eqv": 457.0, 
+                    "label": "inch sub", 
+                    "qty": 12.0, 
+                    "value": "708"
+                }
+            ]
+        ], 
+        "ingredientId": "21151", 
+        "ingredientName": "onions"
+    }, 
+    "paprika": {
+        "foodCalories": [
+            "282", 
+            "kcal", 
+            [
+                {
+                    "eqv": 2.3, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }, 
+                {
+                    "eqv": 6.8, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "19"
+                }
+            ]
+        ], 
+        "ingredientId": "02028", 
+        "ingredientName": "paprika"
+    }, 
+    "parsley": {
+        "foodCalories": [
+            "292", 
+            "kcal", 
+            [
+                {
+                    "eqv": 0.5, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "1"
+                }, 
+                {
+                    "eqv": 1.6, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "5"
+                }
+            ]
+        ], 
+        "ingredientId": "02029", 
+        "ingredientName": "parsley"
+    }, 
+    "pasta": {
+        "foodCalories": [
+            "371", 
+            "kcal", 
+            [
+                {
+                    "eqv": 91.0, 
+                    "label": "cup spaghetti", 
+                    "qty": 1.0, 
+                    "value": "338"
+                }, 
+                {
+                    "eqv": 57.0, 
+                    "label": "oz", 
+                    "qty": 2.0, 
+                    "value": "211"
+                }, 
+                {
+                    "eqv": 122.0, 
+                    "label": "cup elbows", 
+                    "qty": 1.0, 
+                    "value": "453"
+                }, 
+                {
+                    "eqv": 95.0, 
+                    "label": "cup penne", 
+                    "qty": 1.0, 
+                    "value": "352"
+                }, 
+                {
+                    "eqv": 81.0, 
+                    "label": "cup farfalle", 
+                    "qty": 1.0, 
+                    "value": "301"
+                }, 
+                {
+                    "eqv": 96.0, 
+                    "label": "cup rotini", 
+                    "qty": 1.0, 
+                    "value": "356"
+                }, 
+                {
+                    "eqv": 64.0, 
+                    "label": "cup shells", 
+                    "qty": 1.0, 
+                    "value": "237"
+                }, 
+                {
+                    "eqv": 90.0, 
+                    "label": "cup lasagna", 
+                    "qty": 1.0, 
+                    "value": "334"
+                }
+            ]
+        ], 
+        "ingredientId": "20120", 
+        "ingredientName": "pasta"
+    }, 
+    "pepper": {
+        "foodCalories": [
+            "318", 
+            "kcal", 
+            [
+                {
+                    "eqv": 1.8, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }, 
+                {
+                    "eqv": 5.3, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "17"
+                }
+            ]
+        ], 
+        "ingredientId": "02031", 
+        "ingredientName": "pepper"
+    }, 
+    "rib roast": {
+        "foodCalories": [
+            "134", 
+            "kcal", 
+            [
+                {
+                    "eqv": 85.0, 
+                    "label": "oz", 
+                    "qty": 3.0, 
+                    "value": "114"
+                }, 
+                {
+                    "eqv": 325.0, 
+                    "label": "roast with bone", 
+                    "qty": 1.0, 
+                    "value": "436"
+                }
+            ]
+        ], 
+        "ingredientId": "17000", 
+        "ingredientName": "rib roast"
+    }, 
+    "russet potatoes": {
+        "foodCalories": [
+            "79", 
+            "kcal", 
+            [
+                {
+                    "eqv": 75.0, 
+                    "label": "cup, diced", 
+                    "qty": 0.5, 
+                    "value": "59"
+                }, 
+                {
+                    "eqv": 369.0, 
+                    "label": "potato large (3\" to 4-1/4\" dia)", 
+                    "qty": 1.0, 
+                    "value": "292"
+                }, 
+                {
+                    "eqv": 213.0, 
+                    "label": "Potato medium (2-1/4\" to 3-1/4\" dia)", 
+                    "qty": 1.0, 
+                    "value": "168"
+                }, 
+                {
+                    "eqv": 170.0, 
+                    "label": "Potato small (1-3/4\" to 2-1/4\" dia)", 
+                    "qty": 1.0, 
+                    "value": "134"
+                }
+            ]
+        ], 
+        "ingredientId": "11353", 
+        "ingredientName": "russet potatoes"
+    }, 
+    "sage": {
+        "foodCalories": [
+            "315", 
+            "kcal", 
+            [
+                {
+                    "eqv": 0.7, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "2"
+                }, 
+                {
+                    "eqv": 2.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "6"
+                }
+            ]
+        ], 
+        "ingredientId": "02038", 
+        "ingredientName": "sage"
+    }, 
+    "salt": {
+        "foodCalories": [
+            "0", 
+            "kcal", 
+            [
+                {
+                    "eqv": 6.0, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }, 
+                {
+                    "eqv": 18.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }, 
+                {
+                    "eqv": 292.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }, 
+                {
+                    "eqv": 0.4, 
+                    "label": "dash", 
+                    "qty": 1.0, 
+                    "value": "0"
+                }
+            ]
+        ], 
+        "ingredientId": "02047", 
+        "ingredientName": "salt"
+    }, 
+    "sea salt": {
+        "foodCalories": [
+            "381", 
+            "kcal", 
+            [
+                {
+                    "eqv": 31.0, 
+                    "label": "crisps", 
+                    "qty": 11.0, 
+                    "value": "118"
+                }
+            ]
+        ], 
+        "ingredientId": "28017", 
+        "ingredientName": "sea salt"
+    }, 
+    "shredded cheddar cheese": {
+        "foodCalories": [
+            "415", 
+            "kcal", 
+            [
+                {
+                    "eqv": 5.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "21"
+                }
+            ]
+        ], 
+        "ingredientId": "01146", 
+        "ingredientName": "shredded cheddar cheese"
+    }, 
+    "shredded sharp cheddar cheese": {
+        "foodCalories": [
+            "410", 
+            "kcal", 
+            [
+                {
+                    "eqv": 19.0, 
+                    "label": "slice (2/3 oz)", 
+                    "qty": 1.0, 
+                    "value": "78"
+                }, 
+                {
+                    "eqv": 21.0, 
+                    "label": "slice (3/4 oz)", 
+                    "qty": 1.0, 
+                    "value": "86"
+                }, 
+                {
+                    "eqv": 28.0, 
+                    "label": "slice (1 oz)", 
+                    "qty": 1.0, 
+                    "value": "115"
+                }
+            ]
+        ], 
+        "ingredientId": "01270", 
+        "ingredientName": "shredded sharp cheddar cheese"
+    }, 
+    "sour cream": {
+        "foodCalories": [
+            "181", 
+            "kcal", 
+            [
+                {
+                    "eqv": 12.0, 
+                    "label": "tablespoon", 
+                    "qty": 1.0, 
+                    "value": "22"
+                }, 
+                {
+                    "eqv": 230.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "416"
+                }
+            ]
+        ], 
+        "ingredientId": "01178", 
+        "ingredientName": "sour cream"
+    }, 
+    "stuffing": {
+        "foodCalories": [
+            "386", 
+            "kcal", 
+            [
+                {
+                    "eqv": 28.35, 
+                    "label": "oz", 
+                    "qty": 1.0, 
+                    "value": "109"
+                }, 
+                {
+                    "eqv": 170.0, 
+                    "label": "package (6 oz)", 
+                    "qty": 1.0, 
+                    "value": "656"
+                }
+            ]
+        ], 
+        "ingredientId": "18081", 
+        "ingredientName": "stuffing"
+    }, 
+    "sugar": {
+        "foodCalories": [
+            "458", 
+            "kcal", 
+            [
+                {
+                    "eqv": 28.0, 
+                    "label": "cookies", 
+                    "qty": 4.0, 
+                    "value": "128"
+                }
+            ]
+        ], 
+        "ingredientId": "28210", 
+        "ingredientName": "sugar"
+    }, 
+    "tomato paste": {
+        "foodCalories": [
+            "82", 
+            "kcal", 
+            [
+                {
+                    "eqv": 66.0, 
+                    "label": "cup", 
+                    "qty": 0.25, 
+                    "value": "54"
+                }, 
+                {
+                    "eqv": 262.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "215"
+                }, 
+                {
+                    "eqv": 16.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "13"
+                }, 
+                {
+                    "eqv": 170.0, 
+                    "label": "can (6 oz)", 
+                    "qty": 1.0, 
+                    "value": "139"
+                }
+            ]
+        ], 
+        "ingredientId": "11546", 
+        "ingredientName": "tomato paste"
+    }, 
+    "turkey": {
+        "foodCalories": [
+            "201", 
+            "kcal", 
+            [
+                {
+                    "eqv": 227.0, 
+                    "label": "lb", 
+                    "qty": 0.5, 
+                    "value": "456"
+                }
+            ]
+        ], 
+        "ingredientId": "05304", 
+        "ingredientName": "turkey"
+    }, 
+    "vegetable oil": {
+        "foodCalories": [
+            "339", 
+            "kcal", 
+            [
+                {
+                    "eqv": 14.9, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "51"
+                }, 
+                {
+                    "eqv": 232.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "786"
+                }, 
+                {
+                    "eqv": 4.8, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "16"
+                }
+            ]
+        ], 
+        "ingredientId": "04128", 
+        "ingredientName": "vegetable oil"
+    }, 
+    "vinegar": {
+        "foodCalories": [
+            "19", 
+            "kcal", 
+            [
+                {
+                    "eqv": 14.9, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "3"
+                }, 
+                {
+                    "eqv": 239.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "45"
+                }, 
+                {
+                    "eqv": 5.0, 
+                    "label": "tsp", 
+                    "qty": 1.0, 
+                    "value": "1"
+                }
+            ]
+        ], 
+        "ingredientId": "02068", 
+        "ingredientName": "vinegar"
+    }, 
+    "water": {
+        "foodCalories": [
+            "68", 
+            "kcal", 
+            [
+                {
+                    "eqv": 234.0, 
+                    "label": "cup, cooked", 
+                    "qty": 1.0, 
+                    "value": "159"
+                }, 
+                {
+                    "eqv": 501.0, 
+                    "label": "cup, dry, yields", 
+                    "qty": 1.0, 
+                    "value": "341"
+                }, 
+                {
+                    "eqv": 177.0, 
+                    "label": "oz, dry, yields", 
+                    "qty": 1.0, 
+                    "value": "120"
+                }, 
+                {
+                    "eqv": 177.0, 
+                    "label": "packet, dry, yields", 
+                    "qty": 1.0, 
+                    "value": "120"
+                }
+            ]
+        ], 
+        "ingredientId": "08123", 
+        "ingredientName": "water"
+    }, 
+    "whole milk": {
+        "foodCalories": [
+            "97", 
+            "kcal", 
+            [
+                {
+                    "eqv": 210.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "204"
+                }
+            ]
+        ], 
+        "ingredientId": "11379", 
+        "ingredientName": "whole milk"
+    }, 
+    "worcestershire sauce": {
+        "foodCalories": [
+            "78", 
+            "kcal", 
+            [
+                {
+                    "eqv": 17.0, 
+                    "label": "tbsp", 
+                    "qty": 1.0, 
+                    "value": "13"
+                }, 
+                {
+                    "eqv": 275.0, 
+                    "label": "cup", 
+                    "qty": 1.0, 
+                    "value": "214"
+                }
+            ]
+        ], 
+        "ingredientId": "06971", 
+        "ingredientName": "worcestershire sauce"
+    }, 
+    "yellow onion": {
+        "foodCalories": [
+            "132", 
+            "kcal", 
+            [
+                {
+                    "eqv": 87.0, 
+                    "label": "cup chopped", 
+                    "qty": 1.0, 
+                    "value": "115"
+                }
+            ]
+        ], 
+        "ingredientId": "11286", 
+        "ingredientName": "yellow onion"
+    }, 
+    "yellow rice": {
+        "foodCalories": [
+            "343", 
+            "kcal", 
+            [
+                {
+                    "eqv": 57.0, 
+                    "label": "serving (2 oz)", 
+                    "qty": 1.0, 
+                    "value": "196"
+                }
+            ]
+        ], 
+        "ingredientId": "32011", 
+        "ingredientName": "yellow rice"
+    }
+}
