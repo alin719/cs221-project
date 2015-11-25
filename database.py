@@ -10,7 +10,7 @@ This file is responsible for constructing the Recipe and the Nutritional Databas
 # 1) More printing messages.
 # 2) Add cuisine shit now
 
-import collections, requests, json, time
+import collections, requests, json, time, pdb
 
 # Yummly API constants
 YUM_APP_ID = "4d1d7424"
@@ -55,21 +55,21 @@ def nutritionalSearch(ingredient):
 	apiSearchString = "http://api.nal.usda.gov/ndb/search/?format=json&q=%s&max=1&api_key=%s" % (ingredient, GOV_NUT_API_KEY)
 	searchRequest = requests.get(apiSearchString)
 
-	if PRINT_REMAINING_CALLS: print "Gov Nutrional Database Requests remaining: %d" % int(searchRequest.headers['X-RateLimit-Remaining'])
+	if PRINT_REMAINING_CALLS: print "SEARCH: Gov Nutrional Database requests remaining: %d" % int(searchRequest.headers['X-RateLimit-Remaining'])
 
 	if searchRequest.status_code != 200:
 		remaining = int(searchRequest.headers['X-RateLimit-Remaining'])
 		if remaining > SLEEP_THRESHOLD:
-			if PRINT_MISSED_INGREDIENTS: print "Could not find ingredient %s" % ingredient
+			if PRINT_MISSED_INGREDIENTS: print "SEARCH: Could not find ingredient: %s" % ingredient
 			return False, searchRequest
 
 		while remaining < SLEEP_THRESHOLD:
-			print "Request failed because exceeded Gov 1K API requests/hour"
+			print "SEARCH: Request failed because exceeded Gov 1K API requests/hour"
 			print "... Sleeping for 10 min ..."
 			time.sleep(60*10)
 			searchRequest = requests.get(apiSearchString)
 			remaining = int(searchRequest.headers['X-RateLimit-Remaining'])
-			print "Gov Nutrional Database Requests remaining: %d" % remaining
+			print "SEARCH: Gov Nutrional Database requests remaining: %d" % remaining
 	return True, searchRequest
 
 
@@ -89,10 +89,14 @@ def addIngredientToNutritionalList(ingredients):
 		if foundIngredient:
 			# Adding ingredient to allIngredientIds dict
 			nutritionalResults = json.loads(searchRequest.content)
-			ingredientId = nutritionalResults["list"]["item"][0]["ndbno"]
-			if ingredient not in allIngredientIds:
-				allIngredientIds[ingredient] = ingredientId
-				foundItems += 1
+			resultList = nutritionalResults.get('list')
+			if resultList is not None:
+				ingredientId = resultList["item"][0]["ndbno"]
+				if ingredient not in allIngredientIds:
+					allIngredientIds[ingredient] = ingredientId
+					foundItems += 1
+			else:
+				print "ERROR, list is None. Check it out: %s" % resultList
 
 		else:
 			# Adding ingredient to missedIngredients list
@@ -112,26 +116,27 @@ def addIngredientToNutritionalList(ingredients):
 #
 # Otherwise, it means that we have exceeded the gov 1K API requests/hour, and
 # thus we sleep for 10 min and keep trying until we can make API requests again.
-def getNutritionalRequest(apiGetString):
+def getNutritionalRequest(ingredientId):
+	apiGetString = "http://api.nal.usda.gov/ndb/reports/?ndbno={0}&type=b&format=json&api_key={1}".format(ingredientId, GOV_NUT_API_KEY)
 	getRequest = requests.get(apiGetString)
-	if PRINT_REMAINING_CALLS: print "Gov Nutrional Database Requests remaining: %d" % int(searchRequest.headers['X-RateLimit-Remaining'])
+	if PRINT_REMAINING_CALLS: print "GET: Gov Nutrional Database requests remaining: %d" % int(getRequest.headers['X-RateLimit-Remaining'])
 	while getRequest.status_code != 200:
 		print
 		print "[BROKE REQUEST] Status code != 200"
 
 		remaining = int(getRequest.headers['X-RateLimit-Remaining'])
-		print "Gov Nutrional Database Requests remaining: %d" % remaining
+		print "GET: Gov Nutrional Database requests remaining: %d" % remaining
 
 		if remaining > SLEEP_THRESHOLD:
 			return
 
 		while remaining < SLEEP_THRESHOLD:
-			print "Request failed because exceeded Gov 1K API requests/hour"
+			print "GET: Request failed because exceeded Gov 1K API requests/hour"
 			print "... Sleeping for 10 min ..."
 			time.sleep(60*10)
 			getRequest = requests.get(apiGetString)
 			remaining = int(getRequest.headers['X-RateLimit-Remaining'])
-			print "Gov Nutrional Database Requests remaining: %d" % remaining
+			print "GET: Gov Nutrional Database requests remaining: %d" % remaining
 	return getRequest
 
 # Function: buildNutritionalDatabase
@@ -153,9 +158,7 @@ def buildNutritionalDatabase(ingredientNameIdMap, filename):
 	nutritionalDatabase = {}
 
 	for ingredientName, ingredientId in ingredientNameIdMap.iteritems():
-		apiGetString = "http://api.nal.usda.gov/ndb/reports/?ndbno={0}&type=b&format=json&api_key={1}".format(ingredientId, GOV_NUT_API_KEY)
-
-		getRequest = getNutritionalRequest(apiGetString)
+		getRequest = getNutritionalRequest(ingredientId)
 
 		getFood = json.loads(getRequest.content)
 		foodCalories = getFood['report']['food']['nutrients'][1]
@@ -182,7 +185,7 @@ def buildNutritionalDatabase(ingredientNameIdMap, filename):
 # the recipe, which tells us the quantities per ingredient.
 #
 # Then, we create a recipeObj that has: recipeName, recipeId, ingredients,
-# ingredientLines, attributes (which has: cuisine and/or course),
+# ingredientLines, cuisine and/or course,
 # totalTimesInSeconds, flavors, and return it.
 def buildRecipeEntry(recipe):
 	recipeName = recipe['recipeName']
@@ -203,9 +206,10 @@ def buildRecipeEntry(recipe):
 				 'recipeId': recipeId,
 				 'ingredients': ingredients,
 				 'ingredientLines': ingredientLines,
-				 'attributes': recipe['attributes'],
-				 'totalTimeInSeconds': recipe['totalTimeInSeconds'],
-				 'flavors': recipe['flavors']}
+				 'cuisine': recipe['attributes'].get('cuisine'),
+				 'course': recipe['attributes'].get('course'),
+				 'totalTimeInSeconds': recipe.get('totalTimeInSeconds'),
+				 'flavors': recipe.get('flavors')}
 
 	return recipeName, recipeObj
 

@@ -1,60 +1,14 @@
 {
-    "Brown Sugar Date Roast Turkey": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "holiday": [
-                "Thanksgiving"
-            ]
-        }, 
-        "flavors": {
-            "bitter": 0.3333333333333333, 
-            "meaty": 0.8333333333333334, 
-            "piquant": 0.0, 
-            "salty": 0.16666666666666666, 
-            "sour": 0.16666666666666666, 
-            "sweet": 0.5
-        }, 
-        "ingredientLines": [
-            "2 TB boiling water", 
-            "2 TB dark brown sugar", 
-            "3 TB date syrup", 
-            "1 TB fresh grated ginger", 
-            "2 tsp apple cider vinegar", 
-            "2 tsp canola oil (plus more for baking dish)", 
-            "\u215b tsp ground cardamom", 
-            "\u215b tsp ground cinnamon", 
-            "Coarse salt", 
-            "Freshly cracked black pepper", 
-            "2 pounds turkey with skin on"
+    "Asian Beef Skewers": {
+        "course": [
+            "Main Dishes"
         ], 
-        "ingredients": [
-            "boiling water", 
-            "dark brown sugar", 
-            "date honey", 
-            "ginger", 
-            "apple cider vinegar", 
-            "canola oil", 
-            "ground cardamom", 
-            "ground cinnamon", 
-            "coarse salt", 
-            "cracked black pepper", 
-            "turkey"
+        "cuisine": [
+            "Barbecue", 
+            "Asian"
         ], 
-        "recipeId": "Brown-Sugar-Date-Roast-Turkey-1383794", 
-        "recipeName": "Brown Sugar Date Roast Turkey", 
-        "totalTimeInSeconds": 900
-    }, 
-    "Chicken and Dumpling Casserole": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "cuisine": []
-        }, 
         "flavors": {
-            "bitter": 0.5, 
+            "bitter": 0.8333333333333334, 
             "meaty": 0.3333333333333333, 
             "piquant": 0.0, 
             "salty": 0.8333333333333334, 
@@ -62,351 +16,3541 @@
             "sweet": 0.16666666666666666
         }, 
         "ingredientLines": [
-            "1 lb chicken breasts, cooked and shredded", 
-            "2 cups chicken broth", 
-            "1 stick butter", 
-            "2 cups Bisquick", 
-            "2 cups milk", 
-            "1 can cream of chicken soup", 
-            "1/2 tsp dried sage", 
-            "1/2 tsp ground black pepper", 
-            "1/2 tsp salt", 
-            "1/2 tsp garlic powder", 
-            "Shredded Cheddar cheese"
+            "\u00bd cup low sodium soy sauce", 
+            "1 tablespoons vegetable oil", 
+            "2 tablespoons lemon juice", 
+            "1 tablespoons honey", 
+            "2 green onions, thinly sliced", 
+            "1 clove garlic, minced", 
+            "\u00bd tablespoon fresh ginger, grated or minced", 
+            "1 pound sirloin steak, cubed (or your favorite cut of beef)", 
+            "1 onion, chopped into large pieces"
         ], 
         "ingredients": [
-            "chicken breasts", 
-            "chicken broth", 
-            "butter", 
-            "bisquick", 
-            "milk", 
-            "cream of chicken soup", 
-            "dried sage", 
-            "ground black pepper", 
-            "salt", 
-            "garlic powder", 
-            "shredded cheddar cheese"
+            "low sodium soy sauce", 
+            "vegetable oil", 
+            "lemon juice", 
+            "honey", 
+            "green onions", 
+            "garlic", 
+            "fresh ginger", 
+            "sirloin steak", 
+            "onions"
         ], 
-        "recipeId": "Chicken-and-Dumpling-Casserole-1387677", 
-        "recipeName": "Chicken and Dumpling Casserole", 
-        "totalTimeInSeconds": 4200
+        "recipeId": "Asian-Beef-Skewers-1388789", 
+        "recipeName": "Asian Beef Skewers", 
+        "totalTimeInSeconds": 2400
     }, 
-    "Crock Pot Sweet Pork": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ]
-        }, 
+    "BBQ Chicken Taquitos": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 cups cooked chopped chicken", 
+            "2 tablespoons minced onion", 
+            "\u2153 cup of your favorite barbecue sauce", 
+            "1\u00bd cups cheddar cheese", 
+            "10 corn tortillas (you can use flour if you prefer) 6\" size", 
+            "cooking spray or olive oil"
+        ], 
+        "ingredients": [
+            "chicken", 
+            "minced onion", 
+            "barbecue sauce", 
+            "cheddar cheese", 
+            "corn tortillas", 
+            "cooking spray"
+        ], 
+        "recipeId": "BBQ-Chicken-Taquitos-1385820", 
+        "recipeName": "BBQ Chicken Taquitos", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Bacon Maple Pork Tenderloin": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 pork tenderloin", 
+            "8 to 10 slices good-quality bacon;", 
+            "4 tbsp. maple syrup or raw honey; (optional)", 
+            "2 tbsp. Dijon mustard;", 
+            "\u00bc cup unsweetened applesauce;", 
+            "1 tsp. chili powder;", 
+            "\u00bd tsp. smoked paprika;", 
+            "\u00bc tsp. ground cinnamon;", 
+            "Cooking fat;", 
+            "Sea salt and freshly ground black pepper;", 
+            "Sea salt and freshly ground black pepper;"
+        ], 
+        "ingredients": [
+            "pork tenderloin", 
+            "bacon", 
+            "maple syrup", 
+            "dijon mustard", 
+            "unsweetened applesauce", 
+            "chili powder", 
+            "smoked paprika", 
+            "ground cinnamon", 
+            "cooking fat", 
+            "freshly ground black pepper", 
+            "sea salt"
+        ], 
+        "recipeId": "Bacon-Maple-Pork-Tenderloin-1385163", 
+        "recipeName": "Bacon Maple Pork Tenderloin", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Baked Garlic Lemon Tilapia": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "6 tilapia fillets (about 5 ounces each)", 
+            "3 tablespoons freshly squeezed lemon juice", 
+            "2-3 cloves garlic, finely chopped", 
+            "2-3 tablespoons melted butter", 
+            "1 tablespoon finely chopped parsley", 
+            "2 pinches Italian or Provencal herbs blend", 
+            "Salt and freshly ground white pepper to taste", 
+            "Salt and freshly ground white pepper to taste"
+        ], 
+        "ingredients": [
+            "tilapia fillets", 
+            "lemon juice", 
+            "garlic", 
+            "melted butter", 
+            "chopped parsley", 
+            "herbs", 
+            "ground white pepper", 
+            "salt"
+        ], 
+        "recipeId": "Baked-Garlic-Lemon-Tilapia-1385405", 
+        "recipeName": "Baked Garlic Lemon Tilapia", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Basic Pan-Fried Tilapia": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 tilapia filets, fresh or thawed", 
+            "2 Tbsp pastured butter", 
+            "dash unrefined sea salt", 
+            "dash pepper", 
+            "\u00bd fresh lemon"
+        ], 
+        "ingredients": [
+            "tilapia fillets", 
+            "butter", 
+            "sea salt", 
+            "pepper", 
+            "fresh lemon"
+        ], 
+        "recipeId": "Basic-Pan-Fried-Tilapia-1372737", 
+        "recipeName": "Basic Pan-Fried Tilapia", 
+        "totalTimeInSeconds": 660
+    }, 
+    "Beef Massaman Curry (Matsaman Curry)": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [
+            "Asian"
+        ], 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 Pound beef (or other protein such as chicken) Cut into 1\u2033 thin slices", 
+            "1/2 Cup Potatoes, Peeled, Cut into 1\u2033 cubes and boiled for 20 minutes or until tender", 
+            "1 Small White Onion, Cut into Quarters", 
+            "3 Tablespoons Massaman Curry Paste (recipe to follow for the highly motivated, or available at Asian Markets)", 
+            "2 Cups Coconut Milk", 
+            "1/4 Cup Whole Roasted Peanuts", 
+            "2 Bay Leaves", 
+            "3 Cardamon Seeds", 
+            "2 Tablespoons Vegetable Oil", 
+            "1/4 Cup Palm Sugar", 
+            "4 Tablespoons Fish Sauce (Nam Pla)", 
+            "1 Tablespoon and 1 1/2 Teaspoons Tamarind Paste (use white vinegar if unable to locate)", 
+            "1 Inch of Cinnamon Stick", 
+            "5 dried red spur chilies (without seeds)", 
+            "3 Tablespoons Garlic", 
+            "2 Tablespoons Shallots", 
+            "2 Tablespoons Lemongrass with outer leaves removed", 
+            "1 Tablespoon Ginger", 
+            "1 Teaspoon Kaffir Lime Rind (grated)", 
+            "1 Tablespoon Cilantro, chopped", 
+            "1 Teaspoon Salt", 
+            "1 Teaspoon Coriander Seeds", 
+            "1/2 Teaspoon Cumin Seeds", 
+            "1 Teaspoon Black Pepper", 
+            "2 Cloves", 
+            "1 Teaspoon Shrimp Paste"
+        ], 
+        "ingredients": [
+            "beef", 
+            "potatoes", 
+            "white onion", 
+            "Massaman curry paste", 
+            "coconut milk", 
+            "roasted peanuts", 
+            "bay leaves", 
+            "seeds", 
+            "vegetable oil", 
+            "palm sugar", 
+            "fish sauce", 
+            "tamarind paste", 
+            "cinnamon sticks", 
+            "chiles", 
+            "garlic", 
+            "shallots", 
+            "lemongrass", 
+            "ginger", 
+            "lime rind", 
+            "cilantro", 
+            "salt", 
+            "coriander seeds", 
+            "cumin seed", 
+            "black pepper", 
+            "clove", 
+            "shrimp paste"
+        ], 
+        "recipeId": "Beef-Massaman-Curry-_Matsaman-Curry_-1384639", 
+        "recipeName": "Beef Massaman Curry (Matsaman Curry)", 
+        "totalTimeInSeconds": 3900
+    }, 
+    "Beef Stroganoff In The Crockpot": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 lb. stewing meat", 
+            "1 medium onion, chopped", 
+            "1 can mushrooms, drained", 
+            "1 cans French Onion soup", 
+            "1 cans Cream of Celery soup", 
+            "1 container sour cream"
+        ], 
+        "ingredients": [
+            "meat", 
+            "onions", 
+            "mushrooms", 
+            "french onion soup", 
+            "cream of celery soup", 
+            "sour cream"
+        ], 
+        "recipeId": "Beef-Stroganoff-In-The-Crockpot-1359152", 
+        "recipeName": "Beef Stroganoff In The Crockpot", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Best Ever Pork Chops": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
         "flavors": {
-            "bitter": 0.5, 
-            "meaty": 0.5, 
-            "piquant": 0.8333333333333334, 
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.6666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 bone-in pork chops", 
+            "\u00bc - \u00bd cup flour", 
+            "\u00bc cup milk", 
+            "1 sliced onion", 
+            "2 Tbsp. butter or margarine", 
+            "Salt and Pepper", 
+            "Salt and Pepper", 
+            "1 cup water"
+        ], 
+        "ingredients": [
+            "bone-in pork chops", 
+            "flour", 
+            "milk", 
+            "onions", 
+            "butter", 
+            "salt", 
+            "pepper", 
+            "water"
+        ], 
+        "recipeId": "Best-Ever-Pork-Chops-1386941", 
+        "recipeName": "Best Ever Pork Chops", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Breaded Pork Chops": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
             "salty": 0.6666666666666666, 
             "sour": 0.16666666666666666, 
-            "sweet": 0.6666666666666666
+            "sweet": 0.16666666666666666
         }, 
         "ingredientLines": [
-            "2 lbs boneless pork", 
-            "2 cups salsa", 
-            "1 cup brown sugar"
+            "\u00bc cup Original Bisquick", 
+            "7 saltine cracker squares, crushed (1/2 cup)", 
+            "\u00bd teaspoon seasoned salt", 
+            "\u215b teaspoon pepper", 
+            "1 egg", 
+            "1 tablespoon water", 
+            "4 pork chops, about \u00bd inch thick"
         ], 
         "ingredients": [
-            "pork", 
-            "salsa", 
-            "brown sugar"
+            "bisquick", 
+            "saltines", 
+            "seasoning salt", 
+            "pepper", 
+            "eggs", 
+            "water", 
+            "pork chops"
         ], 
-        "recipeId": "Crock-Pot-Sweet-Pork-1385772", 
-        "recipeName": "Crock Pot Sweet Pork", 
+        "recipeId": "Breaded-Pork-Chops-1388598", 
+        "recipeName": "Breaded Pork Chops", 
         "totalTimeInSeconds": 1500
     }, 
-    "Hasselback Chicken ~ Cajun with Pepper Jack & Spinach": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ]
+    "Broccoli, Sundried Tomato, and Crab Pasta with a Chardonnay Cream Sauce": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
         }, 
-        "flavors": null, 
         "ingredientLines": [
-            "2 boneless, skinless chicken breast halves, about 1 1/2 lb", 
-            "4 oz pepper jack cheese, sliced into thin 1/4 inch slices", 
-            "1/2 c cooked spinach (frozen and thawed or sauteed fresh)", 
-            "1 tbsp seasoned bread crumb", 
-            "1/2 tbsp Cajun seasoning", 
-            "Salt, to taste", 
-            "Pepper, to taste"
+            "1 lb. angel hair pasta, prepared with box directions", 
+            "12 oz. broccoli, in bite-size pieces", 
+            "Salt", 
+            "1/2 c. Sundried tomatoes", 
+            "Parmesan cheese, grated (for serving)", 
+            "1 tablespoon butter, unsalted", 
+            "2 shallots, minced", 
+            "1 3/4 cup chardonnay, dry", 
+            "3/4 cup heavy cream", 
+            "1 tsp. salt", 
+            "1 tsp. cracked black pepper"
         ], 
         "ingredients": [
-            "boneless skinless chicken breast halves", 
-            "pepper jack", 
-            "spinach", 
-            "crumbs", 
-            "cajun seasoning", 
+            "angel hair", 
+            "broccoli", 
             "salt", 
-            "pepper"
+            "sun-dried tomatoes", 
+            "parmesan cheese", 
+            "butter", 
+            "shallots", 
+            "chardonnay", 
+            "heavy cream", 
+            "cracked black pepper"
         ], 
-        "recipeId": "Hasselback-Chicken-_-Cajun-with-Pepper-Jack-_-Spinach-1385647", 
-        "recipeName": "Hasselback Chicken ~ Cajun with Pepper Jack & Spinach", 
-        "totalTimeInSeconds": 2700
+        "recipeId": "Broccoli_-Sundried-Tomato_-and-Crab-Pasta-with-a-Chardonnay-Cream-Sauce-1387397", 
+        "recipeName": "Broccoli, Sundried Tomato, and Crab Pasta with a Chardonnay Cream Sauce", 
+        "totalTimeInSeconds": 3000
     }, 
-    "Holiday Glazed Baked Ham": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "holiday": [
-                "Christmas"
-            ]
-        }, 
+    "Brown Sugar Glazed Ham": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
         "flavors": null, 
         "ingredientLines": [
-            "9-12 pound fully cooked ham, bone-in, shank or butt end", 
-            "1 cup pineapple juice", 
-            "\u00bd cup brown sugar", 
-            "\u00bc cup mustard", 
-            "\u00bd teaspoon ground cloves", 
-            "10-12 pineapple rings", 
-            "small jar of maraschino cherries", 
-            "whole cloves"
+            "1 medium whole ham (12-14 lbs), precooked variety", 
+            "1 pound Dixie Crystals Dark Brown Sugar", 
+            "OR 1 pound Dixie Crystals Light Brown Sugar", 
+            "1 can pineapples", 
+            "1/4 cup Italian dressing", 
+            "1/4 cup Dixie Crystals Extra Fine Granulated Sugar", 
+            "1/4 cup Dixie Crystals Dark Brown Sugar", 
+            "OR 1/4 cup Dixie Crystals Light Brown Sugar", 
+            "1 teaspoon powder cloves", 
+            "1 tablespoon honey"
         ], 
         "ingredients": [
-            "fully cooked ham", 
-            "pineapple juice", 
-            "brown sugar", 
-            "mustard", 
-            "ground cloves", 
-            "pineapple rings", 
-            "cocktail cherries", 
-            "whole cloves"
+            "ham", 
+            "Dixie Crystals Dark Brown Sugar", 
+            "Dixie Crystals Light Brown Sugar", 
+            "pineapple", 
+            "italian salad dressing", 
+            "Dixie Crystals Extra Fine Granulated Sugar", 
+            "clove", 
+            "honey"
         ], 
-        "recipeId": "Holiday-Glazed-Baked-Ham-1386266", 
-        "recipeName": "Holiday Glazed Baked Ham", 
-        "totalTimeInSeconds": 12000
+        "recipeId": "Brown-Sugar-Glazed-Ham-1364662", 
+        "recipeName": "Brown Sugar Glazed Ham", 
+        "totalTimeInSeconds": 14400
     }, 
-    "Mozzarella Stick Marinara Burger": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "cuisine": []
+    "Brown Sugar Spiced Salmon": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.5
         }, 
-        "flavors": null, 
+        "ingredientLines": [
+            "\u00bd cup dark brown sugar", 
+            "\u00bd -1 tbsp chili powder", 
+            "1 tsp kosher salt", 
+            "\u00bd tsp freshly ground black pepper", 
+            "Four 8-ounce salmon fillet"
+        ], 
+        "ingredients": [
+            "dark brown sugar", 
+            "chili powder", 
+            "kosher salt", 
+            "freshly ground black pepper", 
+            "salmon fillets"
+        ], 
+        "recipeId": "Brown-Sugar-Spiced-Salmon-1384160", 
+        "recipeName": "Brown Sugar Spiced Salmon", 
+        "totalTimeInSeconds": 900
+    }, 
+    "Burger Steak": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.5, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
         "ingredientLines": [
             "1 lb ground beef", 
-            "12 Mozzarella sticks", 
-            "4 slices Provolone cheese", 
-            "Marinara sauce", 
-            "4 Ciabatta rolls", 
-            "olive oil"
+            "1 small onion chopped finely", 
+            "1/2 cup bread crumbs", 
+            "2 cloves garlic crushed", 
+            "1 raw egg", 
+            "4-5 drops Tabasco or chili sauce", 
+            "1 tbsp  Worcestershire sauce (optional)", 
+            "1 tbsp milk", 
+            "salt and pepper", 
+            "salt and pepper", 
+            "5 fresh button mushrooms", 
+            "1 1/2 cup beef stock", 
+            "3 tbsp butter", 
+            "4 tbsp all purpose flour"
         ], 
         "ingredients": [
             "ground beef", 
-            "mozzarella cheese", 
-            "provolone cheese", 
-            "marinara sauce", 
-            "Ciabatta rolls", 
-            "olive oil"
-        ], 
-        "recipeId": "Mozzarella-Stick-Marinara-Burger-1386262", 
-        "recipeName": "Mozzarella Stick Marinara Burger", 
-        "totalTimeInSeconds": 1800
-    }, 
-    "Oven Baked Beef Stew": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ]
-        }, 
-        "flavors": {
-            "bitter": 0.8333333333333334, 
-            "meaty": 0.16666666666666666, 
-            "piquant": 0.16666666666666666, 
-            "salty": 0.8333333333333334, 
-            "sour": 0.6666666666666666, 
-            "sweet": 0.3333333333333333
-        }, 
-        "ingredientLines": [
-            "1 envelope (1 oz) dry onion soup mix", 
-            "\u00bd teaspoon salt", 
-            "\u00bd teaspoon paprika", 
-            "1\u00bd lbs lean beef stew meat, chunked", 
-            "3 potatoes, unpeeled and chunked", 
-            "1 large yellow onion, diced", 
-            "1 bag (16 oz) baby carrots", 
-            "1 can (14.5 oz) condensed cream of celery soup", 
-            "\u00bd cup ketchup"
-        ], 
-        "ingredients": [
-            "onion soup mix", 
-            "salt", 
-            "paprika", 
-            "beef stew meat", 
-            "potatoes", 
-            "yellow onion", 
-            "baby carrots", 
-            "condensed cream of celery soup", 
-            "ketchup"
-        ], 
-        "recipeId": "Oven-Baked-Beef-Stew-1383621", 
-        "recipeName": "Oven Baked Beef Stew", 
-        "totalTimeInSeconds": 7200
-    }, 
-    "Perfect Roast Turkey": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "holiday": [
-                "Thanksgiving", 
-                "Fall"
-            ]
-        }, 
-        "flavors": null, 
-        "ingredientLines": [
-            "6 quarts (24 cups) cold water", 
-            "1 3/4 cups coarse or kosher salt, plus more for seasoning", 
-            "1 cup granulated sugar", 
-            "3 medium onions, peeled and coarsely chopped", 
-            "3 leeks, white and pale green parts only, coarsely chopped and washed well", 
-            "3 carrots, peeled and coarsely chopped", 
-            "3 celery stalks, coarsely chopped", 
-            "3 dried bay leaves", 
-            "6 sprigs thyme", 
-            "6 sprigs fresh flat-leaf parsley", 
-            "1 tablespoon whole black peppercorns", 
-            "2 loaves good-quality white bread, cut into 3/4-inch cubes (about 20 cups)", 
-            "1 1/2 pounds (4 cups) fresh chestnuts", 
-            "12 tablespoons (6 ounces) unsalted butter", 
-            "4 small onions, peeled and cut into 1/4-inch dice (about 4 cubes)", 
-            "1 bunch celery, cut into 1/4-inch dice (about 4 cups)", 
-            "3 tablespoons finely chopped fresh sage", 
-            "5 cups chicken stock", 
-            "3 cups coarsely chopped fresh flat-leaf parsley", 
-            "1 tablespoon coarse salt", 
-            "Freshly ground black pepper", 
-            "1 fresh whole (18 to 20 pounds) turkey, rinsed and patted dry, giblets and neck reserved for gravy", 
-            "8 tablespoons (4 ounces) unsalted butter, melted, plus 4 tablespoons more, at room temperature", 
-            "1 1/2 cups dry white wine, such as Sauvignon Blanc", 
-            "Coarse salt and freshly ground black pepper", 
-            "Coarse salt and freshly ground black pepper", 
-            "Chestnut stuffing", 
-            "Lady apples (optional)", 
-            "Fresh sage leaves (optional)", 
-            "Whole chestnuts (optional)", 
-            "Reserved giblets and neck from turkey", 
-            "3 tablespoons unsalted butter", 
-            "2 celery stalks, coarsely chopped", 
-            "1 medium carrot, coarsely chopped", 
-            "1 leek, white and pale-green parts only, coarsely chopped and well washed", 
-            "1 medium onion, peeled and coarsely chopped", 
-            "3 sprigs fresh thyme", 
-            "3 sprigs fresh flat-leaf parsley", 
-            "1 sprig fresh rosemary", 
-            "1 bay leaf", 
-            "5 whole black peppercorns", 
-            "1 quart water", 
-            "3/4 cup dry white wine", 
-            "3 tablespoons all-purpose flour", 
-            "Coarse salt and freshly ground black pepper", 
-            "Coarse salt and freshly ground black pepper"
-        ], 
-        "ingredients": [
-            "cold water", 
-            "kosher salt", 
-            "granulated sugar", 
             "onions", 
-            "leeks", 
-            "carrots", 
-            "celery ribs", 
-            "bay leaves", 
-            "thyme", 
-            "flat leaf parsley", 
-            "black peppercorns", 
-            "white bread", 
-            "chestnuts", 
-            "unsalted butter", 
-            "celery", 
-            "chopped fresh sage", 
-            "chicken stock", 
-            "coarse salt", 
-            "freshly ground black pepper", 
-            "turkey", 
-            "dry white wine", 
-            "stuffing", 
-            "lady apples", 
-            "sage leaves", 
-            "giblet", 
-            "fresh thyme", 
-            "fresh rosemary", 
-            "bay leaf", 
-            "water", 
+            "bread crumbs", 
+            "garlic", 
+            "eggs", 
+            "Tabasco Pepper Sauce", 
+            "worcestershire sauce", 
+            "milk", 
+            "salt", 
+            "pepper", 
+            "button mushrooms", 
+            "beef stock", 
+            "butter", 
             "all-purpose flour"
         ], 
-        "recipeId": "Perfect-Roast-Turkey-1384445", 
-        "recipeName": "Perfect Roast Turkey", 
-        "totalTimeInSeconds": 21600
+        "recipeId": "Burger-Steak-1387199", 
+        "recipeName": "Burger Steak", 
+        "totalTimeInSeconds": 3000
     }, 
-    "Slow Cooker Balsamic Pot Roast": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ]
+    "Caillette Fume\u0301": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.6666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.3333333333333333, 
+            "sour": 0.5, 
+            "sweet": 0.16666666666666666
         }, 
+        "ingredientLines": [
+            "400 gr. Minced Meat", 
+            "2 tbsp. Minced Smoked Bacon", 
+            "2 cloves of Garlic", 
+            "150 gr. Spinach", 
+            "150 gr. Shiitake", 
+            "1 twig of Parsley", 
+            "Butter", 
+            "Olive oil", 
+            "Salt", 
+            "Pepper", 
+            "Lemon zest", 
+            "2 tbsp. of breadcrumbs"
+        ], 
+        "ingredients": [
+            "minced meat", 
+            "smoked bacon", 
+            "garlic", 
+            "spinach", 
+            "shiitake", 
+            "parsley", 
+            "butter", 
+            "olive oil", 
+            "salt", 
+            "pepper", 
+            "lemon zest", 
+            "bread crumbs"
+        ], 
+        "recipeId": "Caillette-Fume-1376193", 
+        "recipeName": "Caillette Fume\u0301", 
+        "totalTimeInSeconds": 4500
+    }, 
+    "Cheesy Pasta with Bacon and Kale": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "350g (12oz) pasta - such a fusilli or penne (use gluten free pasta if required)", 
+            "1 tbsp vegetable oil", 
+            "8 rashers bacon", 
+            "150g (2 packed cups) kale", 
+            "100g (1 packed cup) cheese", 
+            "120ml (1/2 cup) cream"
+        ], 
+        "ingredients": [
+            "pasta", 
+            "vegetable oil", 
+            "bacon", 
+            "kale", 
+            "cheese", 
+            "cream"
+        ], 
+        "recipeId": "Cheesy-Pasta-with-Bacon-and-Kale-1370389", 
+        "recipeName": "Cheesy Pasta with Bacon and Kale", 
+        "totalTimeInSeconds": 900
+    }, 
+    "Chicken & Cornbread Cowboy Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
         "flavors": {
             "bitter": 0.3333333333333333, 
             "meaty": 0.16666666666666666, 
             "piquant": 0.16666666666666666, 
             "salty": 0.6666666666666666, 
             "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 cups crumbled cornbread (I used about \u00be of the cornbread that was baked in an 8-inch square pan)", 
+            "\u00bc cup diced green bell pepper", 
+            "\u00bd cup diced onion", 
+            "\u00bc cup diced celery", 
+            "\u00bd cup shredded cheddar cheese", 
+            "2 cups cooked, diced chicken (I used about half of the meat from a store-bought rotisserie chicken)", 
+            "1 (10 ounce) can cream of chicken soup", 
+            "1 cup chicken broth"
+        ], 
+        "ingredients": [
+            "crumbled cornbread", 
+            "green bell pepper", 
+            "diced onions", 
+            "diced celery", 
+            "shredded cheddar cheese", 
+            "diced chicken", 
+            "cream of chicken soup", 
+            "chicken broth"
+        ], 
+        "recipeId": "Chicken-_-Cornbread-Cowboy-Casserole-1386796", 
+        "recipeName": "Chicken & Cornbread Cowboy Casserole", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Chicken Bacon Avocado Quesadillas": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 tortillas, small fajita size", 
+            "\u00bd cup Cheddar cheese", 
+            "\u00bd avocado, diced", 
+            "2 strips bacon, cooked and crumbled", 
+            "\u2153 cup chicken, cooked and diced"
+        ], 
+        "ingredients": [
+            "tortillas", 
+            "cheddar cheese", 
+            "avocado", 
+            "bacon", 
+            "chicken"
+        ], 
+        "recipeId": "Chicken-Bacon-Avocado-Quesadillas-1385596", 
+        "recipeName": "Chicken Bacon Avocado Quesadillas", 
+        "totalTimeInSeconds": 600
+    }, 
+    "Chicken Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.5, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "Olive oil spray", 
+            "1.5 lb. fresh tomatoes, cubed into large cubes", 
+            "1 medium onion, roughly chopped (8 oz)", 
+            "\u00bd cup (packed) chopped basil", 
+            "1 tablespoon minced garlic", 
+            "2 tablespoons olive oil, divided", 
+            "1 teaspoon kosher salt, divided", 
+            "\u00bd teaspoon black pepper, divided", 
+            "4 (8 oz) boneless skinless chicken breasts", 
+            "1 teaspoon dried oregano", 
+            "1 cup (4 oz) shredded part-skim Mozzarella"
+        ], 
+        "ingredients": [
+            "olive oil spray", 
+            "fresh tomatoes", 
+            "onions", 
+            "basil", 
+            "minced garlic", 
+            "olive oil", 
+            "kosher salt", 
+            "black pepper", 
+            "boneless skinless chicken breasts", 
+            "dried oregano", 
+            "part-skim mozzarella"
+        ], 
+        "recipeId": "Chicken-Casserole-1387202", 
+        "recipeName": "Chicken Casserole", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Chicken Cheesy Parmesan": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.6666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.3333333333333333, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "Half a cup of parmesan cheese", 
+            "1 tbs of Parsley", 
+            "2 fresh garlic cloves", 
+            "400 Grams of Boneless chicken Breast", 
+            "Fresh Ground pepper and paprika", 
+            "Fresh Ground pepper and paprika", 
+            "40 grams of dried breadcrumbs"
+        ], 
+        "ingredients": [
+            "parmesan cheese", 
+            "parsley", 
+            "garlic cloves", 
+            "boneless chicken breast", 
+            "paprika", 
+            "ground pepper", 
+            "dry bread crumbs"
+        ], 
+        "recipeId": "Chicken-Cheesy-Parmesan-1380817", 
+        "recipeName": "Chicken Cheesy Parmesan", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Chicken Cranberry Walnut Pizza with Goat Cheese": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.0, 
+            "salty": 0.3333333333333333, 
+            "sour": 0.16666666666666666, 
             "sweet": 0.6666666666666666
         }, 
         "ingredientLines": [
-            "2 lbs rump (chuck or round) roast", 
-            "1 cup chicken (beef) broth", 
-            "1/3 cup balsamic vinegar", 
-            "2 tbsp raw honey or maple syrup", 
-            "1 tbsp soy sauce (I used Bragg\u2019s)", 
-            "1 tbsp dijon mustard", 
-            "1 garlic clove, crushed"
+            "1 lb. pizza dough, thawed", 
+            "1 cup cranberry sauce", 
+            "1 cup shredded rotisserie chicken", 
+            "3 oz. crumbled goat cheese", 
+            "1/4 cup chopped walnuts", 
+            "1 teaspoon chopped fresh rosemary"
         ], 
         "ingredients": [
-            "roast", 
-            "chicken", 
-            "balsamic vinegar", 
-            "raw honey", 
-            "soy sauce", 
-            "dijon mustard", 
-            "garlic cloves"
+            "pizza doughs", 
+            "cranberry sauce", 
+            "rotisserie chicken", 
+            "crumbled goat cheese", 
+            "chopped walnuts", 
+            "fresh rosemary"
         ], 
-        "recipeId": "Slow-Cooker-Balsamic-Pot-Roast-1387872", 
-        "recipeName": "Slow Cooker Balsamic Pot Roast", 
-        "totalTimeInSeconds": 2400
+        "recipeId": "Chicken-Cranberry-Walnut-Pizza-with-Goat-Cheese-1387002", 
+        "recipeName": "Chicken Cranberry Walnut Pizza with Goat Cheese", 
+        "totalTimeInSeconds": 2100
     }, 
-    "Turkey Enchiladas Recipe {Freezer Friendly}": {
-        "attributes": {
-            "course": [
-                "Main Dishes"
-            ], 
-            "cuisine": [
-                "Mexican"
-            ]
+    "Chicken Curry Fried Rice": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
         }, 
+        "ingredientLines": [
+            "\u00bd cup carrots, chopped", 
+            "1 tablespoon olive oil", 
+            "1 small onion, chopped", 
+            "1\u00bd teaspoon curry powder", 
+            "1 cup cooked chicken, cut into bite size pieces", 
+            "2 cups cooked brown rice", 
+            "\u00bd cup frozen peas", 
+            "1 tablespoon oyster sauce", 
+            "1 scallion, chopped", 
+            "\u00bc cup toasted sliced almonds"
+        ], 
+        "ingredients": [
+            "carrots", 
+            "olive oil", 
+            "onions", 
+            "curry powder", 
+            "cooked chicken", 
+            "cooked brown rice", 
+            "frozen peas", 
+            "oyster sauce", 
+            "scallions", 
+            "toasted slivered almonds"
+        ], 
+        "recipeId": "Chicken-Curry-Fried-Rice-1387203", 
+        "recipeName": "Chicken Curry Fried Rice", 
+        "totalTimeInSeconds": 1200
+    }, 
+    "Chicken Parmesan Wonton \u201cCupcakes\u201d": {
+        "course": [], 
+        "cuisine": [], 
         "flavors": null, 
         "ingredientLines": [
-            "4 cups turkey meat, chopped", 
-            "2 (10 oz) cans of red enchilada sauce", 
-            "4 oz can green chilies", 
-            "4 cups Mexican cheese, shredded", 
-            "20 corn tortillas"
+            "2 cups cooked boneless, skinless chicken breast, diced small or shredded", 
+            "\u00be cup pasta sauce", 
+            "\u00be teaspoon Italian seasoning", 
+            "16 wonton wrappers (typically found in the produce section)", 
+            "1 cup (4 oz) shredded 2% Mozzarella cheese", 
+            "0.5 oz seasoned croutons, crushed (I just smushed mine by hand until I had some crumbs and some chunks)", 
+            "2 teaspoons grated Parmesan cheese"
         ], 
         "ingredients": [
-            "turkey meat", 
-            "red enchilada sauce", 
-            "green chilies", 
-            "Mexican cheese", 
-            "corn tortillas"
+            "boneless skinless chicken breasts", 
+            "pasta sauce", 
+            "italian seasoning", 
+            "wonton wrappers", 
+            "mozzarella cheese", 
+            "seasoned croutons", 
+            "grated parmesan cheese"
         ], 
-        "recipeId": "Turkey-Enchiladas-Recipe-_Freezer-Friendly_-1386177", 
-        "recipeName": "Turkey Enchiladas Recipe {Freezer Friendly}", 
+        "recipeId": "Chicken-Parmesan-Wonton-Cupcakes-1376196", 
+        "recipeName": "Chicken Parmesan Wonton \u201cCupcakes\u201d", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Chicken Shawarma with Hummus & Pita": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.3333333333333333, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "Zest and Juice of 1 lemon", 
+            "\u00bc cup olive oil", 
+            "3-4 cloves garlic, peeled and minced", 
+            "\u00bd tsp. coarse salt", 
+            "\u00bd tsp. ground black pepper", 
+            "1 tsp. ground cumin", 
+            "1 tsp. smoked paprika (or paprika)", 
+            "\u00bc tsp. turmeric", 
+            "Pinch of nutmeg, cloves and/or cinnamon", 
+            "Pinch of crushed red pepper (or more, as desired)", 
+            "1 lb. boneless, skinless chicken thighs, trimmed of excess fat", 
+            "1 (15 oz.) can garbanzo beans, drained and rinsed", 
+            "\u00bc cup tahini (sesame seed paste)", 
+            "3 cloves garlic, peeled", 
+            "Zest and juice of 1-2 lemons", 
+            "Salt and pepper to taste", 
+            "Salt and pepper to taste", 
+            "Pinch of paprika", 
+            "\u00bd cup olive oil", 
+            "Whole grain pitas (I like Ezekiel)", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice", 
+            "Cucumbers, tomatoes, olives, capers, cilantro, plain Greek yogurt, parsley, tzatziki, lemon juice"
+        ], 
+        "ingredients": [
+            "lemon", 
+            "olive oil", 
+            "garlic", 
+            "coarse salt", 
+            "ground black pepper", 
+            "ground cumin", 
+            "smoked paprika", 
+            "tumeric", 
+            "nutmeg", 
+            "crushed red pepper", 
+            "boneless chicken skinless thigh", 
+            "garbanzo beans", 
+            "tahini", 
+            "salt", 
+            "pepper", 
+            "paprika", 
+            "pitas", 
+            "cucumber", 
+            "tomatoes", 
+            "olives", 
+            "parsley", 
+            "plain greek yogurt", 
+            "cilantro", 
+            "capers", 
+            "lemon juice", 
+            "tzatziki sauce"
+        ], 
+        "recipeId": "Chicken-Shawarma-with-Hummus-_-Pita-1360459", 
+        "recipeName": "Chicken Shawarma with Hummus & Pita", 
+        "totalTimeInSeconds": 3900
+    }, 
+    "Chicken, Artichoke and Mushroom Lasagna": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.0, 
+            "salty": 0.5, 
+            "sour": 0.3333333333333333, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "16 oz lasagna noodles", 
+            "8 oz mushrooms, sliced", 
+            "1 Tbsp olive oil", 
+            "2 cans artichoke hearts, drained and chopped", 
+            "1 rotisserie chicken, chopped", 
+            "1 egg", 
+            "2 c ricotta cheese", 
+            "2 c mozzarella cheese, shredded", 
+            "2 c Parmesan cheese,  shredded", 
+            "~25 oz spaghetti sauce"
+        ], 
+        "ingredients": [
+            "lasagna noodles", 
+            "mushrooms", 
+            "olive oil", 
+            "artichoke hearts", 
+            "rotisserie chicken", 
+            "eggs", 
+            "ricotta cheese", 
+            "mozzarella cheese", 
+            "parmesan cheese", 
+            "pasta sauce"
+        ], 
+        "recipeId": "Chicken_-Artichoke-and-Mushroom-Lasagna-1379138", 
+        "recipeName": "Chicken, Artichoke and Mushroom Lasagna", 
+        "totalTimeInSeconds": 4500
+    }, 
+    "Chunky, Sauerkraut, Kale, Lentil, Chicken, Soup Chopped": {
+        "course": [
+            "Soups", 
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.5, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 Tablespoons Olive Oil", 
+            "1 Red or Brown Onion, Chopped", 
+            "1 cup Chopped Carrot", 
+            "1 Red Pepper, Chopped", 
+            "1/2 cup Lentils. I used Red but use what you like.", 
+            "1 small Garnet Sweet Potato, Chopped. About 1 cup, Chopped. No need to peel.", 
+            "1 Tablespoon Dried Oregano", 
+            "2 teaspoons Dried Dill", 
+            "6 cups Chicken or Veggie Broth", 
+            "1 cup Sauerkraut, Chopped", 
+            "1 cup frozen peas", 
+            "8 oz. Raw or cooked Chicken Breast. Or 2 cups cooked White Beans. If canned, drained and rinsed.", 
+            "8 oz. Raw or cooked Chicken Breast. Or 2 cups cooked White Beans. If canned, drained and rinsed.", 
+            "2 cups Chopped Kale", 
+            "2 Tablespoons Red Wine Vinegar. Or more to taste. I actually used 1/4 cup, but started with the 2 T\u2019s.", 
+            "Kale Chopped Chips, for topping.", 
+            "Kale Chopped Chips, for topping."
+        ], 
+        "ingredients": [
+            "olive oil", 
+            "yellow onion", 
+            "carrots", 
+            "red pepper", 
+            "lentils", 
+            "sweet potatoes", 
+            "dried oregano", 
+            "dried dill", 
+            "chicken", 
+            "sauerkraut", 
+            "frozen peas", 
+            "cooked chicken breasts", 
+            "white beans", 
+            "kale", 
+            "red wine vinegar", 
+            "chips"
+        ], 
+        "recipeId": "Chunky_-Sauerkraut_-Kale_-Lentil_-Chicken_-Soup-Chopped-1387029", 
+        "recipeName": "Chunky, Sauerkraut, Kale, Lentil, Chicken, Soup Chopped", 
+        "totalTimeInSeconds": 3900
+    }, 
+    "Churrasco Steak": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.0
+        }, 
+        "ingredientLines": [
+            "1 Ib skirt steak, cleaned by butcher", 
+            "1 tbsp unsalted butter", 
+            "1 tbsp lime juice", 
+            "1 tsp chopped fresh rosemary", 
+            "1 tsp kosher salt", 
+            "1 tsp ground black pepper"
+        ], 
+        "ingredients": [
+            "skirt steak", 
+            "unsalted butter", 
+            "lime juice", 
+            "fresh rosemary", 
+            "kosher salt", 
+            "ground black pepper"
+        ], 
+        "recipeId": "Churrasco-Steak-1371679", 
+        "recipeName": "Churrasco Steak", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Classic Pan-Seared Rib-Eye Steak": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 (16-ounce) rib-eye steak", 
+            "1 teaspoon peanut or canola oil", 
+            "1/2 teaspoon coarse kosher salt", 
+            "1/4 teaspoon freshly cracked black pepper", 
+            "3 or 4 thyme sprigs", 
+            "2 garlic cloves, partially crushed", 
+            "2 tablespoons butter"
+        ], 
+        "ingredients": [
+            "rib eye steaks", 
+            "peanut oil", 
+            "coarse kosher salt", 
+            "cracked black pepper", 
+            "thyme sprigs", 
+            "garlic cloves", 
+            "butter"
+        ], 
+        "recipeId": "Classic-Pan-Seared-Rib-Eye-Steak-1363563", 
+        "recipeName": "Classic Pan-Seared Rib-Eye Steak", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Corn and Bacon Casserole": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.6666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "6 slices bacon", 
+            "\u00bd cup chopped onion", 
+            "2 tablespoons flour", 
+            "2 cloves garlic, minced", 
+            "salt and pepper", 
+            "salt and pepper", 
+            "8 oz sour cream", 
+            "3\u00bd cups corn (fresh or frozen)", 
+            "1 tablespoon chopped parsley", 
+            "chopped chives"
+        ], 
+        "ingredients": [
+            "bacon", 
+            "chopped onion", 
+            "flour", 
+            "garlic", 
+            "salt", 
+            "pepper", 
+            "sour cream", 
+            "corn", 
+            "chopped parsley", 
+            "chives"
+        ], 
+        "recipeId": "Corn-and-Bacon-Casserole-1389404", 
+        "recipeName": "Corn and Bacon Casserole", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Creamy Bacon Mushroom Fettuccine": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "6 slices Bacon, Cut Into \u00bd-inch Pieces", 
+            "1 clove garlic, minced", 
+            "2 cups thinly sliced mushrooms", 
+            "\u00bd cup Low Sodium Chicken Broth", 
+            "1\u00bd cups Half-and-half cream", 
+            "2 tablespoons fresh parsley", 
+            "\u00bd cup Freshly Grated Parmesan Cheese", 
+            "Pepper To Taste", 
+            "1 Package fresh fettuccine noodles (9 oz)"
+        ], 
+        "ingredients": [
+            "bacon", 
+            "garlic", 
+            "sliced mushrooms", 
+            "low sodium chicken broth", 
+            "cream", 
+            "fresh parsley", 
+            "grated parmesan cheese", 
+            "pepper", 
+            "noodles"
+        ], 
+        "recipeId": "Creamy-Bacon-Mushroom-Fettuccine-1389033", 
+        "recipeName": "Creamy Bacon Mushroom Fettuccine", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Crock Pot Hamburger Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "3 lbs ground beef", 
+            "\u00bc c minced dried onion", 
+            "3 pkgs 1 oz gravy mix", 
+            "2\u00bd c water", 
+            "2 pkgs 7.5 oz biscuits"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "onions", 
+            "gravy mix", 
+            "water", 
+            "biscuits"
+        ], 
+        "recipeId": "Crock-Pot-Hamburger-Casserole-1387527", 
+        "recipeName": "Crock Pot Hamburger Casserole", 
+        "totalTimeInSeconds": 15000
+    }, 
+    "Crock Pot Honey Sesame Pulled Pork": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.8333333333333334, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.5
+        }, 
+        "ingredientLines": [
+            "2 1/2 pounds (1,125 g) pork roast, diced into 6 pieces", 
+            "1/2 white onion, diced", 
+            "4 cloves garlic, smashed with the side of a knife and peeled", 
+            "1/4 cup (60 mL) soy sauce", 
+            "1/4 cup (45 g) dark brown sugar", 
+            "2 tablespoons (30 mL) honey", 
+            "1 tablespoon (11 g) sesame seeds", 
+            "1 tablespoon (15 g) corn starch", 
+            "3 Thai chili peppers, sliced"
+        ], 
+        "ingredients": [
+            "pork roast", 
+            "white onion", 
+            "garlic", 
+            "soy sauce", 
+            "dark brown sugar", 
+            "honey", 
+            "sesame seeds", 
+            "corn starch", 
+            "thai chile"
+        ], 
+        "recipeId": "Crock-Pot-Honey-Sesame-Pulled-Pork-1118136", 
+        "recipeName": "Crock Pot Honey Sesame Pulled Pork", 
+        "totalTimeInSeconds": 15600
+    }, 
+    "Crock Pot Mexican Hamburgers": {
+        "course": [], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.3333333333333333, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.3333333333333333, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 lbs ground beef or turkey", 
+            "\u00be c water", 
+            "28 oz can tomato puree", 
+            "2-1 oz pkgs taco seasoning", 
+            "8-10 hamburger buns, split", 
+            "optional: cheese slices"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "water", 
+            "tomato pur\u00e9e", 
+            "taco seasoning", 
+            "hamburger buns", 
+            "cheese slices"
+        ], 
+        "recipeId": "Crock-Pot-Mexican-Hamburgers-1383556", 
+        "recipeName": "Crock Pot Mexican Hamburgers", 
+        "totalTimeInSeconds": 16800
+    }, 
+    "Crockpot Turkey Breast": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.0
+        }, 
+        "ingredientLines": [
+            "One 6-7 pound bone-in turkey breast, skin removed", 
+            "olive oil", 
+            "Italian seasoning", 
+            "garlic salt", 
+            "pepper", 
+            "minced garlic", 
+            "chicken broth"
+        ], 
+        "ingredients": [
+            "bone-in turkey breast", 
+            "olive oil", 
+            "italian seasoning", 
+            "garlic salt", 
+            "pepper", 
+            "minced garlic", 
+            "chicken broth"
+        ], 
+        "recipeId": "Crockpot-Turkey-Breast-1387351", 
+        "recipeName": "Crockpot Turkey Breast", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Darn Good Chili": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1\u00bd pounds ground beef", 
+            "1 stalk celery finely chopped or \u00bd tsp celery salt", 
+            "1 onion chopped", 
+            "4 oz. can diced green chili's", 
+            "29 oz. can tomato sauce", 
+            "29 oz. can diced tomatoes", 
+            "29 oz. can kidney beans with liquid", 
+            "29 oz. can pinto beans with liquid", 
+            "2 tsp. cumin powder", 
+            "3 tbs. chili powder", 
+            "4\u00bd tsp. black pepper", 
+            "2 tsp. fine sea salt", 
+            "1 tbs. cayenne pepper (optional for added heat)"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "celery", 
+            "onions", 
+            "green chilies", 
+            "tomato sauce", 
+            "diced tomatoes", 
+            "kidney beans", 
+            "pinto beans", 
+            "ground cumin", 
+            "chili powder", 
+            "black pepper", 
+            "fine sea salt", 
+            "cayenne pepper"
+        ], 
+        "recipeId": "Darn-Good-Chili-1379254", 
+        "recipeName": "Darn Good Chili", 
         "totalTimeInSeconds": 2700
+    }, 
+    "Delicious Taco Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.6666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 ounces Tortilla Chips (about 24), plus additional for serving", 
+            "1 Tbs Chili Oil (or olive oil and red pepper flakes)", 
+            "1 Onion, chopped", 
+            "2 cloves Garlic, minced", 
+            "1 pound Ground Chicken", 
+            "2 Tbs Taco Seasoning", 
+            "1 can Black Beans, drained", 
+            "1 cup Hot Salsa", 
+            "1 cup shredded Reduced Fat Cheddar Cheese", 
+            "Optional: Other toppings such as jalepenios, olives, etc."
+        ], 
+        "ingredients": [
+            "tortilla chips", 
+            "chili oil", 
+            "onions", 
+            "garlic", 
+            "ground chicken", 
+            "taco seasoning", 
+            "black beans", 
+            "hot salsa", 
+            "shredded reduced fat cheddar cheese", 
+            "olives"
+        ], 
+        "recipeId": "Delicious-Taco-Casserole-1377226", 
+        "recipeName": "Delicious Taco Casserole", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Disney's Le Cellier Wild Mushroom Beef Filet": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 (8oz) filets", 
+            "salt", 
+            "pepper", 
+            "olive oil", 
+            "1 Tbsp olive oil", 
+            "1 shallot, sliced", 
+            "1 cup dry white wine (I used Pinot Grigio b/c that is what I drink)", 
+            "1 cup heavy cream", 
+            "1/4 cup cold unsalted butter, cubed", 
+            "1 Tbsp truffle oil", 
+            "1/2 lemon, juiced", 
+            "salt", 
+            "pepper", 
+            "1/2 lb sliced mushrooms", 
+            "1 shallot, sliced", 
+            "1/4 cup minced garlic", 
+            "1/4 olive oil", 
+            "2 Tbsp unsalted butter"
+        ], 
+        "ingredients": [
+            "filet", 
+            "salt", 
+            "pepper", 
+            "olive oil", 
+            "shallots", 
+            "dry white wine", 
+            "heavy cream", 
+            "unsalted butter", 
+            "truffle oil", 
+            "lemon", 
+            "sliced mushrooms", 
+            "minced garlic"
+        ], 
+        "recipeId": "Disney_s-Le-Cellier-Wild-Mushroom-Beef-Filet-1387259", 
+        "recipeName": "Disney's Le Cellier Wild Mushroom Beef Filet", 
+        "totalTimeInSeconds": 4200
+    }, 
+    "Easy (Make-Ahead) Baked Potato and Bacon Casserole": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "8 medium-sized potatoes (any variety)", 
+            "1 pound bacon", 
+            "2 cups shredded cheddar or colby jack cheese", 
+            "Sour cream, chives, and/or Spicy Ranch Dressing for topping", 
+            "Sour cream, chives, and/or Spicy Ranch Dressing for topping", 
+            "Sour cream, chives, and/or Spicy Ranch Dressing for topping"
+        ], 
+        "ingredients": [
+            "potatoes", 
+            "bacon", 
+            "shredded cheddar cheese", 
+            "sour cream", 
+            "spicy ranch salad dressing", 
+            "chives"
+        ], 
+        "recipeId": "Easy-_Make-Ahead_-Baked-Potato-and-Bacon-Casserole-1371204", 
+        "recipeName": "Easy (Make-Ahead) Baked Potato and Bacon Casserole", 
+        "totalTimeInSeconds": 4500
+    }, 
+    "Easy Brown Sugar Pork Roast": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.6666666666666666
+        }, 
+        "ingredientLines": [
+            "1 (3- to 5-pound) pork shoulder", 
+            "1/3cup Worcestershire sauce", 
+            "3/4cup light brown sugar", 
+            "1/2teaspoon dried thyme", 
+            "1/2teaspoon pepper", 
+            "1/2cup water or apple juice", 
+            "1teaspoon salt"
+        ], 
+        "ingredients": [
+            "pork shoulder", 
+            "worcestershire sauce", 
+            "light brown sugar", 
+            "dried thyme", 
+            "pepper", 
+            "water", 
+            "salt"
+        ], 
+        "recipeId": "Easy-Brown-Sugar-Pork-Roast-1381563", 
+        "recipeName": "Easy Brown Sugar Pork Roast", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Easy Chicken Bacon Ranch Pasta": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.5, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 cup dried mini penne pasta", 
+            "\u00bd cup frozen peas", 
+            "1 cup diced rotisserie chicken", 
+            "2 slices bacon, cooked and chopped", 
+            "\u00bd cup Hidden Valley Ranch Original Dressing", 
+            "\u00bc cup low-fat shredded cheddar cheese"
+        ], 
+        "ingredients": [
+            "penne pasta", 
+            "frozen peas", 
+            "rotisserie chicken", 
+            "bacon", 
+            "Hidden Valley\u00ae Original Ranch\u00ae Dressing", 
+            "low-fat shredded cheddar cheese"
+        ], 
+        "recipeId": "Easy-Chicken-Bacon-Ranch-Pasta-1388509", 
+        "recipeName": "Easy Chicken Bacon Ranch Pasta", 
+        "totalTimeInSeconds": 900
+    }, 
+    "Easy Chili": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.8333333333333334, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 pound of cooked and drained ground beef", 
+            "1 can of chili beans (undrained)", 
+            "1 can of chili ready diced tomatoes (I use Hunts Seasoned Diced Tomato Sauce for Chili)."
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "chili beans", 
+            "chili"
+        ], 
+        "recipeId": "Easy-Chili-1377845", 
+        "recipeName": "Easy Chili", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Easy Crockpot Creamy Ranch Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 can of cream of chicken soup", 
+            "1 packet of dry ranch dressing", 
+            "4 boneless chicken breasts", 
+            "6 potatoes, cubed", 
+            "\u00bd C. milk", 
+            "Parsley, chopped"
+        ], 
+        "ingredients": [
+            "cream of chicken soup", 
+            "ranch dressing", 
+            "boneless chicken breast", 
+            "potatoes", 
+            "milk", 
+            "parsley"
+        ], 
+        "recipeId": "Easy-Crockpot-Creamy-Ranch-Chicken-1378530", 
+        "recipeName": "Easy Crockpot Creamy Ranch Chicken", 
+        "totalTimeInSeconds": 18900
+    }, 
+    "Easy Tuna Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 1/2 cups whole wheat pasta (or brown rice pasta)", 
+            "3 cups whole milk", 
+            "1/2 teaspoon sea salt", 
+            "2 cans (6 ounces each) tuna, drained", 
+            "1 cup shredded cheese (optional)"
+        ], 
+        "ingredients": [
+            "whole wheat pasta", 
+            "whole milk", 
+            "sea salt", 
+            "tuna", 
+            "shredded cheese"
+        ], 
+        "recipeId": "Easy-Tuna-Casserole-1371400", 
+        "recipeName": "Easy Tuna Casserole", 
+        "totalTimeInSeconds": 1200
+    }, 
+    "Easy and Awesome Tasting Chicken Tetrazzini Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.5, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "16 oz linguini, cooked", 
+            "\u00bd cup butter, softened", 
+            "4 chicken breasts, cooked, diced", 
+            "2 cans cream of chicken soup", 
+            "2 cups sour cream", 
+            "1 tsp kosher salt", 
+            "\u00bd tsp ground pepper", 
+            "\u00bd cup chicken broth", 
+            "2 TB parmesan cheese", 
+            "2 cup shredded mozzarella"
+        ], 
+        "ingredients": [
+            "linguini", 
+            "butter", 
+            "chicken breasts", 
+            "cream of chicken soup", 
+            "sour cream", 
+            "kosher salt", 
+            "ground pepper", 
+            "chicken broth", 
+            "parmesan cheese", 
+            "shredded mozzarella cheese"
+        ], 
+        "recipeId": "Easy-and-Awesome-Tasting-Chicken-Tetrazzini-Bake-1373150", 
+        "recipeName": "Easy and Awesome Tasting Chicken Tetrazzini Bake", 
+        "totalTimeInSeconds": 4800
+    }, 
+    "Easy to Carry Holiday Dinner (With Hormel Cure 81 Ham & Au Gratin Potatoes)": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "about 6 potatoes sliced thin", 
+            "1 onion sliced in rings", 
+            "1 C cheddar cheese shredded", 
+            "3/4 C gouda cheese chopped small", 
+            "2 C milk", 
+            "3 Tbsp butter", 
+            "3 Tbsp flour"
+        ], 
+        "ingredients": [
+            "potatoes", 
+            "onions", 
+            "cheddar cheese", 
+            "gouda", 
+            "milk", 
+            "butter", 
+            "flour"
+        ], 
+        "recipeId": "Easy-to-Carry-Holiday-Dinner-_With-Hormel-Cure-81-Ham-_-Au-Gratin-Potatoes_-1388032", 
+        "recipeName": "Easy to Carry Holiday Dinner (With Hormel Cure 81 Ham & Au Gratin Potatoes)", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Finally Spring": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [
+            "Barbecue"
+        ], 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.5, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 pound ground beef (I use 93% lean, because of calories, but more fat = more flavor)", 
+            "1 Tbls Worchestershire Sauce", 
+            "1/4 of a small onion", 
+            "Salt & Pepper", 
+            "Salt & Pepper"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "worcestershire sauce", 
+            "onions", 
+            "pepper", 
+            "salt"
+        ], 
+        "recipeId": "Finally-Spring-1377360", 
+        "recipeName": "Finally Spring", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Garlic Braised Chicken Legs": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.3333333333333333, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 chicken legs", 
+            "Salt & pepper", 
+            "Salt & pepper", 
+            "8 - 10 garlic cloves, smashed", 
+            "\u00bd cup white wine", 
+            "1 cup chicken broth"
+        ], 
+        "ingredients": [
+            "chicken legs", 
+            "pepper", 
+            "salt", 
+            "garlic cloves", 
+            "white wine", 
+            "chicken broth"
+        ], 
+        "recipeId": "Garlic-Braised-Chicken-Legs-1387267", 
+        "recipeName": "Garlic Braised Chicken Legs", 
+        "totalTimeInSeconds": 3900
+    }, 
+    "Garlic Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "4 boneless skinless chicken breasts", 
+            "1 tablespoon olive oil", 
+            "4 garlic cloves, minced", 
+            "2 tablespoons brown sugar", 
+            "\u00bd tablespoon soy sauce", 
+            "\u00bd teaspoon chili flakes"
+        ], 
+        "ingredients": [
+            "boneless skinless chicken breasts", 
+            "olive oil", 
+            "garlic cloves", 
+            "brown sugar", 
+            "soy sauce", 
+            "chili flakes"
+        ], 
+        "recipeId": "Garlic-Chicken-1382155", 
+        "recipeName": "Garlic Chicken", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Garlic Parmesan Chicken Lasagna Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.5, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "15 no-boil lasagna noodles, or more, if necessary", 
+            "3 to 4 cups shredded rotisserie chicken meat", 
+            "12 ounces frozen organic peas", 
+            "\u00bd cup finely grated Parmesan cheese", 
+            "\u00bd cup coarsely grated Swiss or Gruyere cheese", 
+            "1 cup water", 
+            "\u00bc cup panko breadcrumbs", 
+            "fresh thyme or parsley, for the topping, optional", 
+            "6 T butter", 
+            "8 large cloves of garlic, minced", 
+            "6 T all-purpose flour", 
+            "\u00bd tsp Herbes de Provence", 
+            "\u00be tsp coarse salt", 
+            "5 cups milk (I used a combination of 1% & 2%)"
+        ], 
+        "ingredients": [
+            "oven-ready lasagna noodles", 
+            "chicken meat", 
+            "peas", 
+            "grated parmesan cheese", 
+            "gruyere cheese", 
+            "water", 
+            "panko breadcrumbs", 
+            "fresh thyme", 
+            "butter", 
+            "garlic", 
+            "all-purpose flour", 
+            "herbes de provence", 
+            "coarse salt", 
+            "milk"
+        ], 
+        "recipeId": "Garlic-Parmesan-Chicken-Lasagna-Bake-1360435", 
+        "recipeName": "Garlic Parmesan Chicken Lasagna Bake", 
+        "totalTimeInSeconds": 6300
+    }, 
+    "Garlicky Shrimp (Gambas al Ajillo)": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.5, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.0
+        }, 
+        "ingredientLines": [
+            "1/2 cup extra-virgin olive oil", 
+            "10 garlic cloves, thinly sliced", 
+            "1 pound large or jumbo shrimp, peeled and deveined (tails removed if desired)", 
+            "3/4 teaspoon flaky sea salt", 
+            "1/4 teaspoon freshly ground black pepper", 
+            "1/4 teaspoon bittersweet smoked paprika", 
+            "Pinch of cayenne pepper"
+        ], 
+        "ingredients": [
+            "extra-virgin olive oil", 
+            "garlic cloves", 
+            "jumbo shrimp", 
+            "sea salt flakes", 
+            "freshly ground black pepper", 
+            "smoked paprika", 
+            "cayenne pepper"
+        ], 
+        "recipeId": "Garlicky-Shrimp-_Gambas-al-Ajillo_-1384399", 
+        "recipeName": "Garlicky Shrimp (Gambas al Ajillo)", 
+        "totalTimeInSeconds": 1200
+    }, 
+    "Grandma's Oyster Stew": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "4 tablespoons unsalted butter", 
+            "2 shallots, chopped", 
+            "2 cloves garlic, chopped", 
+            "1 stalk celery, fine chopped", 
+            "2 tablespoons all-purpose flour", 
+            "1/2 cup white wine (I used the Gallo Pinot Grigio)", 
+            "1 cup milk", 
+            "1 cup heavy cream", 
+            "16 ounces of oysters (I chopped mine)", 
+            "Kosher salt", 
+            "1/4 teaspoon cayenne pepper (I added a pinch more at the end because we like it spicy)", 
+            "1/4 teaspoon paprika", 
+            "1/4 teaspoon white pepper", 
+            "Fresh flat leaf parsley leaves, chopped (for garnish)", 
+            "Oyster crackers (for garnish)", 
+            "Loaf of crusty bread"
+        ], 
+        "ingredients": [
+            "unsalted butter", 
+            "shallots", 
+            "garlic", 
+            "celery", 
+            "all-purpose flour", 
+            "white wine", 
+            "milk", 
+            "heavy cream", 
+            "oysters", 
+            "kosher salt", 
+            "cayenne pepper", 
+            "paprika", 
+            "white pepper", 
+            "Italian parsley leaves", 
+            "oyster crackers", 
+            "crusty bread"
+        ], 
+        "recipeId": "Grandma_s-Oyster-Stew-1385640", 
+        "recipeName": "Grandma's Oyster Stew", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Grilled Balsamic Glazed Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [
+            "Barbecue"
+        ], 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "2 pounds Boneless Skinless Chicken Breasts", 
+            "\u00bc cup of Balsamic vinegar", 
+            "\u215b cup of brown sugar", 
+            "Pepper"
+        ], 
+        "ingredients": [
+            "boneless skinless chicken breasts", 
+            "balsamic vinegar", 
+            "brown sugar", 
+            "pepper"
+        ], 
+        "recipeId": "Grilled-Balsamic-Glazed-Chicken-1379637", 
+        "recipeName": "Grilled Balsamic Glazed Chicken", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Grilled Pheasant with Raspberry Balsamic Vinaigrette": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.5, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 Pheasant, split in half", 
+            "1 tbls olive oil", 
+            "Salt and pepper to taste", 
+            "Salt and pepper to taste", 
+            "Raspberry Balsamic Vinaigrette (click for recipe)"
+        ], 
+        "ingredients": [
+            "pheasant", 
+            "olive oil", 
+            "salt", 
+            "pepper", 
+            "balsamic vinaigrette"
+        ], 
+        "recipeId": "Grilled-Pheasant-with-Raspberry-Balsamic-Vinaigrette-1387186", 
+        "recipeName": "Grilled Pheasant with Raspberry Balsamic Vinaigrette", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Ground Beef Stroganoff": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 tablespoon olive oil", 
+            "8 ounces cremini mushrooms, stems trimmed and sliced 1/4 inch thick", 
+            "2 tablespoons unsalted butter (1/4 stick)", 
+            "1 medium yellow onion, small dice", 
+            "2 medium garlic cloves, finely chopped", 
+            "1 pound ground beef", 
+            "3 tablespoons all-purpose flour", 
+            "1 teaspoon paprika", 
+            "1/4 cup dry white wine", 
+            "4 cups (1 quart) low-sodium beef broth or stock", 
+            "1 1/2 teaspoons kosher salt, plus more as needed", 
+            "1/2 teaspoon freshly ground black pepper, plus more as needed", 
+            "8 ounces dried egg noodles", 
+            "3/4 cup sour cream", 
+            "1 tablespoon finely chopped fresh Italian parsley leaves"
+        ], 
+        "ingredients": [
+            "olive oil", 
+            "cremini mushrooms", 
+            "unsalted butter", 
+            "yellow onion", 
+            "garlic cloves", 
+            "ground beef", 
+            "all-purpose flour", 
+            "paprika", 
+            "dry white wine", 
+            "low sodium beef broth", 
+            "kosher salt", 
+            "freshly ground black pepper", 
+            "egg noodles", 
+            "sour cream", 
+            "Italian parsley leaves"
+        ], 
+        "recipeId": "Ground-Beef-Stroganoff-1387271", 
+        "recipeName": "Ground Beef Stroganoff", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Healthier Beef Stroganoff": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "240 grams (8.5 ounces) wide egg noodles", 
+            "4 tablespoons olive oil", 
+            "450 grams (1 lb) beef (sirloin or tenderloin), thinly sliced", 
+            "salt and pepper", 
+            "salt and pepper", 
+            "1 onion, finely diced", 
+            "3 cloves garlic, minced", 
+            "225 grams (1/2 lb) cremini mushrooms, sliced", 
+            "120 ml (1/2 cup) dry white wine", 
+            "360 ml (1 \u00bd cups) beef broth (I used my homemade vegetable stock)", 
+            "1 tablespoon all purpose flour", 
+            "1 tablespoon Worcestershire sauce", 
+            "2 teaspoons Dijion mustard", 
+            "70 grams (1/4 cup) plain 2% fat Greek yogurt", 
+            "fresh parsley, finely chopped"
+        ], 
+        "ingredients": [
+            "wide egg noodles", 
+            "olive oil", 
+            "beef sirloin", 
+            "salt", 
+            "pepper", 
+            "onions", 
+            "garlic", 
+            "cremini mushrooms", 
+            "dry white wine", 
+            "beef broth", 
+            "all-purpose flour", 
+            "worcestershire sauce", 
+            "mustard", 
+            "greek yogurt", 
+            "fresh parsley"
+        ], 
+        "recipeId": "Healthier-Beef-Stroganoff-1387457", 
+        "recipeName": "Healthier Beef Stroganoff", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Hearty Chili Mac And Cheese": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.5, 
+            "salty": 0.5, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "1 lb. lean ground beef", 
+            "1/2 C. onion, chopped", 
+            "1/2 C. green pepper, chopped", 
+            "3 cloves garlic, minced", 
+            "2 C. elbow macaroni, cooked", 
+            "1/2 C. water", 
+            "1 T. chili powder", 
+            "1 tsp. cumin", 
+            "1/2 tsp. salt", 
+            "1/4 tsp. pepper", 
+            "1 14-oz. can chopped tomatoes", 
+            "8 oz. tomato sauce", 
+            "6 oz. tomato paste", 
+            "1 C. shredded low-fat cheddar cheese"
+        ], 
+        "ingredients": [
+            "lean ground beef", 
+            "onions", 
+            "green pepper", 
+            "garlic", 
+            "elbow macaroni", 
+            "water", 
+            "chili powder", 
+            "cumin", 
+            "salt", 
+            "pepper", 
+            "chopped tomatoes", 
+            "tomato sauce", 
+            "tomato paste", 
+            "shredded low-fat cheddar cheese"
+        ], 
+        "recipeId": "Hearty-Chili-Mac-And-Cheese-1387624", 
+        "recipeName": "Hearty Chili Mac And Cheese", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Holiday Leftovers Whole Grain Pizza": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.5
+        }, 
+        "ingredientLines": [
+            "1 (16 oz.) whole grain pizza dough", 
+            "\u00bd cup turkey gravy", 
+            "4 oz. Gruyere cheese, shredded (or other white shredded cheese)", 
+            "8-10 oz. cooked turkey breast, shredded or chopped", 
+            "1 cup turkey stuffing", 
+            "1 Tbsp. extra virgin olive oil", 
+            "\u00bd cup fresh cranberry sauce", 
+            "2-3 Tbsp. water", 
+            "2 Tbsp. fresh sage, chopped", 
+            "1 Tbsp. fresh thyme, chopped"
+        ], 
+        "ingredients": [
+            "whole grain pizza dough", 
+            "turkey gravy", 
+            "gruyere cheese", 
+            "turkey breast", 
+            "stuffing", 
+            "extra-virgin olive oil", 
+            "cranberry sauce", 
+            "water", 
+            "fresh sage", 
+            "fresh thyme"
+        ], 
+        "recipeId": "Holiday-Leftovers-Whole-Grain-Pizza-1389128", 
+        "recipeName": "Holiday Leftovers Whole Grain Pizza", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Homemade Chicken Tenders": {
+        "course": [], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 lb. boneless chicken breast tenders", 
+            "\u00bc C. butter", 
+            "1 \u00bd C. breadcrumbs", 
+            "2 T. flour", 
+            "2 T. salt"
+        ], 
+        "ingredients": [
+            "chicken breast tenders", 
+            "butter", 
+            "bread crumbs", 
+            "flour", 
+            "salt"
+        ], 
+        "recipeId": "Homemade-Chicken-Tenders-1387906", 
+        "recipeName": "Homemade Chicken Tenders", 
+        "totalTimeInSeconds": 300
+    }, 
+    "Honey Garlic Baked Chicken Thighs": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "4 Bone in Chicken Thighs", 
+            "3 Tablespoons Olive Oil", 
+            "3 Tablespoons Soy Sauce", 
+            "3 Cloves Chopped Garlic", 
+            "3 Tablespoons Honey", 
+            "Salt and Pepper", 
+            "Salt and Pepper"
+        ], 
+        "ingredients": [
+            "bone in chicken thighs", 
+            "olive oil", 
+            "soy sauce", 
+            "chopped garlic", 
+            "honey", 
+            "salt", 
+            "pepper"
+        ], 
+        "recipeId": "Honey-Garlic-Baked-Chicken-Thighs-1305814", 
+        "recipeName": "Honey Garlic Baked Chicken Thighs", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Honey Lime Glazed Salmon": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.3333333333333333, 
+            "sweet": 0.5
+        }, 
+        "ingredientLines": [
+            "1 pound salmon filet or 4 1/4 pound filets", 
+            "2 tablespoons honey", 
+            "2 teaspoons grated lime zest", 
+            "1/4 teaspoon black pepper", 
+            "3/4 teaspoon salt"
+        ], 
+        "ingredients": [
+            "salmon fillets", 
+            "honey", 
+            "lime zest", 
+            "black pepper", 
+            "salt"
+        ], 
+        "recipeId": "Honey-Lime-Glazed-Salmon-1376924", 
+        "recipeName": "Honey Lime Glazed Salmon", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "I Say Eat Turkey! Garlic Roasted Turkey Breast": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.0
+        }, 
+        "ingredientLines": [
+            "4 pounds Bone-in Turkey Breast", 
+            "5 cloves garlic", 
+            "2 tsp Dijon mustard", 
+            "\u00bc cup low sodium chicken broth", 
+            "2 tablespoons olive oil", 
+            "2 tablespoons thyme"
+        ], 
+        "ingredients": [
+            "bone-in turkey breast", 
+            "garlic", 
+            "dijon mustard", 
+            "low sodium chicken broth", 
+            "olive oil", 
+            "thyme"
+        ], 
+        "recipeId": "I-Say-Eat-Turkey_-Garlic-Roasted-Turkey-Breast-1385153", 
+        "recipeName": "I Say Eat Turkey! Garlic Roasted Turkey Breast", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Impossible Cheeseburger Pie": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 pound ground beef", 
+            "1 cup chopped onion", 
+            "1/2 teaspoon salt", 
+            "1 cup milk", 
+            "1 cup shredded cheddar cheese", 
+            "1/2 cup Bisquick baking mix", 
+            "2 eggs"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "chopped onion", 
+            "salt", 
+            "milk", 
+            "shredded cheddar cheese", 
+            "Bisquick Baking Mix", 
+            "eggs"
+        ], 
+        "recipeId": "Impossible-Cheeseburger-Pie-1381527", 
+        "recipeName": "Impossible Cheeseburger Pie", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Juicy Baked Pork Chops": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.0, 
+            "salty": 0.5, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 pork chops", 
+            "3 \u00bd oz fresh button mushrooms", 
+            "1 small onion", 
+            "1 cup white wine", 
+            "salt", 
+            "pepper", 
+            "little butter"
+        ], 
+        "ingredients": [
+            "pork chops", 
+            "button mushrooms", 
+            "onions", 
+            "white wine", 
+            "salt", 
+            "pepper", 
+            "butter"
+        ], 
+        "recipeId": "Juicy-Baked-Pork-Chops-1388767", 
+        "recipeName": "Juicy Baked Pork Chops", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Leek And Ham Hock Gratin With Ro\u0308sti Topping": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "100g unsalted butter, plus extra if needed", 
+            "6 leeks, cut into thirds", 
+            "2 garlic cloves, crushed", 
+            "\u00bc whole nutmeg, grated", 
+            "50g plain flour", 
+            "500ml good quality fresh chicken stock", 
+            "300ml whole milk", 
+            "2 bay leaves", 
+            "300g shredded British free-range ham hock (available ready prepared from supermarkets, or use shredded cooked ham)", 
+            "25g parmesan, grated", 
+            "800g floury potatoes (about 4 medium baking potatoes)"
+        ], 
+        "ingredients": [
+            "unsalted butter", 
+            "leeks", 
+            "garlic cloves", 
+            "nutmeg", 
+            "plain flour", 
+            "fresh chicken stock", 
+            "whole milk", 
+            "bay leaves", 
+            "ham hock", 
+            "parmesan cheese", 
+            "potatoes"
+        ], 
+        "recipeId": "Leek-And-Ham-Hock-Gratin-With-Rosti-Topping-1388860", 
+        "recipeName": "Leek And Ham Hock Gratin With Ro\u0308sti Topping", 
+        "totalTimeInSeconds": 4200
+    }, 
+    "Lemon Butter Amberjack Fish": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "6 fillets amberjack or other fish (~2 1/2 lb)", 
+            "1 1/2 Tbsp unsalted butter", 
+            "1 lemon; wedged into 6 pieces", 
+            "12 thyme sprigs", 
+            "sea salt", 
+            "black pepper"
+        ], 
+        "ingredients": [
+            "amberjack", 
+            "unsalted butter", 
+            "lemon", 
+            "thyme sprigs", 
+            "sea salt", 
+            "black pepper"
+        ], 
+        "recipeId": "Lemon-Butter-Amberjack-Fish-1377515", 
+        "recipeName": "Lemon Butter Amberjack Fish", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Lemon Pepper Chicken Thighs": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.3333333333333333, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 chicken thighs", 
+            "1/3 C. lemon juice", 
+            "1 clove garlic, minced", 
+            "1/2 tsp. dried oregano", 
+            "3 T. extra virgin olive oil", 
+            "Salt and pepper", 
+            "Salt and pepper"
+        ], 
+        "ingredients": [
+            "chicken thighs", 
+            "lemon juice", 
+            "garlic", 
+            "dried oregano", 
+            "extra-virgin olive oil", 
+            "salt", 
+            "pepper"
+        ], 
+        "recipeId": "Lemon-Pepper-Chicken-Thighs-1373919", 
+        "recipeName": "Lemon Pepper Chicken Thighs", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Lunchtime Salmon Patties": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "14 oz can salmon", 
+            "1 egg", 
+            "1/2 cup bread crumbs", 
+            "1 t. lemon juice", 
+            "oil for cooking (I use palm shortening or coconut oil)"
+        ], 
+        "ingredients": [
+            "canned salmon", 
+            "eggs", 
+            "bread crumbs", 
+            "lemon juice", 
+            "oil"
+        ], 
+        "recipeId": "Lunchtime-Salmon-Patties-1372128", 
+        "recipeName": "Lunchtime Salmon Patties", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "MIllion Dollar Spaghetti": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.5, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 (16 ounce) package spaghetti noodles", 
+            "1 pound ground beef", 
+            "1 (16 ounce) jar spaghetti sauce", 
+            "1/2 cup butter, sliced - divided", 
+            "1 cup cottage cheese", 
+            "1 (8 ounce) package cream cheese, softened", 
+            "1/4 cup sour cream", 
+            "1 (8 ounce) package shredded Cheddar cheese"
+        ], 
+        "ingredients": [
+            "noodles", 
+            "ground beef", 
+            "pasta sauce", 
+            "butter", 
+            "cottage cheese", 
+            "cream cheese", 
+            "sour cream", 
+            "shredded cheddar cheese"
+        ], 
+        "recipeId": "MIllion-Dollar-Spaghetti-1373149", 
+        "recipeName": "MIllion Dollar Spaghetti", 
+        "totalTimeInSeconds": 5400
+    }, 
+    "Maple and Brown Sugar Glazed Ham": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 fully cooked ham, about 6 to 8 pounds", 
+            "1/2 cup pure maple syrup", 
+            "1/2 cup brown sugar", 
+            "1/2 cup apple juice", 
+            "1 heaping tablespoon brown or Dijon mustard", 
+            "dash cinnamon and ginger or allspice, optional"
+        ], 
+        "ingredients": [
+            "fully cooked ham", 
+            "pure maple syrup", 
+            "brown sugar", 
+            "apple juice", 
+            "dijon mustard", 
+            "cinnamon"
+        ], 
+        "recipeId": "Maple-and-Brown-Sugar-Glazed-Ham-1380502", 
+        "recipeName": "Maple and Brown Sugar Glazed Ham", 
+        "totalTimeInSeconds": 8100
+    }, 
+    "Melt in Your Mouth Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "4 boneless chicken breasts", 
+            "1 cup mayonnaise (for a healthier option, use plain Greek yogurt in place of the mayo)", 
+            "1/2 cup Parmesan cheese", 
+            "1 1/2 tsp seasoning salt", 
+            "1/2 tsp black pepper", 
+            "1 tsp garlic powder"
+        ], 
+        "ingredients": [
+            "boneless chicken breast", 
+            "mayonnaise", 
+            "parmesan cheese", 
+            "seasoning salt", 
+            "black pepper", 
+            "garlic powder"
+        ], 
+        "recipeId": "Melt-in-Your-Mouth-Chicken-1066441", 
+        "recipeName": "Melt in Your Mouth Chicken", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Melt in your Mouth Chicken Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 lb boneless, skinless chicken breasts, diced", 
+            "3/4 cup mayonnaise or Greek yogurt", 
+            "1 cup FRESH Parmesan cheese, shredded", 
+            "1/2 tsp seasoned salt", 
+            "1/2 tsp ground black pepper", 
+            "4 garlic cloves, minced", 
+            "1/2 tsp red pepper flakes", 
+            "1/2 cup Italian bread crumbs"
+        ], 
+        "ingredients": [
+            "boneless skinless chicken breasts", 
+            "mayonnaise", 
+            "fresh parmesan cheese", 
+            "seasoning salt", 
+            "ground black pepper", 
+            "garlic cloves", 
+            "red pepper flakes", 
+            "Italian seasoned breadcrumbs"
+        ], 
+        "recipeId": "Melt-in-your-Mouth-Chicken-Bake-1380254", 
+        "recipeName": "Melt in your Mouth Chicken Bake", 
+        "totalTimeInSeconds": 2700
+    }, 
+    "Mustard Baked Cod Fillets with Maille Dijon": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": null, 
+        "ingredientLines": [
+            "1-1/2 pounds cod fillets", 
+            "1 Tablespoon minced shallot", 
+            "1/2 cup mayonnaise", 
+            "3 Tablespoons Maille Dijon Mustard", 
+            "1/2 teaspoon dried thyme", 
+            "1 teaspoon lemon pepper seasoning"
+        ], 
+        "ingredients": [
+            "cod fillets", 
+            "shallots", 
+            "mayonnaise", 
+            "Maille Dijon mustard", 
+            "dried thyme", 
+            "lemon pepper seasoning"
+        ], 
+        "recipeId": "Mustard-Baked-Cod-Fillets-with-Maille-Dijon-1387127", 
+        "recipeName": "Mustard Baked Cod Fillets with Maille Dijon", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "One-Pan Taco Rice Dinner": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 pound ground beef", 
+            "1 packet taco seasoning", 
+            "2 cups water", 
+            "2 cups Minute Rice, uncooked", 
+            "1 cup salsa", 
+            "1 cup shredded cheddar cheese"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "taco seasoning", 
+            "water", 
+            "minute rice", 
+            "salsa", 
+            "shredded cheddar cheese"
+        ], 
+        "recipeId": "One-Pan-Taco-Rice-Dinner-1372436", 
+        "recipeName": "One-Pan Taco Rice Dinner", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Orange Dijon Glazed Ham": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 fully cooked ham (I used Hormel Cure 81 bone-in ham Cherrywood flavor)", 
+            "2 Tbsp dijon mustard", 
+            "\u00bd cup orange marmalade", 
+            "juice of 1 orange"
+        ], 
+        "ingredients": [
+            "fully cooked ham", 
+            "dijon mustard", 
+            "orange marmalade", 
+            "orange"
+        ], 
+        "recipeId": "Orange-Dijon-Glazed-Ham-1387171", 
+        "recipeName": "Orange Dijon Glazed Ham", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Pan-Fried Pork Chops": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "4 boneless center cut pork chops", 
+            "Garlic powder", 
+            "Salt and fresh ground pepper", 
+            "Salt and fresh ground pepper", 
+            "Smoked paprika (aka bacon spice!)", 
+            "Coconut oil"
+        ], 
+        "ingredients": [
+            "boneless center cut pork chops", 
+            "garlic powder", 
+            "salt", 
+            "ground pepper", 
+            "smoked paprika", 
+            "coconut oil"
+        ], 
+        "recipeId": "Pan-Fried-Pork-Chops-1382078", 
+        "recipeName": "Pan-Fried Pork Chops", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Parmesan-Crusted Pork Chops": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 egg", 
+            "1 tablespoon water", 
+            "1/4 cup Progresso\u2122 Italian style bread crumbs", 
+            "1/3 cup Parmesan cheese", 
+            "4 pork chops", 
+            "1 tablespoon olive oil"
+        ], 
+        "ingredients": [
+            "eggs", 
+            "water", 
+            "Italian seasoned breadcrumbs", 
+            "parmesan cheese", 
+            "pork chops", 
+            "olive oil"
+        ], 
+        "recipeId": "Parmesan-Crusted-Pork-Chops-1357182", 
+        "recipeName": "Parmesan-Crusted Pork Chops", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Paula Deen's Crock Pot Macaroni and Cheese": {
+        "course": [], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 cups uncooked elbow macaroni", 
+            "4 Tbsp butter", 
+            "2 1/2 cups grated sharp cheddar cheese", 
+            "3 eggs", 
+            "1/2 cup sour cream", 
+            "1 can condensed Cheddar Cheese soup, 10 3/4 oz", 
+            "1/2 tsp salt", 
+            "1 cup whole milk", 
+            "1/2 tsp dry mustard", 
+            "1/2 tsp black pepper"
+        ], 
+        "ingredients": [
+            "elbow macaroni", 
+            "butter", 
+            "sharp cheddar cheese", 
+            "eggs", 
+            "sour cream", 
+            "condensed cheddar cheese soup", 
+            "salt", 
+            "whole milk", 
+            "dry mustard", 
+            "black pepper"
+        ], 
+        "recipeId": "Paula-Deen_s-Crock-Pot-Macaroni-and-Cheese-1383179", 
+        "recipeName": "Paula Deen's Crock Pot Macaroni and Cheese", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Pistachio Lime Baked Salmon": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.3333333333333333, 
+            "sweet": 0.6666666666666666
+        }, 
+        "ingredientLines": [
+            "6 salmon fillets (6 ounces each)", 
+            "1 cup pistachio nuts, chopped", 
+            "1/2 cup packed dark brown sugar", 
+            "3 T. lime juice", 
+            "1 1/2 tsp. dill weed", 
+            "1 1/2 tsp. pepper"
+        ], 
+        "ingredients": [
+            "salmon fillets", 
+            "pistachio nuts", 
+            "dark brown sugar", 
+            "lime juice", 
+            "dill weed", 
+            "pepper"
+        ], 
+        "recipeId": "Pistachio-Lime-Baked-Salmon-1362588", 
+        "recipeName": "Pistachio Lime Baked Salmon", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Pork Chop & Potato Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "6 pork chops (you can use any type you like, I use bone-in just because they are less expensive)", 
+            "8 medium potatoes", 
+            "1 large onion", 
+            "1\u00bd cups flour, divided", 
+            "1 stick of butter", 
+            "4 cups of milk"
+        ], 
+        "ingredients": [
+            "pork chops", 
+            "medium potatoes", 
+            "onions", 
+            "flour", 
+            "butter", 
+            "milk"
+        ], 
+        "recipeId": "Pork-Chop-_-Potato-Bake-1377808", 
+        "recipeName": "Pork Chop & Potato Bake", 
+        "totalTimeInSeconds": 5400
+    }, 
+    "Pork Chops Florentine": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 tbsp olive oil", 
+            "1-1/2 lbs) boneless pork chops, 3/4\u2033 thick, (6 chops", 
+            "1 medium onion, thinly sliced (about 1/2 cup)", 
+            "1 (24 oz) jar marinara sauce", 
+            "1 (10 oz) box frozen leaf spinach, thawed, well drained", 
+            "1 cup shredded fat-free Mozzarella cheese (4 oz)", 
+            "Whole grain pasta, optional"
+        ], 
+        "ingredients": [
+            "olive oil", 
+            "boneless chop pork", 
+            "onions", 
+            "marinara sauce", 
+            "spinach", 
+            "mozzarella cheese", 
+            "whole grain pasta"
+        ], 
+        "recipeId": "Pork-Chops-Florentine-1371220", 
+        "recipeName": "Pork Chops Florentine", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Pork Tenderloin With A Maple Sriracha Sauce": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 pound pork tenderloin", 
+            "2 tbsp olive oil", 
+            "3 tbsp sriracha", 
+            "2 tbsp maple syrup", 
+            "1/4 cup red wine vinegar", 
+            "1/2 tbsp fresh minced ginger", 
+            "Kosher salt", 
+            "Fresh ground black pepper"
+        ], 
+        "ingredients": [
+            "pork tenderloin", 
+            "olive oil", 
+            "Sriracha", 
+            "maple syrup", 
+            "red wine vinegar", 
+            "minced ginger", 
+            "kosher salt", 
+            "freshly ground black pepper"
+        ], 
+        "recipeId": "Pork-Tenderloin-With-A-Maple-Sriracha-Sauce-1387729", 
+        "recipeName": "Pork Tenderloin With A Maple Sriracha Sauce", 
+        "totalTimeInSeconds": 3000
+    }, 
+    "Quick Spinach Quiche": {
+        "course": [
+            "Breakfast and Brunch"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "250g frozen chopped spinach, thawed", 
+            "1 bunch spring onions, finely diced", 
+            "4 eggs, whisked", 
+            "500g cottage cheese", 
+            "250g grated Cheddar cheese"
+        ], 
+        "ingredients": [
+            "frozen chopped spinach", 
+            "spring onions", 
+            "eggs", 
+            "cottage cheese", 
+            "cheddar cheese"
+        ], 
+        "recipeId": "Quick-Spinach-Quiche-1369940", 
+        "recipeName": "Quick Spinach Quiche", 
+        "totalTimeInSeconds": 4200
+    }, 
+    "Quinoa Sage Stuffing \u2013 Gluten-free + Vegan": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 cup quinoa, rinsed well", 
+            "2 cups organic vegetable broth", 
+            "1 bay leaf", 
+            "1 heaping cup of diced celery", 
+            "1 medium white onion, diced", 
+            "small handful of fresh sage, chopped {about 2 tablespoons}", 
+            "1/4 teaspoon garlic powder", 
+            "1 tablespoon extra virgin olive oil", 
+            "sea salt", 
+            "fresh ground coarse pepper"
+        ], 
+        "ingredients": [
+            "quinoa", 
+            "organic vegetable broth", 
+            "bay leaf", 
+            "diced celery", 
+            "white onion", 
+            "fresh sage", 
+            "garlic powder", 
+            "extra-virgin olive oil", 
+            "sea salt", 
+            "pepper"
+        ], 
+        "recipeId": "Quinoa-Sage-Stuffing-Gluten-free-_-Vegan-1387251", 
+        "recipeName": "Quinoa Sage Stuffing \u2013 Gluten-free + Vegan", 
+        "totalTimeInSeconds": 3900
+    }, 
+    "Ranch Buffalo Chicken Pasta with Broccoli": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 box (13.25 oz.) whole grain rotini pasta", 
+            "12 oz. fresh broccoli florets", 
+            "1 tbsp. extra virgin olive oil", 
+            "1 large, sweet, yellow onion; chopped", 
+            "3 cloves fresh garlic, minced or pressed", 
+            "4 medium tomatoes, cored and chopped", 
+            "1 packet Hidden Valley\u00ae Original Ranch\u00ae Salad Dressing & Seasoning Mix", 
+            "1.5 lbs. boneless, skinless chicken breasts, chopped into bite-size pieces", 
+            "\u2153 cup buffalo sauce", 
+            "\u00bd cup Hidden Valley\u00ae Original Ranch\u00ae Light Dressing", 
+            "Sea salt and fresh ground pepper to taste.", 
+            "Sea salt and fresh ground pepper to taste."
+        ], 
+        "ingredients": [
+            "whole grain rotini", 
+            "broccoli florets", 
+            "extra-virgin olive oil", 
+            "yellow onion", 
+            "garlic", 
+            "medium tomatoes", 
+            "Hidden Valley\u00ae Original Ranch Salad\u00ae Dressing & Seasoning Mix", 
+            "boneless skinless chicken breasts", 
+            "buffalo sauce", 
+            "Hidden Valley\u00ae Original Ranch\u00ae Light Dressing", 
+            "ground pepper", 
+            "sea salt"
+        ], 
+        "recipeId": "Ranch-Buffalo-Chicken-Pasta-with-Broccoli-1387929", 
+        "recipeName": "Ranch Buffalo Chicken Pasta with Broccoli", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Roast Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.0
+        }, 
+        "ingredientLines": [
+            "1 (4- to 5-lb.) whole chicken", 
+            "1 1/2 teaspoons kosher salt, divided", 
+            "1 lemon half", 
+            "1 teaspoon seasoned pepper", 
+            "1 teaspoon dried rosemary", 
+            "1 tablespoon olive oil", 
+            "1 tablespoon butter, melted"
+        ], 
+        "ingredients": [
+            "whole chicken", 
+            "kosher salt", 
+            "lemon", 
+            "pepper", 
+            "dried rosemary", 
+            "olive oil", 
+            "butter"
+        ], 
+        "recipeId": "Roast-Chicken-1338615", 
+        "recipeName": "Roast Chicken", 
+        "totalTimeInSeconds": 5700
+    }, 
+    "Rosemary Lemon Chicken": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.5, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 pound USDA organic boneless, skinless chicken breast*", 
+            "2 tablespoons olive oil", 
+            "\u00bc cup lemon juice", 
+            "2 cloves garlic, pressed", 
+            "\u00bc cup fresh rosemary, minced", 
+            "\u00bd teaspoon celtic sea salt"
+        ], 
+        "ingredients": [
+            "boneless skinless chicken breasts", 
+            "olive oil", 
+            "lemon juice", 
+            "garlic", 
+            "fresh rosemary", 
+            "sea salt"
+        ], 
+        "recipeId": "Rosemary-Lemon-Chicken-1378458", 
+        "recipeName": "Rosemary Lemon Chicken", 
+        "totalTimeInSeconds": 2700
+    }, 
+    "Sake Salmon": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 salmon fillets about 1.5-2 inches across", 
+            "2 tsp dark soy", 
+            "2 tsp sake", 
+            "75ml sake", 
+            "1 tbsp dark soy", 
+            "2 tsp fish sauce", 
+            "1 tsp wasabi", 
+            "1 tsp Worcestershire/Henderson's sauce", 
+            "1 tsp chilli oil", 
+            "2 tbsp chopped fresh coriander", 
+            "3-4 spring onions finely sliced", 
+            "1 cup of basmati rice, cooked by preferred method", 
+            "Steamed greens as liked - tenderstem broccoli, edamame and sugar snaps are regulars for us", 
+            "Steamed greens as liked - tenderstem broccoli, edamame and sugar snaps are regulars for us", 
+            "Steamed greens as liked - tenderstem broccoli, edamame and sugar snaps are regulars for us", 
+            "Steamed greens as liked - tenderstem broccoli, edamame and sugar snaps are regulars for us"
+        ], 
+        "ingredients": [
+            "salmon fillets", 
+            "dark soy", 
+            "sake", 
+            "fish sauce", 
+            "wasabi", 
+            "worcestershire sauce", 
+            "chili oil", 
+            "fresh coriander", 
+            "spring onions", 
+            "basmati rice", 
+            "sugar snap", 
+            "edamame", 
+            "broccolini", 
+            "greens"
+        ], 
+        "recipeId": "Sake-Salmon-1386807", 
+        "recipeName": "Sake Salmon", 
+        "totalTimeInSeconds": 2700
+    }, 
+    "Scalloped Potatoes and Ham": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.8333333333333334, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 cups Cooked ham; cubed", 
+            "1/4 cup Onion; chopped fine", 
+            "1/4 cup Butter or margarine", 
+            "1/4 cup Flour", 
+            "2 1/2 cups Milk", 
+            "5 large Potatoes; thinly sliced", 
+            "1 1/2 teaspoons Salt", 
+            "1/8 teaspoon Pepper"
+        ], 
+        "ingredients": [
+            "cooked ham", 
+            "onions", 
+            "butter", 
+            "flour", 
+            "milk", 
+            "large potatoes", 
+            "salt", 
+            "pepper"
+        ], 
+        "recipeId": "Scalloped-Potatoes-and-Ham-1363016", 
+        "recipeName": "Scalloped Potatoes and Ham", 
+        "totalTimeInSeconds": 6300
+    }, 
+    "Shrimp Feta Pasta Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.5, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 lb fettuccine noodles", 
+            "1 24 oz jar Ragu\u00ae Chunky Roasted Garlic Sauce", 
+            "1 lb shrimp, medium peeled and deveined", 
+            "1 T butter", 
+            "1 t Italian Seasoning", 
+            "1 cup feta cheese, crumbled", 
+            "3/4 cup Panko breadcrumbs", 
+            "3 T butter, melted"
+        ], 
+        "ingredients": [
+            "noodles", 
+            "ragu", 
+            "shrimp", 
+            "butter", 
+            "italian seasoning", 
+            "feta cheese", 
+            "panko breadcrumbs"
+        ], 
+        "recipeId": "Shrimp-Feta-Pasta-Bake-1383827", 
+        "recipeName": "Shrimp Feta Pasta Bake", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Slow Cooked Steak with Creamy Mushroom Sauce": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1kg chuck beef steaks (you could change the steak to rump also if you prefer)", 
+            "2 tsp beef stock powder", 
+            "500ml COOKING cream", 
+            "300g Mushrooms, quartered", 
+            "2 tbsp cornflour mixed with 1-2 tbsp water to thicken"
+        ], 
+        "ingredients": [
+            "beef steak", 
+            "beef stock", 
+            "cooking cream", 
+            "mushrooms", 
+            "corn flour"
+        ], 
+        "recipeId": "Slow-Cooked-Steak-with-Creamy-Mushroom-Sauce-1376774", 
+        "recipeName": "Slow Cooked Steak with Creamy Mushroom Sauce", 
+        "totalTimeInSeconds": 18300
+    }, 
+    "Slow Cooker Chicken and Dumplings": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 Tablespoons Butter", 
+            "4 boneless, skinless chicken breast (or 6 skinless chicken thighs)", 
+            "1 Onion, finely diced", 
+            "2 cans of Cream of Chicken Soup", 
+            "2 small packages Grands Jr biscuits (10 biscuits)", 
+            "flour"
+        ], 
+        "ingredients": [
+            "butter", 
+            "boneless skinless chicken breasts", 
+            "onions", 
+            "cream of chicken soup", 
+            "biscuits", 
+            "flour"
+        ], 
+        "recipeId": "Slow-Cooker-Chicken-and-Dumplings-1377637", 
+        "recipeName": "Slow Cooker Chicken and Dumplings", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Slow-Cooker BBQ Short Ribs": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.5, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.8333333333333334
+        }, 
+        "ingredientLines": [
+            "4 lb. beef short ribs", 
+            "1 large onion, coarsely chopped", 
+            "1/4 cup flour", 
+            "1 cup KRAFT Original Barbecue Sauce", 
+            "1/4 cup honey", 
+            "1 Tbsp. HEINZ Yellow Mustard"
+        ], 
+        "ingredients": [
+            "beef rib short", 
+            "onions", 
+            "flour", 
+            "KRAFT Original Barbecue Sauce", 
+            "honey", 
+            "Heinz Yellow Mustard"
+        ], 
+        "recipeId": "Slow-Cooker-BBQ-Short-Ribs-1353801", 
+        "recipeName": "Slow-Cooker BBQ Short Ribs", 
+        "totalTimeInSeconds": 22800
+    }, 
+    "Spaghetti Carbonara": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "600 g spaghetti", 
+            "6 rashers bacon cut into stripes", 
+            "180 g Philadelphia Light", 
+            "2 egg yolks", 
+            "3 stalks flat parsley leaves picked and chopped", 
+            "300 ml vegetable stock", 
+            "shavings of parmesan to garnish"
+        ], 
+        "ingredients": [
+            "spaghetti", 
+            "bacon", 
+            "Philadelphia Light Cream Cheese", 
+            "egg yolks", 
+            "parsley leaves", 
+            "vegetable stock", 
+            "parmesan cheese"
+        ], 
+        "recipeId": "Spaghetti-Carbonara-1366567", 
+        "recipeName": "Spaghetti Carbonara", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Taco Pasta Bake": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": [], 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1/2 \u2013 3/4 of a bag of large noodle pasta like ziti", 
+            "approx. 1lb of ground beef", 
+            "1 pkg/envelope of taco seasoning", 
+            "1C water", 
+            "1/2 pkg of cream cheese", 
+            "1 1/2C shredded cheese (I used marble)"
+        ], 
+        "ingredients": [
+            "pasta", 
+            "ground beef", 
+            "taco seasoning", 
+            "water", 
+            "cream cheese", 
+            "shredded cheese"
+        ], 
+        "recipeId": "Taco-Pasta-Bake-1380020", 
+        "recipeName": "Taco Pasta Bake", 
+        "totalTimeInSeconds": 3600
+    }, 
+    "Thanksgiving Leftovers Gravy Balls": {
+        "course": [], 
+        "cuisine": null, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 cups cooked turkey, coarsely chopped", 
+            "1 \u00bd cups leftover stuffing", 
+            "1 \u00bd cups leftover mashed potatoes", 
+            "Cooking spray", 
+            "1 large egg", 
+            "2 Tbsp. milk", 
+            "\u00bd cup panko breadcrumbs", 
+            "\u00bd cup leftover gravy or cranberry sauce"
+        ], 
+        "ingredients": [
+            "cooked turkey", 
+            "stuffing", 
+            "mashed potatoes", 
+            "cooking spray", 
+            "large eggs", 
+            "milk", 
+            "panko breadcrumbs", 
+            "leftover gravy"
+        ], 
+        "recipeId": "Thanksgiving-Leftovers-Gravy-Balls-1389157", 
+        "recipeName": "Thanksgiving Leftovers Gravy Balls", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "The Best Pizza Dough": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 cup warm water", 
+            "1 tablespoon honey", 
+            "1 tablespoon vegetable oil", 
+            "1 tablespoon instant yeast", 
+            "1 teaspoon salt", 
+            "2 1/2 cups all-purpose flour"
+        ], 
+        "ingredients": [
+            "warm water", 
+            "honey", 
+            "vegetable oil", 
+            "instant yeast", 
+            "salt", 
+            "all-purpose flour"
+        ], 
+        "recipeId": "The-Best-Pizza-Dough-1367842", 
+        "recipeName": "The Best Pizza Dough", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Turkey Croquets with Mushroom Sauce #SundaySupper": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1/2 cup dice onion", 
+            "1/2 pound slice mushroom", 
+            "2 cups cream of mushroom", 
+            "1/4 cup evaporate milk", 
+            "1/2 cup chopped cilantro", 
+            "Salt and pepper to taste", 
+            "Salt and pepper to taste", 
+            "2 teaspoon vegetable oil", 
+            "1/2 pound ground turkey", 
+            "1/4 cup mince onion", 
+            "1/2 cup chopped cilantro", 
+            "2 tablespoons Worcestershire sauce", 
+            "1 egg", 
+            "1 cup Masa Harina", 
+            "Salt and pepper to taste", 
+            "Salt and pepper to taste", 
+            "enough oil for cooking"
+        ], 
+        "ingredients": [
+            "onions", 
+            "mushrooms", 
+            "cream of mushroom soup", 
+            "milk", 
+            "chopped cilantro", 
+            "salt", 
+            "pepper", 
+            "vegetable oil", 
+            "ground turkey", 
+            "worcestershire sauce", 
+            "eggs", 
+            "masa harina", 
+            "oil"
+        ], 
+        "recipeId": "Turkey-Croquets-with-Mushroom-Sauce-_SundaySupper-1385473", 
+        "recipeName": "Turkey Croquets with Mushroom Sauce #SundaySupper", 
+        "totalTimeInSeconds": 3300
+    }, 
+    "Unbelievably Easy Chicken and Rice Casserole": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.6666666666666666, 
+            "meaty": 0.5, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 cups cooked, diced chicken", 
+            "3/4 cup mayonnaise", 
+            "1 cup diced celery", 
+            "1 cup minute rice, uncooked", 
+            "1/4 cup slivered almonds", 
+            "1 Tbsp lemon juice", 
+            "3 eggs, hard boiled, sliced", 
+            "1 can cream of chicken soup", 
+            "1 Tbsp grated onion", 
+            "1/2 tsp salt", 
+            "1 cup crushed cornflakes", 
+            "1 Tbsp butter, melted"
+        ], 
+        "ingredients": [
+            "diced chicken", 
+            "mayonnaise", 
+            "diced celery", 
+            "minute rice", 
+            "slivered almonds", 
+            "lemon juice", 
+            "eggs", 
+            "cream of chicken soup", 
+            "onions", 
+            "salt", 
+            "crushed cornflakes", 
+            "butter"
+        ], 
+        "recipeId": "Unbelievably-Easy-Chicken-and-Rice-Casserole-1380516", 
+        "recipeName": "Unbelievably Easy Chicken and Rice Casserole", 
+        "totalTimeInSeconds": 2700
+    }, 
+    "Uptown Red Beans and Rice with Turkey Sausage": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.16666666666666666, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 tablespoons vegetable oil", 
+            "1 pound turkey sausage, sliced", 
+            "1 package (8 ounces) ZATARAIN'S\u00ae Red Beans and Rice", 
+            "3 cups water"
+        ], 
+        "ingredients": [
+            "vegetable oil", 
+            "turkey sausage", 
+            "red beans", 
+            "water"
+        ], 
+        "recipeId": "Uptown-Red-Beans-and-Rice-with-Turkey-Sausage-1356432", 
+        "recipeName": "Uptown Red Beans and Rice with Turkey Sausage", 
+        "totalTimeInSeconds": 2100
+    }, 
+    "Vegetable and Ricotta Lasagna Filling": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "2 lbs ricotta cheese", 
+            "2 eggs", 
+            "1/2 cup shredded mozzarella", 
+            "1/3 cup shredded pecorino romano", 
+            "1/2 teaspoon garlic powder", 
+            "1/2 cup fresh parsley, chopped", 
+            "1/2 cup fresh baby spinach, chopped", 
+            "1/2 cup shredded carrots", 
+            "1/2 cup fresh mushrooms, minced", 
+            "2 ribs of celery, minced", 
+            "1/4 teaspoon of ground black pepper"
+        ], 
+        "ingredients": [
+            "ricotta cheese", 
+            "eggs", 
+            "shredded mozzarella cheese", 
+            "pecorino romano cheese", 
+            "garlic powder", 
+            "fresh parsley", 
+            "baby spinach", 
+            "shredded carrots", 
+            "fresh mushrooms", 
+            "rib", 
+            "ground black pepper"
+        ], 
+        "recipeId": "Vegetable-and-Ricotta-Lasagna-Filling-1380384", 
+        "recipeName": "Vegetable and Ricotta Lasagna Filling", 
+        "totalTimeInSeconds": 900
+    }, 
+    "Walnut Crusted Pork Tenderloin": {
+        "course": [
+            "Main Dishes"
+        ], 
+        "cuisine": null, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.5
+        }, 
+        "ingredientLines": [
+            "16 oz pork tenderloin", 
+            "1 tsp salt", 
+            "1 tsp pepper", 
+            "2 cups walnuts", 
+            "2 tsp poultry seasoning", 
+            "1 cup flour", 
+            "4 Tbsp oil", 
+            "4 Tbsp butter", 
+            "6 Tbsp maple syrup", 
+            "1/2 cup chopped walnuts"
+        ], 
+        "ingredients": [
+            "pork tenderloin", 
+            "salt", 
+            "pepper", 
+            "walnuts", 
+            "poultry seasoning", 
+            "flour", 
+            "oil", 
+            "butter", 
+            "maple syrup", 
+            "chopped walnuts"
+        ], 
+        "recipeId": "Walnut-Crusted-Pork-Tenderloin-1385991", 
+        "recipeName": "Walnut Crusted Pork Tenderloin", 
+        "totalTimeInSeconds": 3300
     }
 }
