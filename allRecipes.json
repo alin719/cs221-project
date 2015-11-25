@@ -1,255 +1,412 @@
 {
-    "Crock Pot Chicken and Stuffing": {
+    "Brown Sugar Date Roast Turkey": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "holiday": [
+                "Thanksgiving"
+            ]
+        }, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.8333333333333334, 
+            "piquant": 0.0, 
+            "salty": 0.16666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.5
+        }, 
         "ingredientLines": [
-            "4 chicken breasts cut in half", 
-            "1 (6 ounce) package stuffing", 
-            "1\u20442 cup sour cream - lite sour cream is great", 
-            "1 (10\u00bd ounce) can of cream of chicken soup"
+            "2 TB boiling water", 
+            "2 TB dark brown sugar", 
+            "3 TB date syrup", 
+            "1 TB fresh grated ginger", 
+            "2 tsp apple cider vinegar", 
+            "2 tsp canola oil (plus more for baking dish)", 
+            "\u215b tsp ground cardamom", 
+            "\u215b tsp ground cinnamon", 
+            "Coarse salt", 
+            "Freshly cracked black pepper", 
+            "2 pounds turkey with skin on"
+        ], 
+        "ingredients": [
+            "boiling water", 
+            "dark brown sugar", 
+            "date honey", 
+            "ginger", 
+            "apple cider vinegar", 
+            "canola oil", 
+            "ground cardamom", 
+            "ground cinnamon", 
+            "coarse salt", 
+            "cracked black pepper", 
+            "turkey"
+        ], 
+        "recipeId": "Brown-Sugar-Date-Roast-Turkey-1383794", 
+        "recipeName": "Brown Sugar Date Roast Turkey", 
+        "totalTimeInSeconds": 900
+    }, 
+    "Chicken and Dumpling Casserole": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "cuisine": []
+        }, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.3333333333333333, 
+            "piquant": 0.0, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.16666666666666666
+        }, 
+        "ingredientLines": [
+            "1 lb chicken breasts, cooked and shredded", 
+            "2 cups chicken broth", 
+            "1 stick butter", 
+            "2 cups Bisquick", 
+            "2 cups milk", 
+            "1 can cream of chicken soup", 
+            "1/2 tsp dried sage", 
+            "1/2 tsp ground black pepper", 
+            "1/2 tsp salt", 
+            "1/2 tsp garlic powder", 
+            "Shredded Cheddar cheese"
         ], 
         "ingredients": [
             "chicken breasts", 
-            "stuffing", 
-            "sour cream", 
-            "cream of chicken soup"
-        ], 
-        "recipeId": "Crock-Pot-Chicken-and-Stuffing-1370704", 
-        "recipeName": "Crock Pot Chicken and Stuffing"
-    }, 
-    "Herb Crusted Lamb Chops": {
-        "ingredientLines": [
-            "6 lamb rib chops", 
-            "3 cloves garlic, minced", 
-            "2 tablespoons fresh rosemary, minced", 
-            "1 \u00bd tablespoons fresh thyme, minced", 
-            "Olive oil", 
-            "Freshly cracked sea salt and black pepper", 
-            "Freshly cracked sea salt and black pepper"
-        ], 
-        "ingredients": [
-            "lamb rib chops", 
-            "garlic", 
-            "fresh rosemary", 
-            "fresh thyme", 
-            "olive oil", 
-            "black pepper", 
-            "sea salt"
-        ], 
-        "recipeId": "Herb-Crusted-Lamb-Chops-1366197", 
-        "recipeName": "Herb Crusted Lamb Chops"
-    }, 
-    "Homemade Crispy & Easy Chicken Strips": {
-        "ingredientLines": [
-            "500 gms boneless chicken breasts", 
-            "2 tbsp ginger garlic paste", 
-            "1 tbsp crushed red chili flakes", 
-            "1 tsp black pepper powder", 
-            "1 egg", 
-            "salt to taste", 
-            "3 tbsp refined flour/maida", 
-            "2 cup corn flakes, crushed", 
-            "oil for frying"
-        ], 
-        "ingredients": [
-            "boneless chicken breast", 
-            "garlic paste", 
-            "crushed red pepper flakes", 
-            "black pepper", 
-            "eggs", 
-            "salt", 
-            "flour", 
-            "corn flakes", 
-            "oil"
-        ], 
-        "recipeId": "Homemade-Crispy-_-Easy-Chicken-Strips-1365442", 
-        "recipeName": "Homemade Crispy & Easy Chicken Strips"
-    }, 
-    "Roasted Prime Rib": {
-        "ingredientLines": [
-            "1 5.75 pound prime rib roast of beef (2 bones)", 
-            "Butter at room temperature", 
-            "Herbs de Provence", 
-            "Fresh cracked pepper", 
-            "Kosher salt \u2013 a generous amount"
-        ], 
-        "ingredients": [
-            "rib roast", 
-            "butter", 
-            "herbes de provence", 
-            "cracked black pepper", 
-            "kosher salt"
-        ], 
-        "recipeId": "Roasted-Prime-Rib-1365771", 
-        "recipeName": "Roasted Prime Rib"
-    }, 
-    "Runzas (Bierocks)": {
-        "ingredientLines": [
-            "12 Rhodes Texas\u2122 Rolls, or 24 Rhodes\u2122 Dinner Rolls, thawed but still cold", 
-            "4 cups sliced cabbage", 
-            "1 cup sliced yellow onion", 
-            "1 tablespoon vegetable oil", 
-            "8 ounces ground beef", 
-            "1 teaspoon sugar", 
-            "1 tablespoon vinegar", 
-            "1 teaspoon salt", 
-            "1 teaspoon pepper", 
-            "1 cup mozzarella cheese, grated", 
-            "2 tablespoons butter, melted"
-        ], 
-        "ingredients": [
-            "Rhodes Dinner Rolls", 
-            "cabbage", 
-            "yellow onion", 
-            "vegetable oil", 
-            "ground beef", 
-            "sugar", 
-            "vinegar", 
-            "salt", 
-            "pepper", 
-            "mozzarella cheese", 
-            "butter"
-        ], 
-        "recipeId": "Runzas-_Bierocks_-1365224", 
-        "recipeName": "Runzas (Bierocks)"
-    }, 
-    "Simple Beef Stew": {
-        "ingredientLines": [
-            "3 Tablespoons Olive Oil", 
-            "2 pounds Chuck Roast, trimmed and diced", 
-            "1 whole Medium Onion, Diced", 
-            "3 cloves Garlic, Minced", 
-            "4 cups Beef Broth or Stock", 
-            "2 cups Water (additional, If Needed)", 
-            "1 Tablespoon Worcestershire Sauce", 
-            "2 Tablespoons Tomato Paste", 
-            "1-15 ounce can diced tomatoes", 
-            "\u00bd teaspoon Paprika", 
-            "\u00bd teaspoon Kosher Salt", 
-            "1 teaspoon Liquid Smoke (optional)", 
-            "Freshly Ground Black Pepper", 
-            "2 teaspoons brown sugar", 
-            "3 whole Carrots peeled and sliced into 1 inch pieces", 
-            "2 stalks celery, cut into 1 inch pieces", 
-            "2 medium Russet Potatoes, peeled and cut into 1 inch chunks", 
-            "3 tablespoons flour", 
-            "Minced Parsley (optional)"
-        ], 
-        "ingredients": [
-            "olive oil", 
-            "chuck roast", 
-            "onions", 
-            "garlic", 
-            "beef broth", 
-            "water", 
-            "worcestershire sauce", 
-            "tomato paste", 
-            "diced tomatoes", 
-            "paprika", 
-            "kosher salt", 
-            "liquid smoke", 
-            "freshly ground black pepper", 
-            "brown sugar", 
-            "carrots", 
-            "celery", 
-            "russet potatoes", 
-            "flour", 
-            "parsley"
-        ], 
-        "recipeId": "Simple-Beef-Stew-1368435", 
-        "recipeName": "Simple Beef Stew"
-    }, 
-    "Sloppy Joe\u2019s": {
-        "ingredientLines": [
-            "2 lbs. Lean Ground Beef 1 tsp.Mustard", 
-            "2 lbs. Lean Ground Beef 1 tsp.Mustard", 
-            "3/4 C. Chopped Onions 4 TBSP. Brown Sugar", 
-            "3/4 C. Chopped Onions 4 TBSP. Brown Sugar", 
-            "1 TBSP. Flour in 1/2 Water 2 tsp. Vinegar", 
-            "1 TBSP. Flour in 1/2 Water 2 tsp. Vinegar", 
-            "1 C. Ketchup 2 tsp. Worcestershire Sauce", 
-            "1 C. Ketchup 2 tsp. Worcestershire Sauce"
-        ], 
-        "ingredients": [
-            "lean ground beef", 
-            "mustard", 
-            "brown sugar", 
-            "onions", 
-            "flour", 
-            "vinegar", 
-            "ketchup", 
-            "worcestershire sauce"
-        ], 
-        "recipeId": "Sloppy-Joes-1363957", 
-        "recipeName": "Sloppy Joe\u2019s"
-    }, 
-    "Slow Cooker Cheesy Rice and Chicken Casserole": {
-        "ingredientLines": [
-            "4 boneless, skinless chicken breasts", 
-            "1 can cream of chicken soup", 
-            "1 medium sized onion, diced", 
-            "1 (8 oz) box yellow rice like Zatarain\u2019s, prepared according to package directions", 
-            "1 cup shredded cheddar cheese", 
-            "1 (15 oz) can corn, drained"
-        ], 
-        "ingredients": [
-            "boneless skinless chicken breasts", 
-            "cream of chicken soup", 
-            "onions", 
-            "yellow rice", 
-            "shredded cheddar cheese", 
-            "corn"
-        ], 
-        "recipeId": "Slow-Cooker-Cheesy-Rice-and-Chicken-Casserole-1368283", 
-        "recipeName": "Slow Cooker Cheesy Rice and Chicken Casserole"
-    }, 
-    "Spicy Sage Slow Cooker Turkey": {
-        "ingredientLines": [
-            "1 frozen GF turkey {5-7 pounds}, thawed, cleaned, and baggies taken out", 
-            "\u00bd GF chicken broth", 
-            "4 TBSP butter", 
-            "garlic powder", 
-            "chopped sage", 
-            "crushed red pepper flakes", 
-            "chopped dried onion"
-        ], 
-        "ingredients": [
-            "turkey", 
             "chicken broth", 
             "butter", 
+            "bisquick", 
+            "milk", 
+            "cream of chicken soup", 
+            "dried sage", 
+            "ground black pepper", 
+            "salt", 
             "garlic powder", 
-            "sage", 
-            "crushed red pepper flakes", 
-            "onions"
+            "shredded cheddar cheese"
         ], 
-        "recipeId": "Spicy-Sage-Slow-Cooker-Turkey-1370352", 
-        "recipeName": "Spicy Sage Slow Cooker Turkey"
+        "recipeId": "Chicken-and-Dumpling-Casserole-1387677", 
+        "recipeName": "Chicken and Dumpling Casserole", 
+        "totalTimeInSeconds": 4200
     }, 
-    "Stove Top Butternut Squash Mac and Cheese": {
+    "Crock Pot Sweet Pork": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ]
+        }, 
+        "flavors": {
+            "bitter": 0.5, 
+            "meaty": 0.5, 
+            "piquant": 0.8333333333333334, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.6666666666666666
+        }, 
         "ingredientLines": [
-            "3 cups butternut squash, \u00bc\" to \u00bd\" cubed", 
-            "1 tablespoon olive oil, for roasting", 
-            "\u00bc cup steaming water or vegetable broth", 
-            "10 ounces pasta (any type of smaller pasta like elbow, fusilli, penne, etc)", 
-            "1\u00bd cups water", 
-            "1\u00bd cups whole milk", 
-            "\u00bd teaspoon salt", 
-            "\u00bd teaspoon black pepper", 
-            "\u00bd teaspoon garlic powder", 
-            "\u00bc teaspoons smoked paprika", 
-            "4 ounces shredded sharp cheddar"
+            "2 lbs boneless pork", 
+            "2 cups salsa", 
+            "1 cup brown sugar"
         ], 
         "ingredients": [
-            "butternut squash", 
-            "olive oil", 
-            "water", 
-            "pasta", 
-            "whole milk", 
-            "salt", 
-            "black pepper", 
-            "garlic powder", 
-            "smoked paprika", 
-            "shredded sharp cheddar cheese"
+            "pork", 
+            "salsa", 
+            "brown sugar"
         ], 
-        "recipeId": "Stove-Top-Butternut-Squash-Mac-and-Cheese-1367596", 
-        "recipeName": "Stove Top Butternut Squash Mac and Cheese"
+        "recipeId": "Crock-Pot-Sweet-Pork-1385772", 
+        "recipeName": "Crock Pot Sweet Pork", 
+        "totalTimeInSeconds": 1500
+    }, 
+    "Hasselback Chicken ~ Cajun with Pepper Jack & Spinach": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ]
+        }, 
+        "flavors": null, 
+        "ingredientLines": [
+            "2 boneless, skinless chicken breast halves, about 1 1/2 lb", 
+            "4 oz pepper jack cheese, sliced into thin 1/4 inch slices", 
+            "1/2 c cooked spinach (frozen and thawed or sauteed fresh)", 
+            "1 tbsp seasoned bread crumb", 
+            "1/2 tbsp Cajun seasoning", 
+            "Salt, to taste", 
+            "Pepper, to taste"
+        ], 
+        "ingredients": [
+            "boneless skinless chicken breast halves", 
+            "pepper jack", 
+            "spinach", 
+            "crumbs", 
+            "cajun seasoning", 
+            "salt", 
+            "pepper"
+        ], 
+        "recipeId": "Hasselback-Chicken-_-Cajun-with-Pepper-Jack-_-Spinach-1385647", 
+        "recipeName": "Hasselback Chicken ~ Cajun with Pepper Jack & Spinach", 
+        "totalTimeInSeconds": 2700
+    }, 
+    "Holiday Glazed Baked Ham": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "holiday": [
+                "Christmas"
+            ]
+        }, 
+        "flavors": null, 
+        "ingredientLines": [
+            "9-12 pound fully cooked ham, bone-in, shank or butt end", 
+            "1 cup pineapple juice", 
+            "\u00bd cup brown sugar", 
+            "\u00bc cup mustard", 
+            "\u00bd teaspoon ground cloves", 
+            "10-12 pineapple rings", 
+            "small jar of maraschino cherries", 
+            "whole cloves"
+        ], 
+        "ingredients": [
+            "fully cooked ham", 
+            "pineapple juice", 
+            "brown sugar", 
+            "mustard", 
+            "ground cloves", 
+            "pineapple rings", 
+            "cocktail cherries", 
+            "whole cloves"
+        ], 
+        "recipeId": "Holiday-Glazed-Baked-Ham-1386266", 
+        "recipeName": "Holiday Glazed Baked Ham", 
+        "totalTimeInSeconds": 12000
+    }, 
+    "Mozzarella Stick Marinara Burger": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "cuisine": []
+        }, 
+        "flavors": null, 
+        "ingredientLines": [
+            "1 lb ground beef", 
+            "12 Mozzarella sticks", 
+            "4 slices Provolone cheese", 
+            "Marinara sauce", 
+            "4 Ciabatta rolls", 
+            "olive oil"
+        ], 
+        "ingredients": [
+            "ground beef", 
+            "mozzarella cheese", 
+            "provolone cheese", 
+            "marinara sauce", 
+            "Ciabatta rolls", 
+            "olive oil"
+        ], 
+        "recipeId": "Mozzarella-Stick-Marinara-Burger-1386262", 
+        "recipeName": "Mozzarella Stick Marinara Burger", 
+        "totalTimeInSeconds": 1800
+    }, 
+    "Oven Baked Beef Stew": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ]
+        }, 
+        "flavors": {
+            "bitter": 0.8333333333333334, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.8333333333333334, 
+            "sour": 0.6666666666666666, 
+            "sweet": 0.3333333333333333
+        }, 
+        "ingredientLines": [
+            "1 envelope (1 oz) dry onion soup mix", 
+            "\u00bd teaspoon salt", 
+            "\u00bd teaspoon paprika", 
+            "1\u00bd lbs lean beef stew meat, chunked", 
+            "3 potatoes, unpeeled and chunked", 
+            "1 large yellow onion, diced", 
+            "1 bag (16 oz) baby carrots", 
+            "1 can (14.5 oz) condensed cream of celery soup", 
+            "\u00bd cup ketchup"
+        ], 
+        "ingredients": [
+            "onion soup mix", 
+            "salt", 
+            "paprika", 
+            "beef stew meat", 
+            "potatoes", 
+            "yellow onion", 
+            "baby carrots", 
+            "condensed cream of celery soup", 
+            "ketchup"
+        ], 
+        "recipeId": "Oven-Baked-Beef-Stew-1383621", 
+        "recipeName": "Oven Baked Beef Stew", 
+        "totalTimeInSeconds": 7200
+    }, 
+    "Perfect Roast Turkey": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "holiday": [
+                "Thanksgiving", 
+                "Fall"
+            ]
+        }, 
+        "flavors": null, 
+        "ingredientLines": [
+            "6 quarts (24 cups) cold water", 
+            "1 3/4 cups coarse or kosher salt, plus more for seasoning", 
+            "1 cup granulated sugar", 
+            "3 medium onions, peeled and coarsely chopped", 
+            "3 leeks, white and pale green parts only, coarsely chopped and washed well", 
+            "3 carrots, peeled and coarsely chopped", 
+            "3 celery stalks, coarsely chopped", 
+            "3 dried bay leaves", 
+            "6 sprigs thyme", 
+            "6 sprigs fresh flat-leaf parsley", 
+            "1 tablespoon whole black peppercorns", 
+            "2 loaves good-quality white bread, cut into 3/4-inch cubes (about 20 cups)", 
+            "1 1/2 pounds (4 cups) fresh chestnuts", 
+            "12 tablespoons (6 ounces) unsalted butter", 
+            "4 small onions, peeled and cut into 1/4-inch dice (about 4 cubes)", 
+            "1 bunch celery, cut into 1/4-inch dice (about 4 cups)", 
+            "3 tablespoons finely chopped fresh sage", 
+            "5 cups chicken stock", 
+            "3 cups coarsely chopped fresh flat-leaf parsley", 
+            "1 tablespoon coarse salt", 
+            "Freshly ground black pepper", 
+            "1 fresh whole (18 to 20 pounds) turkey, rinsed and patted dry, giblets and neck reserved for gravy", 
+            "8 tablespoons (4 ounces) unsalted butter, melted, plus 4 tablespoons more, at room temperature", 
+            "1 1/2 cups dry white wine, such as Sauvignon Blanc", 
+            "Coarse salt and freshly ground black pepper", 
+            "Coarse salt and freshly ground black pepper", 
+            "Chestnut stuffing", 
+            "Lady apples (optional)", 
+            "Fresh sage leaves (optional)", 
+            "Whole chestnuts (optional)", 
+            "Reserved giblets and neck from turkey", 
+            "3 tablespoons unsalted butter", 
+            "2 celery stalks, coarsely chopped", 
+            "1 medium carrot, coarsely chopped", 
+            "1 leek, white and pale-green parts only, coarsely chopped and well washed", 
+            "1 medium onion, peeled and coarsely chopped", 
+            "3 sprigs fresh thyme", 
+            "3 sprigs fresh flat-leaf parsley", 
+            "1 sprig fresh rosemary", 
+            "1 bay leaf", 
+            "5 whole black peppercorns", 
+            "1 quart water", 
+            "3/4 cup dry white wine", 
+            "3 tablespoons all-purpose flour", 
+            "Coarse salt and freshly ground black pepper", 
+            "Coarse salt and freshly ground black pepper"
+        ], 
+        "ingredients": [
+            "cold water", 
+            "kosher salt", 
+            "granulated sugar", 
+            "onions", 
+            "leeks", 
+            "carrots", 
+            "celery ribs", 
+            "bay leaves", 
+            "thyme", 
+            "flat leaf parsley", 
+            "black peppercorns", 
+            "white bread", 
+            "chestnuts", 
+            "unsalted butter", 
+            "celery", 
+            "chopped fresh sage", 
+            "chicken stock", 
+            "coarse salt", 
+            "freshly ground black pepper", 
+            "turkey", 
+            "dry white wine", 
+            "stuffing", 
+            "lady apples", 
+            "sage leaves", 
+            "giblet", 
+            "fresh thyme", 
+            "fresh rosemary", 
+            "bay leaf", 
+            "water", 
+            "all-purpose flour"
+        ], 
+        "recipeId": "Perfect-Roast-Turkey-1384445", 
+        "recipeName": "Perfect Roast Turkey", 
+        "totalTimeInSeconds": 21600
+    }, 
+    "Slow Cooker Balsamic Pot Roast": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ]
+        }, 
+        "flavors": {
+            "bitter": 0.3333333333333333, 
+            "meaty": 0.16666666666666666, 
+            "piquant": 0.16666666666666666, 
+            "salty": 0.6666666666666666, 
+            "sour": 0.16666666666666666, 
+            "sweet": 0.6666666666666666
+        }, 
+        "ingredientLines": [
+            "2 lbs rump (chuck or round) roast", 
+            "1 cup chicken (beef) broth", 
+            "1/3 cup balsamic vinegar", 
+            "2 tbsp raw honey or maple syrup", 
+            "1 tbsp soy sauce (I used Bragg\u2019s)", 
+            "1 tbsp dijon mustard", 
+            "1 garlic clove, crushed"
+        ], 
+        "ingredients": [
+            "roast", 
+            "chicken", 
+            "balsamic vinegar", 
+            "raw honey", 
+            "soy sauce", 
+            "dijon mustard", 
+            "garlic cloves"
+        ], 
+        "recipeId": "Slow-Cooker-Balsamic-Pot-Roast-1387872", 
+        "recipeName": "Slow Cooker Balsamic Pot Roast", 
+        "totalTimeInSeconds": 2400
+    }, 
+    "Turkey Enchiladas Recipe {Freezer Friendly}": {
+        "attributes": {
+            "course": [
+                "Main Dishes"
+            ], 
+            "cuisine": [
+                "Mexican"
+            ]
+        }, 
+        "flavors": null, 
+        "ingredientLines": [
+            "4 cups turkey meat, chopped", 
+            "2 (10 oz) cans of red enchilada sauce", 
+            "4 oz can green chilies", 
+            "4 cups Mexican cheese, shredded", 
+            "20 corn tortillas"
+        ], 
+        "ingredients": [
+            "turkey meat", 
+            "red enchilada sauce", 
+            "green chilies", 
+            "Mexican cheese", 
+            "corn tortillas"
+        ], 
+        "recipeId": "Turkey-Enchiladas-Recipe-_Freezer-Friendly_-1386177", 
+        "recipeName": "Turkey Enchiladas Recipe {Freezer Friendly}", 
+        "totalTimeInSeconds": 2700
     }
 }
