@@ -76,6 +76,7 @@ def main(argv):
     # Separate complete cookbook text into individual recipe chunks
     allRecipes = separateRawRecipeTexts(res_dirName)
 
+    ### Tag: Debugging Code
     # Just seeing if recipe texts were filled
     for recipe in allRecipes[:2]:
         print recipe.getAllRecipeText() 
@@ -694,34 +695,35 @@ def makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, s
                 vals.append(tokensDefault[0])
                 reverseSeedMap.append(currentSeedDefault,vals)
 
+# Function: makeEndSeedMap
+# ------------------------
+# Makes a map from all end seeds to the other end seeds they've been seen with.
+# Ex:
+#  - endSeedMap originally is {}
+#  - First recipe has large carrots, ground pepper, and grilled chicken
+#  - After processing first recipe, endSeedMap is:
+#       - {("large", "carrots"): [("ground", "pepper"), ("grilled", "chicken")],
+#          ("ground", "pepper"): [("large", "carrots"), ("grilled", "chicken")],
+#          ("grilled", "chicken"): [("ground", "pepper"), ("large", "carrots")]
+#          }
 def makeEndSeedMap(allRecipes, endSeedMap):
-    for i in xrange(0, len(allRecipes)):
-        currentRecipe = allRecipes[i]
+    for currentRecipe in allRecipes:
         endSeeds = currentRecipe.getEndSeeds()
         for j in xrange(0, len(endSeeds)):
-            key = []
-            key += endSeeds[j]
-            vals = []
-            for k in xrange(0, len(endSeeds)):
-                if (j==k):
-                    break
-                else:
-                    vals.append(endSeeds[k])
-            if key not in endSeedMap:
-                endSeedMap.append(key, vals)
-            else:
-                currentVals = []
-                currentVals = endSeedMap[key]
-                vals += currentVals
-                endSeedMap[key] = vals
+            key = endSeeds[j]
+            vals = [endSeeds[k] for k in xrange(0, len(endSeeds)) if k != j]:
+            endSeedMap[key] = endSeedMap.get(key, []) + vals
 
+# Function: deleteOneIngredientRecipes
+# ------------------------------------
+# allRecipes will have no recipes with only 1 ingredient
+# after this function is executed.
 def deleteOneIngredientRecipes(allRecipes):
-    newAllRecipes = []
-    for i in xrange(0, len(allRecipes)):
+    for i in reversed(xrange(0, len(allRecipes))):
         currentRecipe = allRecipes[i]
-        if not (len(currentRecipe.getEndSeeds()) == 1 or len(currentRecipe.getEndSeeds()) == 0):
-            newAllRecipes.append(currentRecipe)
-    allRecipes = newAllRecipes
+        numEndSeeds = len(currentRecipe.getEndSeeds())
+        if numEndSeeds == 1 or numEndSeeds == 0:
+            allRecipes.pop(i)
 
 def splitRecipes(allRecipes, adjectives, endSeedLength):
     for i in xrange(0, len(allRecipes)):
