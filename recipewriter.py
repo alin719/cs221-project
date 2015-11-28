@@ -76,13 +76,6 @@ def main(argv):
     # Separate complete cookbook text into individual recipe chunks
     allRecipes = separateRawRecipeTexts(res_dirName)
 
-    ### Tag: Debugging Code
-    # Just seeing if recipe texts were filled
-    for recipe in allRecipes[:2]:
-        print recipe.getAllRecipeText() 
-        print "\n\n ---- RECIPE END ---- \n\n"
-    return
-
     # Parse each individual recipe into its component parts
     splitRecipes(allRecipes, adjectives, endSeedLength)
 
@@ -275,47 +268,120 @@ def main(argv):
 def separateRawRecipeTexts(res_dirName):
     cookbook_fileName = os.path.join(res_dirName, "MarthaStewart-LivingCookbook.txt")
     allText = open(cookbook_fileName, 'r').read()
+
+    # Remove any lines from allText that have any 
+    # all-caps words in them that aren't MAKES or SERVES. These 
+    # deleted lines are unimportant.
+    allText = removeAllCapsLines(allText)
+
     allRecipes = []
-    index = 0
-    recipeInd = 0
-    newLinesSinceLastMakesServes = 100
-    while (True):
-        if index == len(allText):
-            indEndLastRecipe = len(allText) - 1
-            previousRecipe = allRecipes[recipeInd-1]
-            lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-            previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : lengthOfLastRecipe])
-            allRecipes[recipeInd-1] = previousRecipe
-            break
-        makesOrServes = ""
-        if (index < len(allText)-7):
-            makesOrServes = allText[index : index + 6]
-        if (newLinesSinceLastMakesServes > 5 and (makesOrServes == "MAKES " or makesOrServes == "SERVES")):
+    lines = allText.split('\n')
+    numLines = len(lines)
+    print "num lines in cookbook: ", len(lines)
+    pastFirstRecipe = False
+    recipeIndBounds = [0, None]
+    for ind, line in enumerate(lines):
+        lineWords = line.strip().split()
+        if ind == numLines - 1:
+            # This accounts for the last recipe
             newRecipe = Recipe()
-            newLinesSinceLastMakesServes = 0
-            indStartRecipe = findIndPreviousTitle(index, allText)
-            newRecipe.setIndStartRecipe(indStartRecipe)
+            newRecipe.allRecipeText = "\n".join(lines[recipeIndBounds[0]:])
+            newRecipe.recipeCharLength = len(newRecipe.allRecipeText)
+            allRecipes.append(newRecipe)
+        elif lineWords != [] and (lineWords[0] in ["MAKES", "SERVES"]):
+
+            # Doesn't work on first iteration, so have to punt
+            if pastFirstRecipe == False:
+                pastFirstRecipe = True
+                continue
+
+            # Create new recipe for insertion into allRecipes list
+            newRecipe = Recipe()
+
+            # Find nearest previous non-blank line
+            indFirstPrevNonBlank = ind - 1
+            while True:
+                if indFirstPrevNonBlank <= 0 or lines[indFirstPrevNonBlank] != '':
+                    break
+                indFirstPrevNonBlank -= 1
+
+            # Find nearest previous blank line after nearest previous non-blank line
+            indSecondPrevBlank = indFirstPrevNonBlank - 1
+            while True:
+                if indSecondPrevBlank <= 0 or lines[indSecondPrevBlank] == '':
+                    break
+                indSecondPrevBlank -= 1
+
+            recipeIndBounds[1] = indSecondPrevBlank
+
+            newRecipe.allRecipeText = "\n".join(lines[recipeIndBounds[0]:recipeIndBounds[1]])
+            newRecipe.recipeCharLength = len(newRecipe.allRecipeText)
             allRecipes.append(newRecipe)
 
-            if (recipeInd != 0):
-                indEndLastRecipe = findIndEndLastRecipe(indStartRecipe, allText)
-                previousRecipe = allRecipes[recipeInd-1]
-                lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-                previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : previousRecipe.getIndStartRecipe() + lengthOfLastRecipe])
-                previousRecipe.setRecipeCharLength(lengthOfLastRecipe)
-                allRecipes[recipeInd-1] = previousRecipe
-            recipeInd += 1
-        if (allText[index] == '\n'):
-            newLinesSinceLastMakesServes += 1
-        index += 1
+            recipeIndBounds[0] = recipeIndBounds[1]
+    allRecipes = [recipe for recipe in allRecipes if recipe.allRecipeText != '']
+    print "num recipes: ", len(allRecipes)
     return allRecipes
+
+
+
+
+
+    # index = 0
+    # recipeInd = 0
+    # newLinesSinceLastMakesServes = 100
+    # while True:
+    #     if index == len(allText):
+    #         indEndLastRecipe = len(allText) - 1
+    #         previousRecipe = allRecipes[recipeInd-1]
+    #         lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
+    #         previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : lengthOfLastRecipe])
+    #         allRecipes[recipeInd-1] = previousRecipe
+    #         break
+    #     makesOrServes = ""
+    #     if (index < len(allText)-7):
+    #         makesOrServes = allText[index : index + 6]
+    #     if newLinesSinceLastMakesServes > 5 and (makesOrServes == "MAKES " or makesOrServes == "SERVES"):
+    #         newRecipe = Recipe()
+    #         newLinesSinceLastMakesServes = 0
+    #         indStartRecipe = findIndPreviousTitle(index, allText)
+    #         newRecipe.setIndStartRecipe(indStartRecipe)
+    #         allRecipes.append(newRecipe)
+
+    #         if recipeInd != 0:
+    #             indEndLastRecipe = findIndEndLastRecipe(indStartRecipe, allText)
+    #             previousRecipe = allRecipes[recipeInd-1]
+    #             lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
+    #             previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : previousRecipe.getIndStartRecipe() + lengthOfLastRecipe])
+    #             previousRecipe.setRecipeCharLength(lengthOfLastRecipe)
+    #             allRecipes[recipeInd-1] = previousRecipe
+    #         recipeInd += 1
+    #     if (allText[index] == '\n'):
+    #         newLinesSinceLastMakesServes += 1
+    #     index += 1
+
+##
+# Function: Recipe::removeAllCapsLines
+# ------------------------------------
+# Remove any lines from the text that don't have the all-caps words
+# MAKES or SERVES. These deleted lines are unimportant.
+##
+def removeAllCapsLines(text):
+    newText = []
+    lines = [(line, line.strip().split(" ")) for line in text.split('\n')]
+    for line, lineWords in lines:
+        allCapsWords = [word for word in lineWords if word.isupper()]
+        if allCapsWords == [] or lineWords[0] in ["MAKES", "SERVES"]:
+            newText += [line]
+    newText = "\n".join(newText)
+    return newText
 
 
 def findIndEndLastRecipe(indStartRecipe, allText):
     indEndLastRecipe = 0
     currentIndex = indStartRecipe-1
     while (True):
-        if (currentIndex == 0):
+        if currentIndex == 0:
             indEndLastRecipe = -1
             break
         currentChar = allText[currentIndex]
@@ -477,7 +543,7 @@ def makeRandomInstructions(bigVec, ingredientsList):
 def refineReverseSeedMapKeys(reverseSeedMap):
     for key in reverseSeedMap.keys():
         if "$" in key or "%" in key:
-            reverseSeedMap.remove(key)
+            reverseSeedMap.pop(key, None)
 
 
 def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLength, endSeedLength, endSeedSeedLength):
@@ -711,13 +777,15 @@ def makeEndSeedMap(allRecipes, endSeedMap):
         endSeeds = currentRecipe.getEndSeeds()
         for j in xrange(0, len(endSeeds)):
             key = endSeeds[j]
-            vals = [endSeeds[k] for k in xrange(0, len(endSeeds)) if k != j]:
+            vals = [endSeeds[k] for k in xrange(0, len(endSeeds)) if k != j]
             endSeedMap[key] = endSeedMap.get(key, []) + vals
 
+##
 # Function: deleteOneIngredientRecipes
 # ------------------------------------
 # allRecipes will have no recipes with only 1 ingredient
 # after this function is executed.
+##
 def deleteOneIngredientRecipes(allRecipes):
     for i in reversed(xrange(0, len(allRecipes))):
         currentRecipe = allRecipes[i]
@@ -726,20 +794,28 @@ def deleteOneIngredientRecipes(allRecipes):
             allRecipes.pop(i)
 
 def splitRecipes(allRecipes, adjectives, endSeedLength):
-    for i in xrange(0, len(allRecipes)):
-        myRecipe = allRecipes[i]
-        allRecipeText = myRecipe.getAllRecipeText()
-        if allRecipeText == "":
-            continue
-        myRecipe.removeCaps()
-        try:
-            title = myRecipe.findTitle()
-            myRecipe.setName(title)
-        except IndexError:
-            print i
-            print allRecipeText
-        myRecipe.setNumServings(myRecipe.findNumServings())
-        myRecipe.setAllIngredientsText(myRecipe.findAllIngredients())
+    # for recipe in allRecipes[:3]:
+    #     print len(recipe.allRecipeText)
+    # sys.exit()
+    for i, myRecipe in enumerate(allRecipes):
+
+        # Find the title of this recipe in myRecipe.allRecipeText and set
+        # myRecipe.name equal to that title.
+        myRecipe.findAndSetTitle()
+
+        # Find and set the number of servings this recipe makes.
+        myRecipe.findAndSetNumServings()
+
+        # Split myRecipe.allRecipeText into myRecipe.allIngredientsText
+        # and myRecipe.allInstructionsText
+        myRecipe.splitIngredientsInstructionText()
+
+        myRecipe.printAllInstructionText()
+        myRecipe.printAllIngredientsText()
+
+        if i==2:
+            sys.exit()
+
         myRecipe.separateIngredients(adjectives)
         myRecipe.separateInstructions()
         myRecipe.findIngredientAmounts()
@@ -959,4 +1035,5 @@ def getAllAtOnceResponse(argv):
 
 # If called from command line, call the main() function
 if __name__ == "__main__":
-    main(sys.argv)
+    #main(sys.argv)
+    main(sys.argv + ["-d"])

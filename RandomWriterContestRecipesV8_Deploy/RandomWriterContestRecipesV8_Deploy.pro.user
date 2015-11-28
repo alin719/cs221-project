@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.2.1, 2015-03-27T16:35:54. -->
+<!-- Written by QtCreator 3.2.1, 2015-11-27T14:42:30. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -235,8 +235,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">RandomWriterContestRecipesV8_Deploy</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/austin_ray/Documents/Stanford_14_15/Winter_Classes/CS_106B/Assignments/RandomWriterContest/RandomWriterContestRecipesV8_Deploy/RandomWriterContestRecipesV8_Deploy.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RandomWriterContestRecipesV8_Deploy2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/austin_ray/GitHub/cs221-project/RandomWriterContestRecipesV8_Deploy/RandomWriterContestRecipesV8_Deploy.pro</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">RandomWriterContestRecipesV8_Deploy.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
