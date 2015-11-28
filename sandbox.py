@@ -200,11 +200,19 @@ with plastic wrap. """
 	print "sentVec: ", sentVec
 	print ""
 
+def test_split3():
+	myW = "hey"
+	wSplit = myW.split(" ")
+	print "\"hey\".split(' '): ", wSplit
+	print ""
+
 
 # test_slicing()
 # test_split1()
 # test_chain1()
-test_chain2()
-test_split2()
-test_isupper()
-test_regex1()
+# test_chain2()
+# test_split2()
+# test_isupper()
+# test_regex1()
+
+test_split3()

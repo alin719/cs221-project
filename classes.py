@@ -15,9 +15,11 @@ class Ingredient:
         self.units = ""
         self.ingredientName = ""
         self.entireLine = ""          # Contains amount, units, and ingredient name
+        self.cleanLine = ""           # Line with the % at the beginning and numbers added
         self.lineWithoutAmount = ""
 
         self.wordsInIngredient = []            # Vector of strings
+        self.cleanWordsInIngredient = []       # Words including '%' and numbers
         self.nonUnitWordsInIngredient = []     # Vector of strings
         self.endSeed = []                      # Vector of strings
 
@@ -260,8 +262,7 @@ class Recipe:
 
     def findSeedsInInstructionSentences(self):
         servingWords = ["Serve", "serve", "Served", "served"]
-        for i in xrange(0, len(self.instructionSteps)):
-            myInstructionStep = self.instructionSteps[i]
+        for i, myInstructionStep in enumerate(self.instructionSteps):
             for j in xrange(0, len(myInstructionStep.instructionSentences)):
                 myInstructionSent = myInstructionStep.instructionSentences[j]
                 sentence = myInstructionSent.sentence
@@ -286,9 +287,9 @@ class Recipe:
                     if (previousPreviousToken in servingWords or previousToken in servingWords or currentToken in servingWords):
                         myInstructionSent.isServingSentence = True
                 myInstructionSent.sentence = myInstructionSent.sentence.replace("\n", "")
-                if (myInstructionSent.isGoodSentence):
+                if myInstructionSent.isGoodSentence:
                     self.goodInstructionSentences.append(myInstructionSent)
-                if (myInstructionSent.isServingSentence):
+                if myInstructionSent.isServingSentence:
                     self.servingInstructionSentences.append(myInstructionSent)
                 myInstructionStep.instructionSentences[j] = myInstructionSent
             self.instructionSteps[i] = myInstructionStep
@@ -363,20 +364,26 @@ class Recipe:
         for i in xrange(0, len(self.ingredients)):
             myIngredient = self.ingredients[i]
             words = myIngredient.wordsInIngredient
+            endSeed = None
             if len(words) <= endSeedLength:
-                myIngredient.endSeed = tuple([word for word in words if not isUnit(word)])
+                endSeed = [word for word in words if not self.isUnit(word)]
             else:
-                myIngredient.endSeed = words[-endSeedLength:]
-
+                endSeed = words[-endSeedLength:]
+            myIngredient.endSeed = tuple([w for w in endSeed if len(w) > 1])
             self.ingredients[i] = myIngredient
             self.endSeeds.append(myIngredient.endSeed)
 
+    ##
+    # Function: Recipe::isUnit
+    # ------------------------
+    # Returns True if the word is a unit word like "cup" or "teaspoon"
+    # and returns False otherwise.
+    ##
     def isUnit(self, word):
-        return word in self.NORMAL_UNITS or word in NORMAL_UNITS_PLURAL
+        return word in self.NORMAL_UNITS or word in self.NORMAL_UNITS_PLURAL
 
     def findIngredientAmounts(self):
-        for i in xrange(0, len(self.ingredients)):
-            myIngredient = self.ingredients[i]
+        for i, myIngredient in enumerate(self.ingredients):
             line = myIngredient.entireLine
             if line[0].isdigit():
                 numString = ""
@@ -403,49 +410,42 @@ class Recipe:
                 myIngredient.amount = numString
             else:
                 myIngredient.amount = "NO_LEADING_NUMBER"
-            ingredients[i] = myIngredient
+            self.ingredients[i] = myIngredient
 
     def findIngredientUnits(self):
-        for i in xrange(0, len(self.ingredients)):
-            myIngredient = ingredients[i]
-            line = myIngredient.entireLine
-            myVec = stringSplit(line, " ")
+        for i, ingredient in enumerate(self.ingredients):
+            line = ingredient.entireLine
+            words = line.split(" ")
             theUnits = ""
             unitsFound = False
-            for i in xrange(0, len(myVec)):
-                if (isUnit(myVec[i])):
-                    theUnits = myVec[i]
-                    unitsFound = True
+            for word in words:
+                if self.isUnit(word):
+                    ingredient.units = word
                     break
-                if (unitsFound):
-                    break
-            myIngredient.units = theUnits
-            ingredients[i] = myIngredient
+            self.ingredients[i] = ingredient
 
     def fillIngredientWords(self):
-        for i in xrange(0, len(self.ingredients)):
-            myIngredient = ingredients[i]
+        for i, myIngredient in enumerate(self.ingredients):
             line = myIngredient.entireLine
-            wordsInIngredient = stringSplit(line, " ")
-            for i in xrange(0, len(wordsInIngredient)):
-                word = wordsInIngredient[i]
+            wordsInIngredient = line.split(" ")
+            for j, word in enumerate(wordsInIngredient):
                 newWord = ""
                 for ch in word:
                     if not ch.isalpha():
                         newWord += " "
                     else:
                         newWord += ch
-                wordsInIngredient[i] = newWord
+                wordsInIngredient[j] = newWord
 
             ingredientWords = []
-            validWord = True
-            for i in xrange(0, len(wordsInIngredient)):
-                currentWord = wordsInIngredient[i]
+            for currentWord in wordsInIngredient:
+                validWord = True
                 for ch in currentWord:
                     if ch.isdigit():
                         validWord = False
+                        break
                 if validWord:
-                    word = wordsInIngredient[i]
+                    word = currentWord
                     newWord = ""
                     for ch in word:
                         if (ch==','):
@@ -456,20 +456,21 @@ class Recipe:
                             newWord += " "
                         else:
                             newWord += ch
-                    newWord = newWord.strip()
-                    wordSplit = newWord.split(" ")
-                    for newWord2 in wordSplit:
-                        ingredientWords.append(newWord2)
-                validWord = True
+                    ingredientWords += newWord.strip().split(" ")
 
             nonUnitIngredientWords = []
             for word in ingredientWords:
-                if not isUnit(word):
-                    nonUnitIngredientWords += word
-            myIngredient.wordsInIngredient = ingredientWords
-            myIngredient.nonUnitWordsInIngredient = nonUnitIngredientWords
-            ingredients[i] = myIngredient
+                if not self.isUnit(word):
+                    nonUnitIngredientWords.append(word)
+            myIngredient.wordsInIngredient = [w for w in ingredientWords if w != '']
+            myIngredient.nonUnitWordsInIngredient = [w for w in nonUnitIngredientWords if w != '']
+            self.ingredients[i] = myIngredient
 
+    ##
+    # Function: Recipe::separateIngredients
+    # -------------------------------------
+    # Separate the entire ingredients text into individual ingredients.
+    ##
     def separateIngredients(self, adjectives):
         ingredientsText = self.allIngredientsText
         myIngredients = []
@@ -485,13 +486,13 @@ class Recipe:
             currentChar = ingredientsText[currentIndex]
             nextChar = ingredientsText[currentIndex+1]
 
-            if (previousChar.isalpha()):
+            if previousChar.isalpha():
                 currentWord += previousChar
             elif (currentWord != ""):
                 wordsInIngredient += 1
                 currentWord = ""
 
-            if (previousChar == '\n' and currentChar.isdigit() and not inParentheses):
+            if previousChar == '\n' and currentChar.isdigit() and not inParentheses:
                 wordsInIngredient = 0
                 payAttention = True
                 pastComma = False
@@ -538,7 +539,7 @@ class Recipe:
                     currentLine += nextChar
                 currentIngredient.entireLine = currentLine
                 myIngredients[len(myIngredients)-1] = currentIngredient
-        ingredients = myIngredients
+        self.ingredients = myIngredients
 
     ##
     # Function: Recipe::findAndSetNumServings
@@ -547,12 +548,16 @@ class Recipe:
     ##
     def findAndSetNumServings(self):
         numServings = None
-        lineWordLists = [line.strip().split() for line in self.allRecipeText.split('\n')]
-        for lineWords in lineWordLists:
+        lines = self.allRecipeText.split('\n')
+        for ind, line in enumerate(lines):
+            lineWords = line.strip().split()
             if lineWords != [] and lineWords[0] in ["MAKES", "SERVES"]:
                 numbers = [s for s in line if s.isdigit()]
                 if numbers != []:
                     numServings = numbers[0]
+                    # Delete the makes/serves line from self.allRecipeText
+                    self.allRecipeText = "\n".join(lines[ind:])
+
 
         # If the recipe does not mention how many servings it makes,
         # arbitrarily choose 10
@@ -601,37 +606,23 @@ class Recipe:
             char2 = recipeText[currentIndex+1]
             char3 = recipeText[currentIndex+2]
 
-            # See if we just entered in the make/serve line
-            makesOrServes = self.getWord(currentIndex, recipeText)
-            if makesOrServes == "MAKES" or makesOrServes == "SERVES":
-                haveSeenNumbers = False
-                inMakeServeLine = True
-                belowMakeServeLine = False
-
-            if inMakeServeLine and char1 == '\n':
-                # make/serve line just ended
-                inMakeServeLine = False
-                belowMakeServeLine = True
-            elif belowMakeServeLine:
-                if char1.isdigit():
-                    haveSeenNumbers = True
-                if allIngredientsText == "" and char1 == '\n':
-                    pass
-                else:
-                    atNewLine = (char1 == '\n')
-                    nextWordIsInstructionVerb = (self.getWord(currentIndex+1, recipeText) in self.INSTRUCTION_VERBS)
-                    nextLineIsNonNumberedInstruction = (atNewLine and haveSeenNumbers and nextWordIsInstructionVerb)
-                    nextLineIsNumberedInstruction = (atNewLine and char2.isdigit() and char3 == '.')
-                    nextLineIsInstruction = (nextLineIsNonNumberedInstruction or nextLineIsNumberedInstruction)
-                    if nextLineIsInstruction:
-                        self.allInstructionsText = recipeText[currentIndex:]
-                        self.instructionsAreNumbered = nextLineIsNumberedInstruction
-                        break
-                    else:
-                        allIngredientsText += char1
-            else:
-                # We're above the makeServe line
+            if char1.isdigit():
+                haveSeenNumbers = True
+            if allIngredientsText == "" and char1 == '\n':
                 pass
+            else:
+                atNewLine = (char1 == '\n')
+                nextWordIsInstructionVerb = (self.getWord(currentIndex+1, recipeText) in self.INSTRUCTION_VERBS)
+                nextLineIsNonNumberedInstruction = (atNewLine and haveSeenNumbers and nextWordIsInstructionVerb)
+                nextLineIsNumberedInstruction = (atNewLine and char2.isdigit() and char3 == '.')
+                nextLineIsInstruction = (nextLineIsNonNumberedInstruction or nextLineIsNumberedInstruction)
+                if nextLineIsInstruction:
+                    self.allInstructionsText = recipeText[currentIndex:]
+                    self.instructionsAreNumbered = nextLineIsNumberedInstruction
+                    break
+                else:
+                    allIngredientsText += char1
+           
         self.allIngredientsText = allIngredientsText
 
     ##
@@ -701,12 +692,13 @@ class Recipe:
 
     def printIngredients(self):
         for i in xrange(0, len(self.ingredients)):
-            print "   ", ingredients[i].entireLine
-            print "        Amount: ", ingredients[i].amount
-            print "        Units: ", ingredients[i].units
-            print "        Words: ", ingredients[i].wordsInIngredient
-            print "        Non-Unit Words: ", ingredients[i].nonUnitWordsInIngredient
-            print "        End Seed: ", ingredients[i].endSeed
+            ingredient = self.ingredients[i]
+            print "   ", ingredient.entireLine
+            print "        Amount: ", ingredient.amount
+            print "        Units: ", ingredient.units
+            print "        Words: ", ingredient.wordsInIngredient
+            print "        Non-Unit Words: ", ingredient.nonUnitWordsInIngredient
+            print "        End Seed: ", ingredient.endSeed
         print "   End Seeds:"
         for endSeed in self.endSeeds:
             print "   ", endSeed

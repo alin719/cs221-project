@@ -18,8 +18,6 @@ from classes import *
 """Recipe-Related Function Prototypes
 
 string getAllText(ifstream & infile)
-int findIndEndLastRecipe(int indStartRecipe, string & allText)
-int findIndPreviousTitle(int index, string & allText)
 Map<string,string> invertMap(Map<string,string> map)
 void fillRecipes(Vector<Recipe> & allRecipes, string & allText)
 void splitRecipes(Vector<Recipe> & allRecipes, Lexicon & adjectives, int endSeedLength)
@@ -43,7 +41,17 @@ string refineRandomInstructions(Vector<string> & instructions, Vector<instructio
 # Main Program */
 def main(argv):
     res_dirName = "res"
+    validEndsOfTitles = ["bread", "oil", "sausage", "cheese", "corn", "salad", "dressing",\
+            "stock", "pepper", "bacon", "meat", "mustard", "butter", "water", "melon",\
+            "kiwi", "lettuce", "yogurt", "sauce", "rice", "salt", "port", "vinegar"]
+
+    badTitleWords = ["halves", "thighs", "leaves", "stalks", "cloves", "half", "thigh", "leaf", "stalk", "clove", "extract"]
+
+    # Seed length used for weighted-random-writing ingredient lines of
+    # already-picked ingredients
     seedLength = 2
+
+    # Seed length used for weighted-random-picking new ingredients
     endSeedLength = 2
 
     # Collect a set of adjectives from the ./res/adjectives.txt file
@@ -85,21 +93,18 @@ def main(argv):
     # Update the user on program progress
     printUpdate(1)
     
-    allIngredients = []
-    allIngredientsString = ""
-    compileAllIngredients(allRecipes, allIngredients, allIngredientsString)
+    # Add '% ' to beginning of lines, add numbers/amounts
+    prepIngredientsForMaps(allRecipes)
 
-    reverseSeedMap = {}
-    makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, seedLength, endSeedLength)
+    # Make a reverse n-gram map that will allow us to write backwards later
+    reverseSeedMap = makeReverseBigramDict(allRecipes)
    
     # Update the user on program progress
     printUpdate(2)
 
-    refineReverseSeedMapKeys(reverseSeedMap)
+    # refineReverseSeedMapKeys(reverseSeedMap)
 
-
-    endSeedMap = {}
-    makeEndSeedMap(allRecipes, endSeedMap)
+    endSeedMap = makeEndSeedMap(allRecipes)
 
     printUpdate(3)
 
@@ -109,23 +114,20 @@ def main(argv):
     goodSentencesWithSeeds = []
     servingSentences = []
     servingSentencesWithoutSeeds = []
-    for i in xrange(0, len(allRecipes)):
-        myRecipe = allRecipes[i]
+    for i, myRecipe in enumerate(allRecipes):
         myRecipe.fillInstructionSentenceTokens()
-        goodInstructionSentences = myRecipe.getGoodInstructionSentences()
-        servingInstructionSentences = myRecipe.getServingInstructionSentences()
-        allGoodSentences.append(goodInstructionSentences)
-        servingSentences.append(servingInstructionSentences)
-        for instSent in goodInstructionSentences:
-            if (len(instSent.order1EndSeedsInside) != 0):
+        allGoodSentences += myRecipe.goodInstructionSentences
+        servingSentences += myRecipe.servingInstructionSentences
+        for instSent in myRecipe.goodInstructionSentences:
+            if len(instSent.order1EndSeedsInside) != 0:
                 containsBadSeed = False
                 for token in instSent.tokensInSentence:
                     if (token not in instSent.order1EndSeedsInside) and (token in singleEndSeeds):
                         containsBadSeed = True
                         break
                 if not containsBadSeed:
-                    goodSentencesWithSeeds += instSent
-        for instSent in servingInstructionSentences:
+                    goodSentencesWithSeeds.append(instSent)
+        for instSent in myRecipe.servingInstructionSentences:
             if len(instSent.order1EndSeedsInside) == 0:
                 tokens = instSent.tokensInSentence
                 hasSeed = False
@@ -133,16 +135,8 @@ def main(argv):
                     if (token in singleEndSeeds):
                         hasSeed = True
                         break
-                if (not hasSeed):
+                if not hasSeed:
                     servingSentencesWithoutSeeds.append(instSent)
-
-    print servingSentences[:5]
-
-    validEndsOfTitles = ["bread", "oil", "sausage", "cheese", "corn", "salad", "dressing",\
-            "stock", "pepper", "bacon", "meat", "mustard", "butter", "water", "melon",\
-            "kiwi", "lettuce", "yogurt", "sauce", "rice", "salt", "port", "vinegar"]
-
-    badTitleWords = ["halves", "thighs", "leaves", "stalks", "cloves", "half", "thigh", "leaf", "stalk", "clove", "extract"]
 
     metaTextToPrint = "               Randomly Generated Recipe Booklet\n"
     metaTextToPrint += "            ----------------------------------------- \n\n"
@@ -262,8 +256,6 @@ def main(argv):
 # The following functions are used to separate the raw cookbook
 # text into individual, raw recipe texts 
 #    - separateRawRecipeTexts
-#    - findIndEndLastRecipe
-#    - findIndPreviousTitle
 ##
 def separateRawRecipeTexts(res_dirName):
     cookbook_fileName = os.path.join(res_dirName, "MarthaStewart-LivingCookbook.txt")
@@ -323,43 +315,6 @@ def separateRawRecipeTexts(res_dirName):
     print "num recipes: ", len(allRecipes)
     return allRecipes
 
-
-
-
-
-    # index = 0
-    # recipeInd = 0
-    # newLinesSinceLastMakesServes = 100
-    # while True:
-    #     if index == len(allText):
-    #         indEndLastRecipe = len(allText) - 1
-    #         previousRecipe = allRecipes[recipeInd-1]
-    #         lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-    #         previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : lengthOfLastRecipe])
-    #         allRecipes[recipeInd-1] = previousRecipe
-    #         break
-    #     makesOrServes = ""
-    #     if (index < len(allText)-7):
-    #         makesOrServes = allText[index : index + 6]
-    #     if newLinesSinceLastMakesServes > 5 and (makesOrServes == "MAKES " or makesOrServes == "SERVES"):
-    #         newRecipe = Recipe()
-    #         newLinesSinceLastMakesServes = 0
-    #         indStartRecipe = findIndPreviousTitle(index, allText)
-    #         newRecipe.setIndStartRecipe(indStartRecipe)
-    #         allRecipes.append(newRecipe)
-
-    #         if recipeInd != 0:
-    #             indEndLastRecipe = findIndEndLastRecipe(indStartRecipe, allText)
-    #             previousRecipe = allRecipes[recipeInd-1]
-    #             lengthOfLastRecipe = indEndLastRecipe - previousRecipe.getIndStartRecipe()
-    #             previousRecipe.setAllRecipeText(allText[previousRecipe.getIndStartRecipe() : previousRecipe.getIndStartRecipe() + lengthOfLastRecipe])
-    #             previousRecipe.setRecipeCharLength(lengthOfLastRecipe)
-    #             allRecipes[recipeInd-1] = previousRecipe
-    #         recipeInd += 1
-    #     if (allText[index] == '\n'):
-    #         newLinesSinceLastMakesServes += 1
-    #     index += 1
-
 ##
 # Function: Recipe::removeAllCapsLines
 # ------------------------------------
@@ -376,39 +331,183 @@ def removeAllCapsLines(text):
     newText = "\n".join(newText)
     return newText
 
+def splitRecipes(allRecipes, adjectives, endSeedLength):
+    # for recipe in allRecipes[:3]:
+    #     print len(recipe.allRecipeText)
+    # sys.exit()
+    for i, myRecipe in enumerate(allRecipes):
 
-def findIndEndLastRecipe(indStartRecipe, allText):
-    indEndLastRecipe = 0
-    currentIndex = indStartRecipe-1
-    while (True):
-        if currentIndex == 0:
-            indEndLastRecipe = -1
-            break
-        currentChar = allText[currentIndex]
-        if (currentChar == '.'):
-            indEndLastRecipe = currentIndex+1
-            break
-        currentIndex -= 1
-    return indEndLastRecipe
+        # Find the title of this recipe in myRecipe.allRecipeText and set
+        # myRecipe.name equal to that title.
+        myRecipe.findAndSetTitle()
+
+        # Find and set the number of servings this recipe makes.
+        myRecipe.findAndSetNumServings()
+
+        # Split myRecipe.allRecipeText into myRecipe.allIngredientsText
+        # and myRecipe.allInstructionsText
+        myRecipe.splitIngredientsInstructionText()
+
+        # myRecipe.printAllInstructionText()
+        # myRecipe.printAllIngredientsText()
+
+        myRecipe.separateIngredients(adjectives)
+
+        myRecipe.separateInstructions()
+        myRecipe.findIngredientAmounts()
+        myRecipe.findIngredientUnits()
+        myRecipe.fillIngredientWords()
+        myRecipe.fillEndSeeds(endSeedLength)
+        myRecipe.divideInstructionSentences()
+        myRecipe.findFinalIngredientWords()
+        myRecipe.findSeedsInInstructionSentences()
+
+        allRecipes[i] = myRecipe
+
+# def makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, seedLength, endSeedLength, defaultSeedLength=1):
+#     allIngredientsStringTokens = [t for t in re.split("([^a-zA-Z0-9_\''])", allIngredientsString) if t not in ['', ' ']]
+
+#     tokens = ["" for _ in xrange(0, seedLength+1)]
+
+#     tokensEnd = ["" for _ in xrange(0, endSeedLength+1)]
+
+#     tokensDefault = ["" for _ in xrange(0, defaultSeedLength+1)]
+
+#     currentSeed = []
+#     currentSeedEnd = []
+#     currentSeedDefault = []
+#     for token in allIngredientsStringTokens:
+#         for i in xrange(0, seedLength):
+#             tokens[i] = tokens[i+1]
+#         for i in xrange(0, endSeedLength):
+#             tokensEnd[i] = tokensEnd[i+1]
+#         for i in xrange(0, defaultSeedLength):
+#             tokensDefault[i] = tokensDefault[i+1]
+#         tokens[seedLength] = token
+#         tokensEnd[endSeedLength] = tokens[seedLength]
+#         tokensDefault[defaultSeedLength] = tokens[seedLength]
+#         currentSeed += tokens[seedLength]
+#         currentSeedEnd += tokensEnd[endSeedLength]
+#         currentSeedDefault += tokensDefault[defaultSeedLength]
+
+#         if (len(currentSeed) > seedLength):
+#             currentSeed = currentSeed.subList(1,seedLength)
+#             if (reverseSeedMap.containsKey(currentSeed)):
+#                 currentVals = reverseSeedMap[currentSeed]
+#                 currentVals += tokens[0]
+#                 reverseSeedMap[currentSeed] = currentVals
+#             else:
+#                 vals = []
+#                 vals.append(tokens[0])
+#                 reverseSeedMap[currentSeed] = vals
+
+#         if (len(currentSeedEnd) > endSeedLength):
+#             currentSeedEnd = currentSeedEnd.subList(1,endSeedLength)
+
+#             if (reverseSeedMap.containsKey(currentSeedEnd)):
+#                 currentVals = reverseSeedMap[currentSeedEnd]
+#                 currentVals += tokensEnd[0]
+#                 reverseSeedMap[currentSeedEnd] = currentVals
+#             else:
+#                 vals = []
+#                 vals.append(tokensEnd[0])
+#                 reverseSeedMap.append(currentSeedEnd,vals)
+
+#         if (len(currentSeedDefault) > defaultSeedLength):
+#             currentSeedDefault = currentSeedDefault.subList(1,defaultSeedLength)
+
+#             if (reverseSeedMap.containsKey(currentSeedDefault)):
+#                 currentVals = reverseSeedMap[currentSeedDefault]
+#                 currentVals += tokensDefault[0]
+#                 reverseSeedMap[currentSeedDefault] = currentVals
+#             else:
+#                 vals = []
+#                 vals.append(tokensDefault[0])
+#                 reverseSeedMap[currentSeedDefault] = vals
+
+def makeReverseBigramDict(allRecipes):
+    reverseBigramDict = {}
+    for recipe in allRecipes:
+        for ingredient in recipe.ingredients:
+            ingWords = ingredient.cleanWordsInIngredient
+            for word1, word2 in zip(ingWords[:], ingWords[1:]):
+                reverseBigramDict[word2] = reverseBigramDict.get(word2, []) + [word1]
+
+    return reverseBigramDict
 
 
-def findIndPreviousTitle(index, allText):
-    indTitle = 0
-    currentIndex = index-1
-    possibleIndTitle = -1
-    while (True):
-        if (currentIndex == 0):
-            indTitle = 0
-            break
-        currentChar = allText[currentIndex]
-        previousChar = allText[currentIndex-1]
-        if (currentChar == '.' and possibleIndTitle != -1):
-            indTitle = possibleIndTitle
-            break
-        elif (currentChar.isalpha() and currentChar.islower() and previousChar == '\n'):
-            possibleIndTitle = currentIndex
-        currentIndex -= 1
-    return indTitle
+
+
+# def refineReverseSeedMapKeys(reverseSeedMap):
+#     for key in reverseSeedMap.keys():
+#         if "$" in key or "%" in key:
+#             reverseSeedMap.pop(key, None)
+
+
+# Function: makeEndSeedMap
+# ------------------------
+# Makes a map from all end seeds to the other end seeds they've been seen with.
+# Ex:
+#  - endSeedMap originally is {}
+#  - First recipe has large carrots, ground pepper, and grilled chicken as ingredients
+#  - After processing first recipe, endSeedMap is:
+#       - {("large", "carrots"): [("ground", "pepper"), ("grilled", "chicken")],
+#          ("ground", "pepper"): [("large", "carrots"), ("grilled", "chicken")],
+#          ("grilled", "chicken"): [("ground", "pepper"), ("large", "carrots")]
+#          }
+def makeEndSeedMap(allRecipes):
+    endSeedMap = {}
+    for recipe in allRecipes:
+        endSeeds = recipe.endSeeds
+        for endSeed in endSeeds:
+            otherEndSeeds = [seed for seed in endSeeds if seed != endSeed]
+            endSeedMap[endSeed] = endSeedMap.get(endSeed, []) + otherEndSeeds
+
+    del endSeedMap[tuple()]
+
+    return endSeedMap
+
+
+## 
+# Function: compileAllIngredients
+# -------------------------------
+# Do some adjustments to the ingredients, adding % signs
+# to the beginning of the ingredient lines and adding in
+# some numbers (amounts).
+##
+def prepIngredientsForMaps(allRecipes):
+    for i, recipe in enumerate(allRecipes):
+        for j, myIngredient in enumerate(recipe.ingredients):
+            line = "% "
+            if myIngredient.amount != "NO_LEADING_NUMBER":
+                line += myIngredient.amount + " "
+
+            lastWord = ""
+            for word in myIngredient.wordsInIngredient:
+                if lastWord == "plus" and allRecipes[0].isUnit(word):
+                    line += str(random.randint(1,10)) + " "
+                line += word + " "
+                lastWord = word
+            line += "\n"
+
+            myIngredient.cleanWordsInIngredient = line.split(" ")
+            myIngredient.cleanLine = line
+            recipe.ingredients[j] = myIngredient
+        allRecipes[i] = recipe
+
+##
+# Function: deleteOneIngredientRecipes
+# ------------------------------------
+# allRecipes will have no recipes with only 1 ingredient
+# after this function is executed.
+##
+def deleteOneIngredientRecipes(allRecipes):
+    for i in reversed(xrange(0, len(allRecipes))):
+        currentRecipe = allRecipes[i]
+        numEndSeeds = len(currentRecipe.getEndSeeds())
+        if numEndSeeds == 1 or numEndSeeds == 0:
+            allRecipes.pop(i)
+
 
 def refineRandomInstructions(instructions, servingSentencesWithoutSeeds):
     serveSentence = ""
@@ -538,12 +637,6 @@ def makeRandomInstructions(bigVec, ingredientsList):
         returnVec += sentence
         iterationCounter1 += 1
     return returnVec
-
-
-def refineReverseSeedMapKeys(reverseSeedMap):
-    for key in reverseSeedMap.keys():
-        if "$" in key or "%" in key:
-            reverseSeedMap.pop(key, None)
 
 
 def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLength, endSeedLength, endSeedSeedLength):
@@ -678,155 +771,19 @@ def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLe
     return ingredientList
 
 
-def compileAllIngredients(allRecipes, allIngredients, allIngredientsString):
-    for i in xrange(0, len(allRecipes)):
-        currentRecipe = allRecipes[i]
-        recipeIngredients = currentRecipe.getIngredients()
-        for myIngredient in recipeIngredients:
-            allIngredients += myIngredient
-            line = ""
-            if (myIngredient.amount=="NO_LEADING_NUMBER"):
-                line = "% "
-            else:
-                line = "% " + myIngredient.amount + " "
-
-            lastWord = ""
-            for word in myIngredient.wordsInIngredient:
-                if (lastWord=="plus" and allRecipes[0].isUnit(word)):
-                    line += str(random.randint(1,10)) + " " + word + " "
-                else:
-                    line += word + " "
-                lastWord = word
-
-            line += "\n"
-            allIngredientsString += line
 
 
-def makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, seedLength, endSeedLength, defaultSeedLength=1):
-    allIngredientsStringTokens = [t for t in re.split("([^a-zA-Z0-9_\''])", allIngredientsString) if t not in ['', ' ']]
 
-    tokens = ["" for _ in xrange(0, seedLength+1)]
 
-    tokensEnd = ["" for _ in xrange(0, endSeedLength+1)]
 
-    tokensDefault = ["" for _ in xrange(0, defaultSeedLength+1)]
 
-    currentSeed = []
-    currentSeedEnd = []
-    currentSeedDefault = []
-    for token in allIngredientsStringTokens:
-        for i in xrange(0, seedLength):
-            tokens[i] = tokens[i+1]
-        for i in xrange(0, endSeedLength):
-            tokensEnd[i] = tokensEnd[i+1]
-        for i in xrange(0, defaultSeedLength):
-            tokensDefault[i] = tokensDefault[i+1]
-        tokens[seedLength] = token
-        tokensEnd[endSeedLength] = tokens[seedLength]
-        tokensDefault[defaultSeedLength] = tokens[seedLength]
-        currentSeed += tokens[seedLength]
-        currentSeedEnd += tokensEnd[endSeedLength]
-        currentSeedDefault += tokensDefault[defaultSeedLength]
 
-        if (len(currentSeed) > seedLength):
-            currentSeed = currentSeed.subList(1,seedLength)
-            if (reverseSeedMap.containsKey(currentSeed)):
-                currentVals = reverseSeedMap[currentSeed]
-                currentVals += tokens[0]
-                reverseSeedMap[currentSeed] = currentVals
-            else:
-                vals = []
-                vals.append(tokens[0])
-                reverseSeedMap.append(currentSeed,vals)
-        if (len(currentSeedEnd) > endSeedLength):
-            currentSeedEnd = currentSeedEnd.subList(1,endSeedLength)
 
-            if (reverseSeedMap.containsKey(currentSeedEnd)):
-                currentVals = reverseSeedMap[currentSeedEnd]
-                currentVals += tokensEnd[0]
-                reverseSeedMap[currentSeedEnd] = currentVals
-            else:
-                vals = []
-                vals.append(tokensEnd[0])
-                reverseSeedMap.append(currentSeedEnd,vals)
-        if (len(currentSeedDefault) > defaultSeedLength):
-            currentSeedDefault = currentSeedDefault.subList(1,defaultSeedLength)
 
-            if (reverseSeedMap.containsKey(currentSeedDefault)):
-                currentVals = reverseSeedMap[currentSeedDefault]
-                currentVals += tokensDefault[0]
-                reverseSeedMap[currentSeedDefault] = currentVals
-            else:
-                vals = []
-                vals.append(tokensDefault[0])
-                reverseSeedMap.append(currentSeedDefault,vals)
 
-# Function: makeEndSeedMap
-# ------------------------
-# Makes a map from all end seeds to the other end seeds they've been seen with.
-# Ex:
-#  - endSeedMap originally is {}
-#  - First recipe has large carrots, ground pepper, and grilled chicken
-#  - After processing first recipe, endSeedMap is:
-#       - {("large", "carrots"): [("ground", "pepper"), ("grilled", "chicken")],
-#          ("ground", "pepper"): [("large", "carrots"), ("grilled", "chicken")],
-#          ("grilled", "chicken"): [("ground", "pepper"), ("large", "carrots")]
-#          }
-def makeEndSeedMap(allRecipes, endSeedMap):
-    for currentRecipe in allRecipes:
-        endSeeds = currentRecipe.getEndSeeds()
-        for j in xrange(0, len(endSeeds)):
-            key = endSeeds[j]
-            vals = [endSeeds[k] for k in xrange(0, len(endSeeds)) if k != j]
-            endSeedMap[key] = endSeedMap.get(key, []) + vals
 
-##
-# Function: deleteOneIngredientRecipes
-# ------------------------------------
-# allRecipes will have no recipes with only 1 ingredient
-# after this function is executed.
-##
-def deleteOneIngredientRecipes(allRecipes):
-    for i in reversed(xrange(0, len(allRecipes))):
-        currentRecipe = allRecipes[i]
-        numEndSeeds = len(currentRecipe.getEndSeeds())
-        if numEndSeeds == 1 or numEndSeeds == 0:
-            allRecipes.pop(i)
 
-def splitRecipes(allRecipes, adjectives, endSeedLength):
-    # for recipe in allRecipes[:3]:
-    #     print len(recipe.allRecipeText)
-    # sys.exit()
-    for i, myRecipe in enumerate(allRecipes):
 
-        # Find the title of this recipe in myRecipe.allRecipeText and set
-        # myRecipe.name equal to that title.
-        myRecipe.findAndSetTitle()
-
-        # Find and set the number of servings this recipe makes.
-        myRecipe.findAndSetNumServings()
-
-        # Split myRecipe.allRecipeText into myRecipe.allIngredientsText
-        # and myRecipe.allInstructionsText
-        myRecipe.splitIngredientsInstructionText()
-
-        myRecipe.printAllInstructionText()
-        myRecipe.printAllIngredientsText()
-
-        if i==2:
-            sys.exit()
-
-        myRecipe.separateIngredients(adjectives)
-        myRecipe.separateInstructions()
-        myRecipe.findIngredientAmounts()
-        myRecipe.findIngredientUnits()
-        myRecipe.fillIngredientWords()
-        myRecipe.fillEndSeeds(endSeedLength)
-        myRecipe.divideInstructionSentences()
-        myRecipe.findFinalIngredientWords()
-        myRecipe.findSeedsInInstructionSentences()
-
-        allRecipes[i] = myRecipe
 
 
 
