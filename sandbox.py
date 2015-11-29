@@ -10,8 +10,17 @@
 import collections, itertools, copy
 import numpy, scipy, math
 import re
+import inspect
+
+def printFunctionName():
+	print ""
+	print ""
+	print "Function: " + inspect.stack()[1][3]
+	print "---------"
+
 
 def test_makeTrigrams():
+	printFunctionName()
 	myStr = """1 teaspoon's coarse salt, plus more 
 	for cooking water. """
 
@@ -24,6 +33,7 @@ def test_makeTrigrams():
 	print ""
 
 def test_passByReference1():
+	printFunctionName()
 	def myAppend(li, n):
 		li.append(n)
 
@@ -100,9 +110,9 @@ def test_passByReference1():
 	listB = setEqual_ret(listB, listC)
 	print "listA: ", listA, "listB: ", listB, "listC: ", listC
 
-	print ""
 
 def test_passByReference2():
+	printFunctionName()
 	listA = [0, 1]
 	listB = [4, 5]
 	listC = [7, 8]
@@ -138,8 +148,9 @@ def test_slicing():
 	numEndElems = 3
 	listB = listA[-numEndElems:]
 	print "listA: ", listA, "listB: ", listB
+	print "listA[:-1]: ", listA[:-1]
+	print "listA[-len(listA):] ", listA[-len(listA):]
 
-	print ""
 
 def test_split1():
 	sent = """Preheat the oven to 325 degrees F. Line a 9 x 1  baking 
@@ -149,9 +160,9 @@ with plastic wrap. """
 	sentVec = sent.split("@")
 	print sentVec
 
-	print ""
 
 def test_split2():
+	printFunctionName()
 	sent = """spicy seared scallop canapes 
 
 MAKES 48 
@@ -161,9 +172,9 @@ MAKES 48
 	print sentVec
 	print "\n".join(sentVec)
 
-	print ""
 
 def test_chain1():
+	printFunctionName()
 	listA = [0, 1]
 	listB = [4, 5]
 	listC = [7, 8]
@@ -172,9 +183,9 @@ def test_chain1():
 	print "bigList: ", bigList
 	print "flattenedList: ", flattenedList
 
-	print ""
 
 def test_chain2():
+	printFunctionName()
 	listA = "hello "
 	listB = "beautiful "
 	listC = "world!"
@@ -183,31 +194,89 @@ def test_chain2():
 	print "bigList: ", bigList
 	print "flattenedList: ", flattenedList
 
-	print ""
 
 def test_isupper():
+	printFunctionName()
 	word1 = "HELLO"
 	word2 = "HELLo"
 	print "word1.isupper(): ", word1.isupper()
 	print "word2.isupper(): ", word2.isupper()
-	print ""
 
 def test_regex1():
+	printFunctionName()
 	sent = """Preheat the oven to 325 degrees F. Line a 9 x 1  baking 
 pan with a kitchen towel. Line the brioche pan 
 with plastic wrap. """
 	sentVec = re.split("([^a-zA-Z0-9_\''])", sent)
 	print "sentVec: ", sentVec
-	print ""
 
 def test_split3():
+	printFunctionName()
 	myW = "hey"
 	wSplit = myW.split(" ")
 	print "\"hey\".split(' '): ", wSplit
-	print ""
+
+def test_tuple1():
+	printFunctionName()
+	myTuple1 = tuple("hey")
+	myTuple2 = tuple(["hey"])
+	myList1 = list(myTuple1)
+	print "myTuple1: ", myTuple1
+	print "myTuple2: ", myTuple2
+	print "myList1: ", myList1
+
+def test_exception1():
+	printFunctionName()
+	var1 = "yooooo"
+	myDict = {"hi": 1}
+	try:
+		var1 = myDict["booooo"]
+	except KeyError:
+		pass
+	print "var1: ", var1
+
+def test_exception2():
+	printFunctionName()
+	exc = Exception("spam", "eggs")
+	try:
+		raise exc
+	except Exception as inst:
+		print "inst.args: ", inst.args
+
+def test_exception3():
+	printFunctionName()
+	class MyException(Exception):
+		pass
+
+	exc = Exception("I am a normal exception")
+	myExc = MyException("I'm special!!!")
+	try:
+		raise myExc
+		raise exc
+	except Exception as inst:
+		print "inst.args: ", inst.args
+	except MyException as inst:
+		print "inst.args: ", inst.args
+
+def test_exception4():
+	printFunctionName()
+	class MyException(Exception):
+		pass
+
+	exc = Exception("I am a normal exception")
+	myExc = MyException("I'm special!!!")
+	try:
+		try:
+			raise exc
+		except Exception as inst:
+			print "inst.args1: ", inst.args
+			raise myExc
+	except MyException as inst:
+		print "inst.args2: ", inst.args
 
 
-# test_slicing()
+
+test_slicing()
 # test_split1()
 # test_chain1()
 # test_chain2()
@@ -215,4 +284,9 @@ def test_split3():
 # test_isupper()
 # test_regex1()
 
-test_split3()
+# test_split3()
+# test_tuple1()
+test_exception1()
+test_exception2()
+test_exception3()
+test_exception4()

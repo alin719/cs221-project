@@ -5,53 +5,23 @@
  This file includes all main code for the recipe writer.
 """
 
-import collections, itertools, Queue
+import collections, itertools, copy, Queue
 import numpy, scipy, math, random
 import os, sys
 import tokenize, re, string
 from classes import *
-#include "lexicon.h" ---- set()
-#include "queue.h"   ----- Queue()
-#include "tokenscanner.h"  ---- tokenize
 
 
-"""Recipe-Related Function Prototypes
-
-string getAllText(ifstream & infile)
-Map<string,string> invertMap(Map<string,string> map)
-void fillRecipes(Vector<Recipe> & allRecipes, string & allText)
-void splitRecipes(Vector<Recipe> & allRecipes, Lexicon & adjectives, int endSeedLength)
-void printListOfRecipesIngredients(Vector<Recipe> & allRecipes, int startingIndex, int numToPrint)
-void giveRecipesAdjectives(Vector<Recipe> & allRecipes, Lexicon & adjectives)
-void makeListAllIngredients(Vector<Recipe> & allRecipes)
-void printRecipeEndSeeds(Vector<Recipe> & allRecipes, int startingIndex=-5, int numToPrint=-5)
-void makeEndSeedMap(Vector<Recipe> & allRecipes, Map<Vector<string>,Vector<Vector<string>>> & endSeedMap)
-void deleteOneIngredientRecipes(Vector<Recipe> & allRecipes)
-void makeIngredientMarkov(Vector<ingredient> & allIngredients, string & allIngredientsString, Map<Vector<string>,Vector<string>> & reverseSeedMap,
-                          int seedLength, int endSeedLength, int defaultSeedLength=1)
-void compileAllIngredients(Vector<Recipe> & allRecipes, Vector<ingredient> & allIngredients, string & allIngredientsString)
-Vector<string> makeRandomIngredientsList(Map<Vector<string>,Vector<string>> & reverseSeedMap, Map<Vector<string>,Vector<Vector<string>>> & endSeedMap,
-                                         int numIngredients, int seedLength, int endSeedLength, int endSeedSeedLength)
-Vector<string> makeRandomInstructions(Vector<instructionSentence> & bigVec, Vector<string> ingredientsList)
-void refineReverseSeedMapKeys(Map<Vector<string>,Vector<string>> & reverseSeedMap)
-string refineRandomInstructions(Vector<string> & instructions, Vector<instructionSentence> & servingSentencesWithoutSeeds)
-"""
-
+# Seed length used for weighted-random-writing ingredient lines of
+# already-picked ingredients
+seedLength = 2
 
 # Main Program */
 def main(argv):
     res_dirName = "res"
-    validEndsOfTitles = ["bread", "oil", "sausage", "cheese", "corn", "salad", "dressing",\
-            "stock", "pepper", "bacon", "meat", "mustard", "butter", "water", "melon",\
-            "kiwi", "lettuce", "yogurt", "sauce", "rice", "salt", "port", "vinegar"]
 
-    badTitleWords = ["halves", "thighs", "leaves", "stalks", "cloves", "half", "thigh", "leaf", "stalk", "clove", "extract"]
-
-    # Seed length used for weighted-random-writing ingredient lines of
-    # already-picked ingredients
-    seedLength = 2
-
-    # Seed length used for weighted-random-picking new ingredients
+    # Number of words at end of ingredient used as seed
+    # for picking other ingredients
     endSeedLength = 2
 
     # Collect a set of adjectives from the ./res/adjectives.txt file
@@ -76,7 +46,7 @@ def main(argv):
     numIngredients = getNumIngredientsResponse(argv)
     endSeedSeedLength = getEndSeedLengthResponse(argv)
     numRecipesToPrint = getNumRecipesToPrintResponse(argv)
-    allAtOnce = getAllAtOnceResponse(argv)
+    # allAtOnce = getAllAtOnceResponse(argv)
 
     # Update the user on program progress
     printUpdate(0)
@@ -102,143 +72,60 @@ def main(argv):
     # Update the user on program progress
     printUpdate(2)
 
-    # refineReverseSeedMapKeys(reverseSeedMap)
-
+    # Make a map from end seeds of ingredients to lists of other end seeds
+    # from ingredients they've been seen with in recipes
     endSeedMap = makeEndSeedMap(allRecipes)
 
     printUpdate(3)
 
-    singleEndSeeds = set([key[-1] for key in endSeedMap.keys()])
+    isd = InstructionSentenceData()
 
-    allGoodSentences = []
-    goodSentencesWithSeeds = []
-    servingSentences = []
-    servingSentencesWithoutSeeds = []
-    for i, myRecipe in enumerate(allRecipes):
-        myRecipe.fillInstructionSentenceTokens()
-        allGoodSentences += myRecipe.goodInstructionSentences
-        servingSentences += myRecipe.servingInstructionSentences
-        for instSent in myRecipe.goodInstructionSentences:
-            if len(instSent.order1EndSeedsInside) != 0:
-                containsBadSeed = False
-                for token in instSent.tokensInSentence:
-                    if (token not in instSent.order1EndSeedsInside) and (token in singleEndSeeds):
-                        containsBadSeed = True
-                        break
-                if not containsBadSeed:
-                    goodSentencesWithSeeds.append(instSent)
-        for instSent in myRecipe.servingInstructionSentences:
-            if len(instSent.order1EndSeedsInside) == 0:
-                tokens = instSent.tokensInSentence
-                hasSeed = False
-                for token in tokens:
-                    if (token in singleEndSeeds):
-                        hasSeed = True
-                        break
-                if not hasSeed:
-                    servingSentencesWithoutSeeds.append(instSent)
+    isd.fillData(allRecipes, endSeedMap)
 
-    metaTextToPrint = "               Randomly Generated Recipe Booklet\n"
-    metaTextToPrint += "            ----------------------------------------- \n\n"
-    print "\n\n\n\n\n\n\n"
-    print metaTextToPrint
+    metaTextToPrint = printRecipeBookTitle()
 
-    markovIngredientsList = []
-    shouldStop = False
-    if (allAtOnce == "one"):
-        shouldStop = True
-    for i in xrange(0, numRecipesToPrint):
-        if (i>=1 and allAtOnce == "one" and shouldStop):
-            continueString = getLine()
-        markovIngredientsList = makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLength, endSeedLength, endSeedSeedLength)
-        if (markovIngredientsList[0] == "ERROR"):
-            i -= 1
-            shouldStop = False
-            continue
-        lastTokens = []
-        for line in markovIngredientsList:
-            splitLine = line.split()
-            lastTokens.append(splitLine[-1])
+    i = 0
+    while i < numRecipesToPrint:
 
-        r = randomInteger(0,len(properAdjectives)-1)
-        startingWord = properAdjectives[r]
-        recipeTitle = ""
-        recipeTitle += startingWord + " "
-        lastWordInTitle = ""
-        lastWordInTitle2 = ""
-        for token in lastTokens:
-            if ((token in validEndsOfTitles) and not (token in badTitleWords)):
-                lastWordInTitle = token
-                break
-        for token in lastTokens:
-            if (token[len(token)-1] == 's' and not (token in badTitleWords)):
-                lastWordInTitle = token
+        markovIngredientsList = None
+        for i in xrange(200):
+            markovIngredientsList = None
+            try:
+                markovIngredientsList = makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, endSeedLength, endSeedSeedLength)
+            except IngredientsListException as inst:
+                # print "markovIngredientsList exception: " + inst.args[0]
+                pass
+            if markovIngredientsList != None:
                 break
 
+        recipeTitle = writeRecipeTitle(properAdjectives, markovIngredientsList)
+        
+        numServings = random.choice(allRecipes).getNumServings()
 
-        for token in lastTokens:
-            if (token in validEndsOfTitles) and (token != lastWordInTitle) and (token not in badTitleWords):
-                lastWordInTitle2 = token
-                break
-        for token in lastTokens:
-            if token[len(token)-1] == 's' and token != lastWordInTitle and not (token in badTitleWords):
-                lastWordInTitle2 = token
-                break
-        descriptorWord = ""
-        for token in lastTokens:
-            if token[len(token)-1] != 's' and token != lastWordInTitle and token != lastWordInTitle2 and not (token in badTitleWords):
-                descriptorWord = token
-                break
-
-        if (descriptorWord != ""):
-            recipeTitle += descriptorWord[0].toupper() + descriptorWord[1] + " "
-        if (lastWordInTitle != ""):
-            recipeTitle += lastWordInTitle[0].toupper() + lastWordInTitle[0]
-        if (lastWordInTitle != "" and lastWordInTitle2 != ""):
-            recipeTitle += " with "
-        if (lastWordInTitle2 != ""):
-            recipeTitle += lastWordInTitle2[0].toupper() + lastWordInTitle2[0]
-
-        if (descriptorWord == "" and lastWordInTitle == "" and lastWordInTitle2 == ""):
-            recipeTitle += "Food"
-
-        textToPrint = ""
-        textToPrint += " " + recipeTitle
-
-        #        print "Checkpoint 3"
-        rand = randomInteger(0,len(allRecipes)-1)
-        myRecipe = allRecipes[rand]
-        numServings = myRecipe.getNumServings()
-        if (numServings<=0):
-            numServings = randomInteger(1,9)
-        textToPrint += " (SERVES " + str(numServings) + ")\n"
-        #        print "Checkpoint 4"
+        textToPrint = " " + recipeTitle + " (SERVES " + str(numServings) + ")\n"
 
         textToPrint += "   Ingredients:\n"
         for ingredient in markovIngredientsList:
-            if (ingredient[2]=='/'):
-                ingredient = ingredient[0] + ingredient[:4]
+            if ingredient[2]=='/':
+                ingredient = ingredient[0] + ingredient[4:]
             textToPrint += "      " + ingredient + "\n"
         textToPrint += "\n"
 
-        #        print "Checkpoint 5"
-        randomInstructions = makeRandomInstructions(goodSentencesWithSeeds, markovIngredientsList)
-        if (randomInstructions[0] == "ERROR"):
-            i -= 1
-            shouldStop = False
+        randomInstructions = []
+        try:
+            randomInstructions = makeRandomInstructions(isd.goodSentencesWithSeeds, markovIngredientsList)
+        except InstructionsListException as inst:
+            # print "Instructions list exception: ", inst.args[0]
+            pass
+        if randomInstructions == []:
             continue
-        #        print "Checkpoint 6"
-        instructionsToPrint = refineRandomInstructions(randomInstructions, servingSentencesWithoutSeeds)
-        textToPrint += "   Instructions:\n"
-        textToPrint += instructionsToPrint + "\n\n\n"
-        #        print "Checkpoint 7"
+        instructionsToPrint = refineRandomInstructions(randomInstructions, isd.servingSentencesWithoutSeeds)
 
+        textToPrint += "   Instructions:\n" + instructionsToPrint + "\n\n\n"
         print textToPrint
         metaTextToPrint += textToPrint
-        textToPrint.clear()
-        markovIngredientsList.clear()
-        if (allAtOnce == "one"):
-            shouldStop = True
+
+        i += 1
 
     print "\n\n\n   I have saved your recipes in \"Random_Recipe_Book.txt\" in this application's folder.\n\n\n"
 
@@ -364,84 +251,32 @@ def splitRecipes(allRecipes, adjectives, endSeedLength):
 
         allRecipes[i] = myRecipe
 
-# def makeIngredientMarkov(allIngredients, allIngredientsString, reverseSeedMap, seedLength, endSeedLength, defaultSeedLength=1):
-#     allIngredientsStringTokens = [t for t in re.split("([^a-zA-Z0-9_\''])", allIngredientsString) if t not in ['', ' ']]
-
-#     tokens = ["" for _ in xrange(0, seedLength+1)]
-
-#     tokensEnd = ["" for _ in xrange(0, endSeedLength+1)]
-
-#     tokensDefault = ["" for _ in xrange(0, defaultSeedLength+1)]
-
-#     currentSeed = []
-#     currentSeedEnd = []
-#     currentSeedDefault = []
-#     for token in allIngredientsStringTokens:
-#         for i in xrange(0, seedLength):
-#             tokens[i] = tokens[i+1]
-#         for i in xrange(0, endSeedLength):
-#             tokensEnd[i] = tokensEnd[i+1]
-#         for i in xrange(0, defaultSeedLength):
-#             tokensDefault[i] = tokensDefault[i+1]
-#         tokens[seedLength] = token
-#         tokensEnd[endSeedLength] = tokens[seedLength]
-#         tokensDefault[defaultSeedLength] = tokens[seedLength]
-#         currentSeed += tokens[seedLength]
-#         currentSeedEnd += tokensEnd[endSeedLength]
-#         currentSeedDefault += tokensDefault[defaultSeedLength]
-
-#         if (len(currentSeed) > seedLength):
-#             currentSeed = currentSeed.subList(1,seedLength)
-#             if (reverseSeedMap.containsKey(currentSeed)):
-#                 currentVals = reverseSeedMap[currentSeed]
-#                 currentVals += tokens[0]
-#                 reverseSeedMap[currentSeed] = currentVals
-#             else:
-#                 vals = []
-#                 vals.append(tokens[0])
-#                 reverseSeedMap[currentSeed] = vals
-
-#         if (len(currentSeedEnd) > endSeedLength):
-#             currentSeedEnd = currentSeedEnd.subList(1,endSeedLength)
-
-#             if (reverseSeedMap.containsKey(currentSeedEnd)):
-#                 currentVals = reverseSeedMap[currentSeedEnd]
-#                 currentVals += tokensEnd[0]
-#                 reverseSeedMap[currentSeedEnd] = currentVals
-#             else:
-#                 vals = []
-#                 vals.append(tokensEnd[0])
-#                 reverseSeedMap.append(currentSeedEnd,vals)
-
-#         if (len(currentSeedDefault) > defaultSeedLength):
-#             currentSeedDefault = currentSeedDefault.subList(1,defaultSeedLength)
-
-#             if (reverseSeedMap.containsKey(currentSeedDefault)):
-#                 currentVals = reverseSeedMap[currentSeedDefault]
-#                 currentVals += tokensDefault[0]
-#                 reverseSeedMap[currentSeedDefault] = currentVals
-#             else:
-#                 vals = []
-#                 vals.append(tokensDefault[0])
-#                 reverseSeedMap[currentSeedDefault] = vals
-
+##
+# Function: makeReverseBigramDict
+# -------------------------------
+# Makes dictionary of classic bigram relations
+# between words, except in reverse.
+# Ex:
+#   - The sentence is: "% 5 teaspoons of olive oil"
+#   - reverseBigramDict:
+#       {("5" "teaspoons"): ["%"],
+#        ("teaspoons" "of"): ["5"], 
+#        ("of", "olive"): ["teaspoons"],
+#        ("olive" "oil"): ["of"]}
+#   - The "%" means the beginning of an ingredient line
 def makeReverseBigramDict(allRecipes):
     reverseBigramDict = {}
     for recipe in allRecipes:
         for ingredient in recipe.ingredients:
             ingWords = ingredient.cleanWordsInIngredient
-            for word1, word2 in zip(ingWords[:], ingWords[1:]):
-                reverseBigramDict[word2] = reverseBigramDict.get(word2, []) + [word1]
+            if len(ingWords) >= 3:
+                for word1, word2, word3 in zip(ingWords[:], ingWords[1:], ingWords[2:]):
+                    bigram = (word2, word3)
+                    unigram = tuple([word3])
+                    reverseBigramDict[bigram] = reverseBigramDict.get(bigram, []) + [word1]
+                    reverseBigramDict[unigram] = reverseBigramDict.get(unigram, []) + [word2]
 
     return reverseBigramDict
-
-
-
-
-# def refineReverseSeedMapKeys(reverseSeedMap):
-#     for key in reverseSeedMap.keys():
-#         if "$" in key or "%" in key:
-#             reverseSeedMap.pop(key, None)
 
 
 # Function: makeEndSeedMap
@@ -459,11 +294,12 @@ def makeEndSeedMap(allRecipes):
     endSeedMap = {}
     for recipe in allRecipes:
         endSeeds = recipe.endSeeds
+        for i, es in reversed(list(enumerate(endSeeds))):
+            if len(es) == 0:
+                endSeeds.pop(i)
         for endSeed in endSeeds:
             otherEndSeeds = [seed for seed in endSeeds if seed != endSeed]
             endSeedMap[endSeed] = endSeedMap.get(endSeed, []) + otherEndSeeds
-
-    del endSeedMap[tuple()]
 
     return endSeedMap
 
@@ -509,28 +345,70 @@ def deleteOneIngredientRecipes(allRecipes):
             allRecipes.pop(i)
 
 
+
+def makeRandomInstructions(goodSentencesWithSeeds, ingredientsList):
+    returnVec = []
+    unusedEndWords = [ingredient.split(" ")[-1] for ingredient in ingredientsList]
+    instSent = None
+
+    iterationCounter1 = 0
+    while True:
+
+        if iterationCounter1 > 30:
+            raise InstructionsListException("More than 30 iters.")
+
+        if unusedEndWords == []:
+            break
+
+        # Try to find pre-made instruction sentences with some of the
+        # unused words already inside them
+        refinedGoodSentencesWithSeeds = []
+        for goodSentence in goodSentencesWithSeeds:
+            for word in goodSentence.order1EndSeedsInside:
+                if word in unusedEndWords:
+                    refinedGoodSentencesWithSeeds.append(goodSentence)
+                    break
+
+        # Make an instruction sentence
+        if refinedGoodSentencesWithSeeds == []:
+            instSent = copy.deepcopy(random.choice(goodSentencesWithSeeds))
+
+            # Replace order 1 seeds in the sentence with unused words
+            numReplacementPairs = min(len(unusedEndWords), len(instSent.order1EndSeedsInside))
+            replacementPairs = zip(instSent.order1EndSeedsInside[:numReplacementPairs], unusedEndWords[:numReplacementPairs])
+            for sentWord, unusedWord in replacementPairs:
+                instSent.sentence = instSent.sentence.replace(sentWord, unusedWord)
+        else:
+            instSent = random.choice(refinedGoodSentencesWithSeeds)
+
+        returnVec.append(instSent.sentence)
+
+        unusedEndWords = [ew for ew in unusedEndWords if (ew not in instSent.sentence)]
+        iterationCounter1 += 1
+    return returnVec
+
+
+
 def refineRandomInstructions(instructions, servingSentencesWithoutSeeds):
     serveSentence = ""
     startSentence = ""
     servingWords = ["Serve", "serve", "Served", "served"]
     startWords = ["Add", "Mix", "Combine", "In", "Prepare", "Preheat", "Blend", "Using", "Place", "Melt", "Slice", "Halve", "Heat"]
     servingSentenceExists = False
-    for i in xrange(0, len(instructions)):
-        sentence = instructions[i]
+    for i, sentence in enumerate(instructions):
 
         for word in servingWords:
-            if (stringContains(sentence,word)):
-                instructions[i] = instructions[len(instructions)-1]
-                instructions[len(instructions)-1] = sentence
+            if word in sentence:
+                instructions[i] = instructions[-1]
+                instructions[-1] = sentence
                 servingSentenceExists = True
 
         for word in startWords:
             if sentence.startswith(word):
                 instructions[i] = instructions[0]
                 instructions[0] = sentence
-    if (not servingSentenceExists):
-        r = randomInteger(0, len(servingSentencesWithoutSeeds)-1)
-        servingSentence = servingSentencesWithoutSeeds[r].sentence
+    if not servingSentenceExists:
+        servingSentence = random.choice(servingSentencesWithoutSeeds).sentence
         instructions.append(servingSentence)
     returnString = ""
     counter = 1
@@ -552,225 +430,114 @@ def refineRandomInstructions(instructions, servingSentencesWithoutSeeds):
     return returnString
 
 
-def makeRandomInstructions(bigVec, ingredientsList):
-    returnVec = []
-    endSeeds = []
-    for ingredient in ingredientsList:
-        ingredientSplit = ingredient.split(" ")
-        endSeed = ingredientSplit[-1]
-        endSeeds.append(endSeed)
-    endSeedsUsed = []
-    for j in xrange(0, len(endSeeds)):
-        endSeedUsed = []
-        endSeedUsed.append(endSeeds[j])
-        endSeedUsed.append("false")
-        endSeedsUsed.append(endSeedUsed)
-
-    existUnusedSeeds = True
-    emptiesUsed = 0
-    iterationCounter1 = 0
-    while (existUnusedSeeds):
-        if (iterationCounter1>300):
-            errorVec = []
-            errorVec += "ERROR"
-            return errorVec
-        refinedBigVec = []
-        unusedEndSeeds = []
-        for j in xrange(0, len(endSeedsUsed)):
-            endSeedUsed = endSeedsUsed[j]
-            if (endSeedUsed[1]=="false"):
-                unusedEndSeeds.append(endSeedUsed[0])
-        if (len(unusedEndSeeds)==0):
-            break
-        for i in xrange(0, len(bigVec)):
-            shouldAdd = True
-            hasUnusedSeed = False
-            for word in bigVec[i].order1EndSeedsInside:
-                if word not in endSeeds:
-                    shouldAdd = False
-                if word in unusedEndSeeds:
-                    hasUnusedSeed = True
-            if shouldAdd and hasUnusedSeed:
-                refinedBigVec.append(bigVec[i])
-        r = 0
-        sentence = ""
-        randomInstructSent = InstructionSentence()
-        if len(refinedBigVec) == 0:
-            r = random.randint(0, len(bigVec)-1)
-            randomInstructSent = bigVec[r]
-            sentence += randomInstructSent.sentence
-            endSeedsInvolved = randomInstructSent.order1EndSeedsInside
-            splitSentence = sentence.split()
-            while currentToken in splitSentence:
-                r = randomInteger(0, len(unusedEndSeeds)-1)
-                if (currentToken in endSeedsInvolved):
-                    if (len(unusedEndSeeds)==0):
-                        errorVec = []
-                        errorVec += "ERROR"
-                        return errorVec
-                    newSentence += unusedEndSeeds[r]
-                    for i in xrange(0, len(endSeedsUsed)):
-                        endSeedUsed = endSeedsUsed[i]
-                        if (unusedEndSeeds[r]!=endSeedUsed[0]):
-                            continue
-                        endSeedUsed[1] = "true"
-                        endSeedsUsed[i] = endSeedUsed
-                    unusedEndSeeds.remove(r)
-                else:
-                    newSentence += currentToken
-            sentence = newSentence
-        else:
-            r = random.randint(0, len(refinedBigVec)-1)
-            randomInstructSent = refinedBigVec[r]
-            sentence += randomInstructSent.sentence
-        trueCounter = 0
-        for i in xrange(0, len(endSeeds)):
-            if endSeeds[i] in randomInstructSent.order1EndSeedsInside:
-
-                endSeedUsed = endSeedsUsed[i]
-                endSeedUsed[1] = "true"
-                endSeedsUsed[i] = endSeedUsed
-            if (endSeedsUsed[i][1]=="true"):
-                trueCounter += 1
-        if ((trueCounter+emptiesUsed) == len(endSeeds)):
-            existUnusedSeeds = False
-        returnVec += sentence
-        iterationCounter1 += 1
-    return returnVec
-
-
-def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, seedLength, endSeedLength, endSeedSeedLength):
+def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, endSeedLength, endSeedSeedLength):
     outputTokens = []
     ingredientList = []
+    usedEndSeedKeys = []
 
     allEndSeedKeys = endSeedMap.keys()
     allRevSeedKeys = reverseSeedMap.keys()
 
-    usedEndSeedKeys = []
-    print "allEndSeedKeys length: ", len(allEndSeedKeys)
-    r = random.randint(0, len(allEndSeedKeys)-1)
-    firstEndSeedKey = allEndSeedKeys[r]
-    usedEndSeedKeys.append(firstEndSeedKey)
-    firstIngredient = ""
-    for member in firstEndSeedKey:
-        firstIngredient += member + " "
-    firstIngredient = firstIngredient.rstrip()
-    newKey = []
-    oldKey = []
-    if (len(firstEndSeedKey) < seedLength):
-        oldKey = firstEndSeedKey
-    else:
-        oldKey.append(firstEndSeedKey.subList(0,seedLength))
-    iterationCounter = 0
-    while (True):
-        if (iterationCounter>200):
-            errorVec = []
-            errorVec += "ERROR"
-            return errorVec
-        possiblePreviousTokens = reverseSeedMap[oldKey]
-        numTokens = len(possiblePreviousTokens)
-        r = random.randint(0, numTokens-1)
-        previousTokenToBeAdded = possiblePreviousTokens[r]
-        if (previousTokenToBeAdded == "%"):
-            break
-        newFirstIngredient = ""
-        if (previousTokenToBeAdded=="/"):
-            newFirstIngredient = previousTokenToBeAdded + firstIngredient
-        elif (firstIngredient[0]=='/'):
-            newFirstIngredient = previousTokenToBeAdded + firstIngredient
-        else:
-            newFirstIngredient = previousTokenToBeAdded + " " + firstIngredient
-        firstIngredient = newFirstIngredient
-        newKey.append(previousTokenToBeAdded)
-        if (len(oldKey)<seedLength-1):
-            newKey += oldKey
-        else:
-            newKey += oldKey.subList(0,seedLength-1)
-        oldKey = newKey
-        newKey.clear()
-        iterationCounter += 1
-    ingredientList += firstIngredient
+    # Choose the first end seed (which is for the first ingredient)
+    nextESK = list(random.choice(allEndSeedKeys))
+    usedEndSeedKeys.append(nextESK)
 
-    newEndSeedKey = []
-    lastEndSeedKey = []
-    lastEndSeedKey += firstEndSeedKey
-    iterationCounter2 = 0
+    # Get the first ingredient started
+    newIngredient = writeIngredientLine(nextESK, reverseSeedMap)
+    ingredientList.append(newIngredient)
+
+    possibleNextEndSeedKeys = None
     for i in xrange(0, numIngredients):
-        if (iterationCounter2>200):
-            errorVec = []
-            errorVec += "ERROR"
-            return errorVec
-        possibleNextEndSeedKeys = []
-        if (len(usedEndSeedKeys) >= endSeedSeedLength):
-            for j in reversed(xrange(1, endSeedSeedLength+1)):
-                seedKey = usedEndSeedKeys[len(usedEndSeedKeys)-j]
-                possibleNextEndSeedKeys += endSeedMap[seedKey]
-        else:
-            for j in xrange(0,  len(usedEndSeedKeys)):
-                seedKey = usedEndSeedKeys[j]
-                possibleNextEndSeedKeys += endSeedMap[seedKey]
-        if (len(possibleNextEndSeedKeys)==0):
-            errorVec = []
-            errorVec += "ERROR"
-            return errorVec
-        r = random.randint(0, len(possibleNextEndSeedKeys)-1)
-        if possibleNextEndSeedKeys[r] in usedEndSeedKeys:
-            i -= 1
-            iterationCounter2 += 1
-            continue
-        if ("plus" in possibleNextEndSeedKeys[r] or "lengths" in possibleNextEndSeedKeys[r] or "inch" in possibleNextEndSeedKeys[r]):
-            i -= 1
-            iterationCounter2 += 1
-            continue
-        newEndSeedKey = possibleNextEndSeedKeys[r]
-        usedEndSeedKeys += newEndSeedKey
-        newIngredient = ""
-        for member in newEndSeedKey:
-            newIngredient += member + " "
-        newIngredient = trimEnd(newIngredient)
-        newKey = []
-        oldKey = []
-        if (len(newEndSeedKey) < seedLength):
-            oldKey = newEndSeedKey
-        else:
-            oldKey += newEndSeedKey.subList(0,seedLength)
-        iterationCounter = 0
-        while (True):
-            if (iterationCounter>200):
-                errorVec = []
-                errorVec += "ERROR"
-                return errorVec
-            possiblePreviousTokens = reverseSeedMap[oldKey]
-            r = random.randint(0, len(possiblePreviousTokens)-1)
-            if len(possiblePreviousTokens) == 0:
-                errorVec = []
-                errorVec += "ERROR"
-                return errorVec
-            previousTokenToBeAdded = possiblePreviousTokens[r]
-            if (previousTokenToBeAdded == "%"):
+        numEndSeedSeeds = min(len(usedEndSeedKeys), endSeedSeedLength)
+        possibleNextEndSeedKeys = [endSeedMap[tuple(seedKey)] for seedKey in usedEndSeedKeys[-numEndSeedSeeds:]]
+        possibleNextEndSeedKeys = list(itertools.chain(*possibleNextEndSeedKeys))
+        if len(possibleNextEndSeedKeys) == 0:
+            raise IngredientsListException("No possible next ingredients")
+        while True:
+            nextESK = random.choice(possibleNextEndSeedKeys)
+            if (nextESK not in usedEndSeedKeys) and ("plus" not in nextESK) and ("lengths" not in nextESK) and ("inch" not in nextESK):
                 break
-            tempNewIngredient = ""
-            if (previousTokenToBeAdded=="/"):
-                tempNewIngredient = previousTokenToBeAdded + newIngredient
-            elif (newIngredient[0]=='/'):
-                tempNewIngredient = previousTokenToBeAdded + newIngredient
-            else:
-                tempNewIngredient = previousTokenToBeAdded + " " + newIngredient
-            newIngredient = tempNewIngredient
-            newKey += previousTokenToBeAdded
-            if (len(oldKey) < seedLength-1):
-                newKey += oldKey
-            else:
-                newKey += oldKey.subList(0,seedLength-1)
-            oldKey = newKey
-            newKey.clear()
-            iterationCounter += 1
-        lastEndSeedKey = newEndSeedKey
-        ingredientList += newIngredient
-        iterationCounter2 += 1
+
+        usedEndSeedKeys.append(nextESK)
+        newIngredient = writeIngredientLine(nextESK, reverseSeedMap)
+        ingredientList.append(newIngredient)
     return ingredientList
 
+def writeIngredientLine(nextESK, reverseSeedMap):
+    ingredientLine = " ".join(nextESK)
+    bigram = list(nextESK[0 : min(len(nextESK), seedLength)])
+    while True:
+        possiblePreviousTokens = []
+        try:
+            possiblePreviousTokens = reverseSeedMap[tuple(bigram)]
+        except KeyError:
+            pass
+        if possiblePreviousTokens == []:
+            raise IngredientsListException("Can't write rest of ingredient line")
 
+        token = random.choice(possiblePreviousTokens)
+
+        # If we've reached the beginning of the ingredient line,
+        # we stop writing
+        if token == "%":
+            break
+
+        # Account for tokens like 3/8 or 5/6 (amounts)
+        space = ""
+        if not (token == "/" or ingredientLine[0] == '/'):
+            space = " "
+
+        ingredientLine = token + space + ingredientLine
+        bigram = [token] + bigram[:-1]
+    return ingredientLine
+
+def writeRecipeTitle(properAdjectives, markovIngredientsList):
+    validEndsOfTitles = ["bread", "oil", "sausage", "cheese", "corn", "salad", "dressing",
+            "stock", "pepper", "bacon", "meat", "mustard", "butter", "water", "melon",
+            "kiwi", "lettuce", "yogurt", "sauce", "rice", "salt", "port", "vinegar"]
+    badTitleWords = ["halves", "thighs", "leaves", "stalks", "cloves", "half", "thigh",
+                    "leaf", "stalk", "clove", "extract"]
+
+    lastWordsInTitle = [None, None]
+    lastTokens = [line.split(" ")[-1] for line in markovIngredientsList]
+    lastTokens = set([t for t in lastTokens if t not in badTitleWords])
+
+    for token in lastTokens:
+        if (token[-1] == 's') or (token in validEndsOfTitles):
+            if not lastWordsInTitle[0]:
+                lastWordsInTitle[0] = token
+            elif not lastWordsInTitle[1] and token != lastWordsInTitle[0]:
+                lastWordsInTitle[1] = token
+                break
+
+    if lastWordsInTitle[0]:
+        lastTokens.remove(lastWordsInTitle[0])
+    if lastWordsInTitle[1]:
+        lastTokens.remove(lastWordsInTitle[1])
+
+    descriptorWord = None
+    for token in lastTokens:
+        if token[-1] != 's':
+            descriptorWord = token
+            break
+
+    recipeTitle = []
+    recipeTitle.append(random.choice(properAdjectives).strip())
+
+    if descriptorWord:
+        recipeTitle.append(descriptorWord.capitalize())
+
+    if lastWordsInTitle[0]:
+        recipeTitle.append(lastWordsInTitle[0].capitalize())
+        if lastWordsInTitle[1]:
+            recipeTitle += ["with", lastWordsInTitle[1].capitalize()]
+
+    # If no words are valid, just make the title "<proper_adjective> Dish"
+    if not descriptorWord and not lastWordsInTitle[0] and not lastWordsInTitle[1]:
+        recipeTitle.append("Dish")
+
+    recipeTitle = " ".join(recipeTitle)
+    return recipeTitle
 
 
 
@@ -897,6 +664,13 @@ def printUpdate(updateNum):
         print "   ", "...Still working..."
     elif updateNum == 3:
         print "   ", "...Can't be much longer now..."
+
+def printRecipeBookTitle():
+    text = "\n\n\n\n\n\n\n"
+    text += "               Randomly Generated Recipe Booklet\n"
+    text += "            ----------------------------------------- \n\n"
+    print text
+    return text
 
 def printListOfRecipesIngredients(allRecipes, startingIndex, numToPrint):
     for myRecipe in allRecipes[0:numToPrint]:

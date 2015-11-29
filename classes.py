@@ -48,7 +48,45 @@ class InstructionStep:
         self.sentenceStringVec = []       # Vector of strings
 
 
+class InstructionSentenceData:
+        def __init__(self):
+            self.allGoodSentences = []
+            self.goodSentencesWithSeeds = []
+            self.servingSentences = []
+            self.servingSentencesWithoutSeeds = []
+        def fillData(self, allRecipes, endSeedMap):
+            # Make a set of order-1 end seeds (the last words in ingredients)
+            singleEndSeeds = set([key[-1] for key in endSeedMap.keys()])
 
+            for i, myRecipe in enumerate(allRecipes):
+                myRecipe.fillInstructionSentenceTokens()
+                self.allGoodSentences += myRecipe.goodInstructionSentences
+                self.servingSentences += myRecipe.servingInstructionSentences
+                for instSent in myRecipe.goodInstructionSentences:
+                    if len(instSent.order1EndSeedsInside) != 0:
+                        containsBadSeed = False
+                        for token in instSent.tokensInSentence:
+                            if (token not in instSent.order1EndSeedsInside) and (token in singleEndSeeds):
+                                containsBadSeed = True
+                                break
+                        if not containsBadSeed:
+                            self.goodSentencesWithSeeds.append(instSent)
+                for instSent in myRecipe.servingInstructionSentences:
+                    if len(instSent.order1EndSeedsInside) == 0:
+                        tokens = instSent.tokensInSentence
+                        hasSeed = False
+                        for token in tokens:
+                            if (token in singleEndSeeds):
+                                hasSeed = True
+                                break
+                        if not hasSeed:
+                            self.servingSentencesWithoutSeeds.append(instSent)
+
+class IngredientsListException(Exception):
+    pass
+
+class InstructionsListException(Exception):
+    pass
 
 
 
@@ -279,8 +317,8 @@ class Recipe:
                               currentToken in self.VALID_AFTER_WORDS)):
                         myInstructionSent.isGoodSentence = False
                         break
-                    elif (previousToken in self.finalIngredientWords):
-                        myInstructionSent.order1EndSeedsInside += previousToken
+                    elif previousToken in self.finalIngredientWords:
+                        myInstructionSent.order1EndSeedsInside.append(previousToken)
                         myInstructionSent.isGoodSentence = True
                     else:
                         myInstructionSent.isGoodSentence = True
@@ -369,7 +407,7 @@ class Recipe:
                 endSeed = [word for word in words if not self.isUnit(word)]
             else:
                 endSeed = words[-endSeedLength:]
-            myIngredient.endSeed = tuple([w for w in endSeed if len(w) > 1])
+            myIngredient.endSeed = tuple([w for w in endSeed if w.isdigit() or len(w) > 1])
             self.ingredients[i] = myIngredient
             self.endSeeds.append(myIngredient.endSeed)
 
