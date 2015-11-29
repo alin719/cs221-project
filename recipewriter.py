@@ -451,12 +451,14 @@ def makeRandomIngredientsList(reverseSeedMap, endSeedMap, numIngredients, endSee
         numEndSeedSeeds = min(len(usedEndSeedKeys), endSeedSeedLength)
         possibleNextEndSeedKeys = [endSeedMap[tuple(seedKey)] for seedKey in usedEndSeedKeys[-numEndSeedSeeds:]]
         possibleNextEndSeedKeys = list(itertools.chain(*possibleNextEndSeedKeys))
-        if len(possibleNextEndSeedKeys) == 0:
-            raise IngredientsListException("No possible next ingredients")
         while True:
+            if possibleNextEndSeedKeys == []:
+                 raise IngredientsListException("No possible next ingredients")
             nextESK = random.choice(possibleNextEndSeedKeys)
             if (nextESK not in usedEndSeedKeys) and ("plus" not in nextESK) and ("lengths" not in nextESK) and ("inch" not in nextESK):
                 break
+            else:
+                possibleNextEndSeedKeys.remove(nextESK)
 
         usedEndSeedKeys.append(nextESK)
         newIngredient = writeIngredientLine(nextESK, reverseSeedMap)
