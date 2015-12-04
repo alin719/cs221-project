@@ -7,8 +7,6 @@ This file is responsible for constructing the Recipe and the Nutritional Databas
 '''
 
 # -------------------- NOTES --------------------
-# 1) More printing messages.
-# 2) Add cuisine shit now
 
 import collections, requests, json, time, pdb
 
@@ -17,18 +15,29 @@ YUM_APP_ID = "4d1d7424"
 YUM_APP_KEY = "419a5ef2649eb3b6e359b7a9de93e905"
 YUM_STEP = 100
 YUM_ALLOWED_COURSE = "course^course-Main Dishes"
+PRINT_RECIPE_IN_DATABASE = False
 
 # Goverment Nutritional Database API constants
 GOV_NUT_API_KEY = "5YbfzajkZSaGWi7hibcD4Nq1EXSGHRtZP5Pvlkvv"
 SLEEP_THRESHOLD = 1
-PRINT_REMAINING_CALLS = True
-PRINT_MISSED_INGREDIENTS = True
+SLEEP_TIME = 60*10
+PRINT_REMAINING_CALLS = False
+PRINT_MISSED_INGREDIENTS = False
 
 # Global variables
 allIngredientIds = {}
 missedIngredients = []
 foundItems = 0
 missedItems = 0
+
+def setConstants(recipesInDatabase, remainingCalls, missedIngredients):
+	global PRINT_RECIPE_IN_DATABASE
+	global PRINT_REMAINING_CALLS
+	global PRINT_MISSED_INGREDIENTS
+	PRINT_RECIPE_IN_DATABASE = recipesInDatabase
+	PRINT_REMAINING_CALLS = remainingCalls
+	PRINT_MISSED_INGREDIENTS = missedIngredients
+
 
 # Function: printMissedIngredients
 # ---------------------
@@ -54,22 +63,22 @@ def printMissedIngredients():
 def nutritionalSearch(ingredient):
 	apiSearchString = "http://api.nal.usda.gov/ndb/search/?format=json&q=%s&max=1&api_key=%s" % (ingredient, GOV_NUT_API_KEY)
 	searchRequest = requests.get(apiSearchString)
+	remaining = int(searchRequest.headers['X-RateLimit-Remaining'])
 
-	if PRINT_REMAINING_CALLS: print "SEARCH: Gov Nutrional Database requests remaining: %d" % int(searchRequest.headers['X-RateLimit-Remaining'])
+	if PRINT_REMAINING_CALLS: print "SEARCH: Gov Nutrional Database requests remaining: %d" % remaining
 
-	if searchRequest.status_code != 200:
-		remaining = int(searchRequest.headers['X-RateLimit-Remaining'])
-		if remaining > SLEEP_THRESHOLD:
+	while searchRequest.status_code != 200:
+		if remaining >= SLEEP_THRESHOLD:
 			if PRINT_MISSED_INGREDIENTS: print "SEARCH: Could not find ingredient: %s" % ingredient
 			return False, searchRequest
 
 		while remaining < SLEEP_THRESHOLD:
+			print "SEARCH: Gov Nutrional Database requests remaining: %d" % remaining
 			print "SEARCH: Request failed because exceeded Gov 1K API requests/hour"
 			print "... Sleeping for 10 min ..."
-			time.sleep(60*10)
+			time.sleep(SLEEP_TIME)
 			searchRequest = requests.get(apiSearchString)
 			remaining = int(searchRequest.headers['X-RateLimit-Remaining'])
-			print "SEARCH: Gov Nutrional Database requests remaining: %d" % remaining
 	return True, searchRequest
 
 
@@ -96,7 +105,8 @@ def addIngredientToNutritionalList(ingredients):
 					allIngredientIds[ingredient] = ingredientId
 					foundItems += 1
 			else:
-				print "ERROR, list is None. Check it out: %s" % resultList
+				print "ERROR, list is None. Check it out the results: %s" % nutritionalResults
+				print searchRequest.status_code
 
 		else:
 			# Adding ingredient to missedIngredients list
@@ -127,13 +137,14 @@ def getNutritionalRequest(ingredientId):
 		remaining = int(getRequest.headers['X-RateLimit-Remaining'])
 		print "GET: Gov Nutrional Database requests remaining: %d" % remaining
 
-		if remaining > SLEEP_THRESHOLD:
-			return
+		if remaining >= SLEEP_THRESHOLD:
+			print "[ERROR] GET: Status != 200 but remaining (%d) >= SLEEP_THRESHOLD (%d)" % (remaining, SLEEP_THRESHOLD)
+			return None
 
 		while remaining < SLEEP_THRESHOLD:
 			print "GET: Request failed because exceeded Gov 1K API requests/hour"
 			print "... Sleeping for 10 min ..."
-			time.sleep(60*10)
+			time.sleep(SLEEP_TIME)
 			getRequest = requests.get(apiGetString)
 			remaining = int(getRequest.headers['X-RateLimit-Remaining'])
 			print "GET: Gov Nutrional Database requests remaining: %d" % remaining
@@ -160,14 +171,15 @@ def buildNutritionalDatabase(ingredientNameIdMap, filename):
 	for ingredientName, ingredientId in ingredientNameIdMap.iteritems():
 		getRequest = getNutritionalRequest(ingredientId)
 
-		getFood = json.loads(getRequest.content)
-		foodCalories = getFood['report']['food']['nutrients'][1]
+		if getRequest is not None:
+			getFood = json.loads(getRequest.content)
+			foodCalories = getFood['report']['food']['nutrients'][1]
 
-		ingredientObj = {'ingredientName': ingredientName,
-						 'ingredientId': ingredientId,
-						 'foodCalories': (foodCalories['value'], foodCalories['unit'], foodCalories['measures'])}
+			ingredientObj = {'ingredientName': ingredientName,
+							 'ingredientId': ingredientId,
+							 'foodCalories': (foodCalories['value'], foodCalories['unit'], foodCalories['measures'])}
 
-		nutritionalDatabase[ingredientName] = ingredientObj
+			nutritionalDatabase[ingredientName] = ingredientObj
 
 	jsonNutritionalDatabase = json.dumps(nutritionalDatabase, sort_keys=True, indent=4)
 	allNutritionalFile = open(filename, 'w+')
@@ -250,24 +262,33 @@ def buildRecipeDatabase(recipeFilename, totalResults):
 
 	numSteps = getNumSteps(totalResults)
 	recipeDatabase = {}
-	brokeRequest = True
+	count = 0
 
 	for i in range(numSteps):
+		brokeRequest = True
 		start, maxResults = getStartAndMaxResults(i, numSteps, totalResults)
 		print "... Processing recipes: %d to %d ..." % (start + 1, start + maxResults)
+		# print "... start: %d, maxResults: %d ..." % (start, maxResults)
 
 		while brokeRequest:
 			apiSearchString = "http://api.yummly.com/v1/api/recipes?_app_id=%s&_app_key=%s&q=&allowedCourse[]=%s&maxResult=%d&start=%d" % (YUM_APP_ID, YUM_APP_KEY, YUM_ALLOWED_COURSE, maxResults, start)
 			searchRequest = requests.get(apiSearchString)
 			brokeRequest = not (searchRequest.status_code == 200)
 
+
+		# check out BROKEREQUEST!!!
 		allRecipes = json.loads(searchRequest.content)
 		matches = allRecipes["matches"]
 		for recipe in matches:
 			recipeName, recipeObj = buildRecipeEntry(recipe)
 			recipeDatabase[recipeName] = recipeObj
+			count += 1
+			if PRINT_RECIPE_IN_DATABASE:
+				print "--> recipe %d: %s" % (count, recipeName)
+				print "--> len of recipeDatabase = %d" % len(recipeDatabase)
 
 	jsonRecipeDatabase = json.dumps(recipeDatabase, sort_keys=True, indent=4)
+	print "--> len of recipeDatabase = %d" % len(recipeDatabase)
 	allRecipesFile = open(recipeFilename, 'w+')
 	allRecipesFile.write(jsonRecipeDatabase)
 	allRecipesFile.close()
